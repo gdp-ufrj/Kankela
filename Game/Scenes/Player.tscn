@@ -1,15 +1,53 @@
-[gd_scene load_steps=5 format=3 uid="uid://v68omfsxr70q"]
+[gd_scene load_steps=9 format=3 uid="uid://v68omfsxr70q"]
 
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_k4ujt"]
+[ext_resource type="Script" uid="uid://btchp5fbd7iy5" path="res://Scripts/player.gd" id="1_k4ujt"]
+[ext_resource type="Texture2D" uid="uid://b1ij5ujdgcr1c" path="res://Assets/Visuals/Sprites/exemplos/female_tilesheet.png" id="2_kyqiw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ug7d6"]
 
-[sub_resource type="Gradient" id="Gradient_osd28"]
-offsets = PackedFloat32Array(0, 0.25974, 0.551948, 0.727273, 1)
-colors = PackedColorArray(0.768627, 0, 0, 1, 0.639216, 0.258824, 0.258824, 1, 0.792157, 0.552941, 0.552941, 1, 0.827451, 0.603922, 0.72549, 1, 1, 0.631373, 0.788235, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_gntrk"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(640, 110, 80, 110)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_m5lfq"]
-gradient = SubResource("Gradient_osd28")
+[sub_resource type="AtlasTexture" id="AtlasTexture_dewec"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(0, 110, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ixxa"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(80, 110, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kyqiw"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(400, 220, 80, 110)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nn08x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gntrk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dewec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ixxa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dewec")
+}],
+"loop": true,
+"name": &"Andando",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kyqiw")
+}],
+"loop": true,
+"name": &"Parada",
+"speed": 5.0
+}]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_k4ujt")
@@ -17,7 +55,12 @@ script = ExtResource("1_k4ujt")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ug7d6")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("GradientTexture2D_m5lfq")
-
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Animator" type="AnimationPlayer" parent="."]
+
+[node name="Anim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_nn08x")
+animation = &"Andando"
+autoplay = "Parada"
+frame_progress = 0.293276

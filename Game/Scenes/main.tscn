@@ -1,20 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://dbx8qsvvgntwi"]
+[gd_scene load_steps=3 format=3 uid="uid://dbx8qsvvgntwi"]
 
+[ext_resource type="Texture2D" uid="uid://bxonbkkyuocaq" path="res://Assets/Visuals/Sprites/exemplos/Sample.png" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://v68omfsxr70q" path="res://Scenes/Player.tscn" id="1_iuasx"]
-
-[sub_resource type="Gradient" id="Gradient_pe786"]
-offsets = PackedFloat32Array(0, 0.123377, 0.233766, 0.435065, 0.5, 0.707792, 0.831169, 1)
-colors = PackedColorArray(0.631373, 0, 0, 1, 0.121569, 0.690196, 0.121569, 1, 0.231373, 0.231373, 0.729412, 1, 0.647059, 0.431373, 0.431373, 1, 0.494118, 0.494118, 0.270588, 1, 0.698039, 0.698039, 0.890196, 1, 0.823529, 0.352941, 0.823529, 1, 0.341176, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_qq6kc"]
-gradient = SubResource("Gradient_pe786")
-width = 1024
-height = 1024
-fill_to = Vector2(1, 1)
 
 [node name="Main" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("GradientTexture2D_qq6kc")
+position = Vector2(864.079, 485.25)
+scale = Vector2(1.88252, 1.88252)
+texture = ExtResource("1_bo1nx")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_iuasx")]
+position = Vector2(851, 785)
