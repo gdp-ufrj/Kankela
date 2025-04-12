@@ -22,8 +22,11 @@ func _physics_process(delta: float) -> void:
 		$Anim.play("Andando")
 		
 		# Vira o sprite horizontalmente conforme a direção
-		if direction.x != 0:
-			animacao.scale.x = direction.x
+		if direction.x > 0:
+			animacao.scale.x = 1
+		elif direction.x < 0:
+			animacao.scale.x = -1
+			
 	else:
 		# Desacelera suavemente até parar
 		velocity.x = move_toward(velocity.x, 0, SPEED)
