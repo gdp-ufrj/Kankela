@@ -1,0 +1,29 @@
+~ start
+Nadir: [[O que?|Espera...|Ué?]]
+Nadir: Onde eu estou?
+Voz Misteriosa: Quem está aí?
+- Meu nome é Nadir
+	Nadir: Meu nome é Nadir. De onde vem essa voz?
+	Voz Misteriosa: ...[wait=0.3][wave]Parece que temos uma novata aqui![/wave]
+	Várias vozes: [shake]HAHAHAHAHAHAHAHAHA[/shake]
+	=>< Nadir_chocada
+- Quem é você?
+	Nadir: Quem é você? De onde está vindo essa voz?
+	Voz Misteriosa: ... [wait=0.3] Que pergunta besta!
+	Voz Misteriosa: Todos sabem quem eu sou!
+	Voz Misteriosa: A não ser que você seja... [wait=0.3][shake]UMA NOVATA[shake]!
+	=>< Nadir_chocada
+- *Ficar em silêncio*
+	Nadir: ...
+	Voz Misteriosa: ...
+	Nadir: ...
+	Voz Misteriosa: ... [wait=1]Bem[speed=0.2]...[speed=1][wait=0.3] deve ter sido coisa da minha cabeça... [wave]hahahahaha[wave]
+
+Nadir: ... [wait=0.3]Que homem estranho...
+=> END
+
+
+~ Nadir_chocada
+Nadir: Novata? Do quê você está falando
+Voz Misteriosa: Por que não tenta descobrir? Tente me achar... [wait=0.3]Se for capaz.
+Voz Misteriosa: [wave]hahahahahahahahahaha[/wave]
