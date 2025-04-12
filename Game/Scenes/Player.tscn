@@ -1,13 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://v68omfsxr70q"]
+[gd_scene load_steps=10 format=3 uid="uid://v68omfsxr70q"]
 
 [ext_resource type="Script" uid="uid://btchp5fbd7iy5" path="res://Scripts/player.gd" id="1_k4ujt"]
 [ext_resource type="Texture2D" uid="uid://b1ij5ujdgcr1c" path="res://Assets/Visuals/Sprites/exemplos/female_tilesheet.png" id="2_kyqiw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ug7d6"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gntrk"]
-atlas = ExtResource("2_kyqiw")
-region = Rect2(640, 110, 80, 110)
+size = Vector2(58, 92)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dewec"]
 atlas = ExtResource("2_kyqiw")
@@ -17,6 +14,10 @@ region = Rect2(0, 110, 80, 110)
 atlas = ExtResource("2_kyqiw")
 region = Rect2(80, 110, 80, 110)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_gntrk"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(640, 110, 80, 110)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_kyqiw"]
 atlas = ExtResource("2_kyqiw")
 region = Rect2(400, 220, 80, 110)
@@ -25,13 +26,13 @@ region = Rect2(400, 220, 80, 110)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gntrk")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_dewec")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5ixxa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gntrk")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dewec")
@@ -49,10 +50,14 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_kyqiw"]
+radius = 50.0
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_k4ujt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 9)
 shape = SubResource("RectangleShape2D_ug7d6")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -61,6 +66,51 @@ shape = SubResource("RectangleShape2D_ug7d6")
 
 [node name="Anim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nn08x")
-animation = &"Andando"
+animation = &"Parada"
 autoplay = "Parada"
-frame_progress = 0.293276
+
+[node name="AreaInteracao" type="Area2D" parent="."]
+position = Vector2(0, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaInteracao"]
+scale = Vector2(1.15, 1.15)
+shape = SubResource("CircleShape2D_kyqiw")
+debug_color = Color(0, 0.650612, 0.0807452, 0.42)
+
+[node name="IconeInteracao" type="Node2D" parent="."]
+visible = false
+position = Vector2(0, -60)
+
+[node name="ColorRect" type="ColorRect" parent="IconeInteracao"]
+clip_contents = true
+custom_minimum_size = Vector2(65, 30)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.5
+offset_top = -15.0
+offset_right = 32.5
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14902, 0.14902, 0.14902, 0.533333)
+
+[node name="Label" type="Label" parent="IconeInteracao/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -29.5
+offset_top = -11.5
+offset_right = 29.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "[Space]"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
