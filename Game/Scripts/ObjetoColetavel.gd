@@ -8,6 +8,7 @@ func interact(_player: Node) -> void:
 	if hasInteracted: return
 
 	hasInteracted = true
+	self.desativar_delineado()
 	# Exibe mensagem no console
 	print(texto_interacao)
 	
