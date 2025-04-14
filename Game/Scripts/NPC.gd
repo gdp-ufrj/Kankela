@@ -20,6 +20,7 @@ func interact(_player: Node) -> void:
 
 	can_interact = false
 	_player.get_node("Anim").play("Parada")
+	_player.get_node("IconeInteracao").visible = false
 	desativar_delineado()
 
 	# Exibe mensagem no console
@@ -36,6 +37,7 @@ func interact(_player: Node) -> void:
 	await DialogueManager.dialogue_ended
 	get_tree().create_timer(interaction_debound).timeout.connect(func(): can_interact = true)
 	
+	_player.get_node("IconeInteracao").visible = true
 	ativar_delineado()
 	# Emite o sinal de interação
 	interaction_finished.emit(InteractableType.Dialogue)
