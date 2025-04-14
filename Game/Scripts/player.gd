@@ -123,7 +123,10 @@ func _on_objeto_interaction_finished(type: ObjetoInterativo.InteractableType) ->
 			print("Item coletado")
 			objeto_interagivel.pop_front()
 			if objeto_interagivel.size() > 0:
+				$IconeInteracao.visible = true
 				objeto_interagivel[0].ativar_delineado()
+			else:
+				$IconeInteracao.visible = false
 			
 		_: # Caso padrão
 			pass
