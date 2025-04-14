@@ -75,12 +75,16 @@ func start_cutscene(dialogue_resource: DialogueResource, title: String = "") -> 
 func _on_area_interacao_body_entered(body: Node) -> void:
 	# Verifica se o objeto possui a interface de interação
 	if body is ObjetoInterativo:
-		objeto_interagivel.push_front(body)
+		objeto_interagivel.push_back(body)
 		$IconeInteracao.visible = true
 		
 		# Conecta o sinal do objeto interativo à função de tratamento
 		if not body.interaction_finished.is_connected(_on_objeto_interaction_finished):
 			body.interaction_finished.connect(_on_objeto_interaction_finished)
+		
+		# Ativa o delineado do objeto se for o primeiro na lista
+		if body == objeto_interagivel[0]:
+			body.ativar_delineado()
 
 
 # Chamado quando um objeto sai da área de interação
@@ -88,10 +92,20 @@ func _on_area_interacao_body_exited(body: Node) -> void:
 	var index = objeto_interagivel.find(body)
 	if index != -1:
 		objeto_interagivel.pop_at(index)
-		$IconeInteracao.visible = objeto_interagivel.size() > 0
+
+		# Se o objeto que saiu tinha delineado, desativa
+		if index == 0:
+			body.desativar_delineado()
+
+		if objeto_interagivel.size() > 0:
+			$IconeInteracao.visible = true
+			objeto_interagivel[0].ativar_delineado()
+		else:
+			$IconeInteracao.visible = false
+			
 		
 		# Desconecta o sinal quando o objeto sai da área
-		if body is ObjetoInterativo and body.interaction_finished.is_connected(_on_objeto_interaction_finished):
+		if body.interaction_finished.is_connected(_on_objeto_interaction_finished):
 			body.interaction_finished.disconnect(_on_objeto_interaction_finished)
 
 
@@ -112,6 +126,8 @@ func _on_objeto_interaction_finished(type: ObjetoInterativo.InteractableType) ->
 		ObjetoInterativo.InteractableType.Item:
 			print("Item coletado")
 			objeto_interagivel.pop_front()
+			if objeto_interagivel.size() > 0:
+				objeto_interagivel[0].ativar_delineado()
 			
 		_: # Caso padrão
 			pass

@@ -1,31 +1,15 @@
-[gd_scene load_steps=13 format=3 uid="uid://dbx8qsvvgntwi"]
+[gd_scene load_steps=7 format=3 uid="uid://dbx8qsvvgntwi"]
 
 [ext_resource type="Texture2D" uid="uid://bxonbkkyuocaq" path="res://Assets/Visuals/Sprites/exemplos/Sample.png" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://v68omfsxr70q" path="res://Scenes/Player.tscn" id="1_iuasx"]
-[ext_resource type="Script" uid="uid://dho3fsaxo38vu" path="res://Scripts/ObjetoColetavel.gd" id="3_kry3j"]
-[ext_resource type="Script" uid="uid://b0f3daum2lyfq" path="res://Scripts/NPC.gd" id="4_21xkr"]
-[ext_resource type="Texture2D" uid="uid://b1ij5ujdgcr1c" path="res://Assets/Visuals/Sprites/exemplos/female_tilesheet.png" id="5_6bp64"]
+[ext_resource type="PackedScene" uid="uid://dfbikeb1245cv" path="res://Prefabs/Coletável.tscn" id="4_kry3j"]
+[ext_resource type="PackedScene" uid="uid://becr3kfbneco7" path="res://Prefabs/NPC.tscn" id="5_21xkr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kry3j"]
 size = Vector2(0.000579834, 515)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_21xkr"]
 size = Vector2(918, 0.001)
-
-[sub_resource type="Gradient" id="Gradient_kry3j"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_21xkr"]
-gradient = SubResource("Gradient_kry3j")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ynf5e"]
-size = Vector2(40, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hptm8"]
-atlas = ExtResource("5_6bp64")
-region = Rect2(480, 0, 80, 110)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d1ilt"]
-size = Vector2(40, 80)
 
 [node name="Main" type="Node2D"]
 
@@ -66,81 +50,26 @@ shape = SubResource("RectangleShape2D_21xkr")
 [node name="Player" parent="." instance=ExtResource("1_iuasx")]
 position = Vector2(4, 224)
 
-[node name="Coletável Ex4" type="CharacterBody2D" parent="."]
-position = Vector2(-208, 424)
-script = ExtResource("3_kry3j")
-texto_interacao = "Você coletou uma poção!"
-
-[node name="Sprite2D" type="Sprite2D" parent="Coletável Ex4"]
-modulate = Color(0.886275, 0.305882, 0.286275, 1)
-scale = Vector2(0.5, 0.5)
-texture = SubResource("GradientTexture2D_21xkr")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Coletável Ex4"]
-shape = SubResource("RectangleShape2D_ynf5e")
-
-[node name="Coletável Ex3" type="CharacterBody2D" parent="."]
-position = Vector2(-216, 400)
-script = ExtResource("3_kry3j")
-texto_interacao = "Você coletou uma poção!"
-
-[node name="Sprite2D" type="Sprite2D" parent="Coletável Ex3"]
-modulate = Color(0.886275, 0.305882, 0.286275, 1)
-scale = Vector2(0.5, 0.5)
-texture = SubResource("GradientTexture2D_21xkr")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Coletável Ex3"]
-shape = SubResource("RectangleShape2D_ynf5e")
-
-[node name="Coletável Ex2" type="CharacterBody2D" parent="."]
-position = Vector2(-208, 368)
-script = ExtResource("3_kry3j")
-texto_interacao = "Você coletou uma poção!"
-
-[node name="Sprite2D" type="Sprite2D" parent="Coletável Ex2"]
-modulate = Color(0.886275, 0.305882, 0.286275, 1)
-scale = Vector2(0.5, 0.5)
-texture = SubResource("GradientTexture2D_21xkr")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Coletável Ex2"]
-shape = SubResource("RectangleShape2D_ynf5e")
-
-[node name="Coletável Ex" type="CharacterBody2D" parent="."]
-position = Vector2(-176, 416)
-script = ExtResource("3_kry3j")
-texto_interacao = "Você coletou uma poção!"
-
-[node name="Sprite2D" type="Sprite2D" parent="Coletável Ex"]
-modulate = Color(0.886275, 0.305882, 0.286275, 1)
-scale = Vector2(0.5, 0.5)
-texture = SubResource("GradientTexture2D_21xkr")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Coletável Ex"]
-shape = SubResource("RectangleShape2D_ynf5e")
-
-[node name="NPC Ex" type="CharacterBody2D" parent="."]
+[node name="NPC Ex" parent="." instance=ExtResource("5_21xkr")]
 position = Vector2(232, 224)
-script = ExtResource("4_21xkr")
-arquivo_dialogo = "uid://cfefibvl6cc3i"
+tamanho_spritesheet = Vector2(9, 3)
 
-[node name="Sprite2D" type="Sprite2D" parent="NPC Ex"]
-texture = SubResource("AtlasTexture_hptm8")
+[node name="Coletável Ex" parent="." instance=ExtResource("4_kry3j")]
+position = Vector2(-176, 416)
+largura_delineado = 10.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC Ex"]
-shape = SubResource("RectangleShape2D_d1ilt")
+[node name="Coletável Ex2" parent="." instance=ExtResource("4_kry3j")]
+position = Vector2(-208, 392)
+largura_delineado = 10.0
 
-[node name="Label" type="Label" parent="NPC Ex"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -46.0
-offset_top = -71.5
-offset_right = 46.0
-offset_bottom = -48.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "Placeholder"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Coletável Ex3" parent="." instance=ExtResource("4_kry3j")]
+position = Vector2(-208, 344)
+largura_delineado = 10.0
+
+[node name="Coletável Ex4" parent="." instance=ExtResource("4_kry3j")]
+position = Vector2(-144, 416)
+largura_delineado = 10.0
+
+[node name="Coletável Ex5" parent="." instance=ExtResource("4_kry3j")]
+position = Vector2(-184, 320)
+largura_delineado = 10.0

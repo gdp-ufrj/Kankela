@@ -19,6 +19,9 @@ func interact(_player: Node) -> void:
 		return
 
 	can_interact = false
+	_player.get_node("Anim").play("Parada")
+	desativar_delineado()
+
 	# Exibe mensagem no console
 	print(nome_npc + " está falando com você.")
 	
@@ -33,5 +36,6 @@ func interact(_player: Node) -> void:
 	await DialogueManager.dialogue_ended
 	get_tree().create_timer(interaction_debound).timeout.connect(func(): can_interact = true)
 	
+	ativar_delineado()
 	# Emite o sinal de interação
 	interaction_finished.emit(InteractableType.Dialogue)

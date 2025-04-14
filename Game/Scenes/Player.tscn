@@ -79,6 +79,7 @@ debug_color = Color(0, 0.650612, 0.0807452, 0.42)
 
 [node name="IconeInteracao" type="Node2D" parent="."]
 visible = false
+z_index = 999
 position = Vector2(0, -60)
 
 [node name="ColorRect" type="ColorRect" parent="IconeInteracao"]
