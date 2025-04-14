@@ -61,6 +61,7 @@ func _physics_process(_delta: float) -> void:
 
 		# Verifica interação
 		if Input.is_action_just_pressed("ui_select") and objeto_interagivel:
+			$Anim.play("Parada")
 			self.interact_with_objects()
 
 
