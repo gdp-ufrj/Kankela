@@ -16,5 +16,6 @@ func interact(_player: Node) -> void:
 	
 	# Efeito visual de coleta (pode adicionar partículas ou animação)
 	var tween = create_tween()
-	tween.tween_property(self, "scale", Vector2.ZERO, 0.5)
+	tween.tween_property($Sprite2D, "scale", Vector2.ZERO, 0.5)
+	self.interaction_finished.disconnect(_player._on_objeto_interaction_finished)
 	tween.tween_callback(self.queue_free)

@@ -102,11 +102,6 @@ func _on_area_interacao_body_exited(body: Node) -> void:
 			objeto_interagivel[0].ativar_delineado()
 		else:
 			$IconeInteracao.visible = false
-			
-		
-		# Desconecta o sinal quando o objeto sai da área
-		if body.interaction_finished.is_connected(_on_objeto_interaction_finished):
-			body.interaction_finished.disconnect(_on_objeto_interaction_finished)
 
 
 # Método para interact com o objeto atual

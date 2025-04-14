@@ -18,8 +18,10 @@ var adicionar_margens: bool = true
 var _delineado_ativo: bool = false
 @onready var sprite: Sprite2D = $Sprite2D if has_node("Sprite2D") else null
 
-# Função customizada (opcional)
-var _custom_callback: Callable
+
+func _ready() -> void:
+	var player = get_tree().get_root().get_node("Main/Player")
+	self.interaction_finished.connect(player._on_objeto_interaction_finished)
 
 # Função que será chamada pelo player quando interact
 func interact(_player: Node) -> void:
@@ -27,11 +29,8 @@ func interact(_player: Node) -> void:
 	print("Interagindo com ", name)
 	
 	# Emite o sinal de interação
-	interaction_finished.emit(InteractableType.None, _custom_callback)
+	interaction_finished.emit(InteractableType.None)
 
-# Define uma função customizada para ser executada após a interação
-func set_custom_callback(callback: Callable) -> void:
-	_custom_callback = callback
 
 # Ativa o delineado do objeto
 func ativar_delineado() -> void:
