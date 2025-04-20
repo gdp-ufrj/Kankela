@@ -1,25 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://becr3kfbneco7"]
+[gd_scene load_steps=2 format=3 uid="uid://becr3kfbneco7"]
 
 [ext_resource type="Script" uid="uid://b0f3daum2lyfq" path="res://Scripts/NPC.gd" id="1_kchh4"]
-[ext_resource type="Texture2D" uid="uid://b1ij5ujdgcr1c" path="res://Assets/Visuals/Sprites/exemplos/female_tilesheet.png" id="2_rd2d0"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hptm8"]
-atlas = ExtResource("2_rd2d0")
-region = Rect2(480, 0, 80, 110)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d1ilt"]
-size = Vector2(40, 80)
 
 [node name="NPC Ex" type="CharacterBody2D"]
 script = ExtResource("1_kchh4")
 arquivo_dialogo = "uid://cfefibvl6cc3i"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("AtlasTexture_hptm8")
 region_rect = Rect2(0, 0, 88.895, 73.74)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_d1ilt")
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 8

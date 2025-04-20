@@ -128,5 +128,8 @@ func _on_objeto_interaction_finished(type: ObjetoInterativo.InteractableType) ->
 			else:
 				$IconeInteracao.visible = false
 			
+		ObjetoInterativo.InteractableType.Door:
+			print("Porta aberta")
+			
 		_: # Caso padrão
 			pass

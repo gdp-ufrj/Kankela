@@ -1,4 +1,4 @@
-class_name ObjetoInterativo extends CharacterBody2D
+class_name ObjetoInterativo extends CollisionObject2D
 
 # Sinal para quando o objeto é interaction_finished
 signal interaction_finished(type: InteractableType, function: Callable)
@@ -18,10 +18,24 @@ var adicionar_margens: bool = true
 var _delineado_ativo: bool = false
 @onready var sprite: Sprite2D = $Sprite2D if has_node("Sprite2D") else null
 
+# Exportando sprite e área de colisão do objeto
+var sprite_texture: Texture2D	# Exporta a textura da imagem
+var CollisionShape: CollisionShape2D
+var FormaColisao: Shape2D
+var PosicaoColisao: Vector2
 
 func _ready() -> void:
-	var player = get_tree().get_root().get_node("Main/Player")
+	var player = %Player
 	self.interaction_finished.connect(player._on_objeto_interaction_finished)
+	
+	# Definindo o sprite
+	if sprite and sprite_texture:
+		sprite.texture = sprite_texture
+	
+	# Definindo a área de colisão
+	if CollisionShape and FormaColisao:
+		CollisionShape.shape = FormaColisao
+		CollisionShape.position = PosicaoColisao
 
 # Função que será chamada pelo player quando interact
 func interact(_player: Node) -> void:
@@ -68,5 +82,6 @@ func desativar_delineado() -> void:
 enum InteractableType {
 	None,
 	Dialogue,
-	Item
+	Item,
+	Door
 }

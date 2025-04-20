@@ -1,0 +1,148 @@
+[gd_scene load_steps=28 format=3 uid="uid://dbx8qsvvgntwi"]
+
+[ext_resource type="Texture2D" uid="uid://bxonbkkyuocaq" path="res://Assets/Visuals/Sprites/exemplos/Sample.png" id="1_jll27"]
+[ext_resource type="PackedScene" uid="uid://camnftgon0rp" path="res://Scenes/Prefabs/door.tscn" id="2_6t17n"]
+[ext_resource type="PackedScene" uid="uid://v68omfsxr70q" path="res://Scenes/Player.tscn" id="2_jll27"]
+[ext_resource type="PackedScene" uid="uid://becr3kfbneco7" path="res://Scenes/Prefabs/NPC.tscn" id="3_6t17n"]
+[ext_resource type="Texture2D" uid="uid://b6nqunmq8d3mx" path="res://Assets/Visuals/Sprites/exemplos/tile_door.png" id="3_ougk0"]
+[ext_resource type="PackedScene" uid="uid://dfbikeb1245cv" path="res://Scenes/Prefabs/Coletável.tscn" id="4_ougk0"]
+[ext_resource type="Texture2D" uid="uid://bponj0ub2wsqp" path="res://Assets/Visuals/Sprites/exemplos/player_tilesheet.png" id="6_ougk0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kry3j"]
+size = Vector2(0.000579834, 515)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_21xkr"]
+size = Vector2(918, 0.001)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ougk0"]
+size = Vector2(80, 59)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ougk0"]
+atlas = ExtResource("6_ougk0")
+region = Rect2(400, 0, 80, 110)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mt7aw"]
+size = Vector2(40, 80)
+
+[sub_resource type="Gradient" id="Gradient_ougk0"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0xxjv"]
+gradient = SubResource("Gradient_ougk0")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xxjv"]
+size = Vector2(40, 40)
+
+[sub_resource type="Gradient" id="Gradient_1sihp"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_etifk"]
+gradient = SubResource("Gradient_1sihp")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1sihp"]
+size = Vector2(40, 40)
+
+[sub_resource type="Gradient" id="Gradient_delm8"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ilqhf"]
+gradient = SubResource("Gradient_delm8")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_etifk"]
+size = Vector2(40, 40)
+
+[sub_resource type="Gradient" id="Gradient_mt7aw"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gdppd"]
+gradient = SubResource("Gradient_mt7aw")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_delm8"]
+size = Vector2(40, 40)
+
+[sub_resource type="Gradient" id="Gradient_di0hy"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_71emk"]
+gradient = SubResource("Gradient_di0hy")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ilqhf"]
+size = Vector2(40, 40)
+
+[node name="Main" type="Node2D"]
+
+[node name="Arena" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Arena"]
+scale = Vector2(1.88235, 1.88349)
+texture = ExtResource("1_jll27")
+
+[node name="esquerda" type="StaticBody2D" parent="Arena"]
+position = Vector2(-863.999, 0)
+scale = Vector2(1.88235, 1.88349)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/esquerda"]
+shape = SubResource("RectangleShape2D_kry3j")
+
+[node name="direita" type="StaticBody2D" parent="Arena"]
+position = Vector2(863.999, 0)
+scale = Vector2(1.88235, 1.88349)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/direita"]
+shape = SubResource("RectangleShape2D_kry3j")
+
+[node name="cima" type="StaticBody2D" parent="Arena"]
+position = Vector2(0, -484.999)
+scale = Vector2(1.88235, 1.88349)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/cima"]
+shape = SubResource("RectangleShape2D_21xkr")
+
+[node name="baixo" type="StaticBody2D" parent="Arena"]
+position = Vector2(0, 484.999)
+scale = Vector2(1.88235, 1.88349)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/baixo"]
+shape = SubResource("RectangleShape2D_21xkr")
+
+[node name="Door" parent="Arena" instance=ExtResource("2_6t17n")]
+position = Vector2(2, 235)
+area = "Underworld"
+sprite_porta = ExtResource("3_ougk0")
+forma_colisao = SubResource("RectangleShape2D_ougk0")
+posicao_colisao = Vector2(0, -60)
+
+[node name="Player" parent="." instance=ExtResource("2_jll27")]
+unique_name_in_owner = true
+position = Vector2(1, 285)
+
+[node name="NPC Ex" parent="." instance=ExtResource("3_6t17n")]
+position = Vector2(232, 224)
+sprite_npc = SubResource("AtlasTexture_ougk0")
+forma_colisao = SubResource("RectangleShape2D_mt7aw")
+tamanho_spritesheet = Vector2(9, 3)
+
+[node name="Coletável Ex" parent="." instance=ExtResource("4_ougk0")]
+position = Vector2(-176, 416)
+sprite_objeto = SubResource("GradientTexture2D_0xxjv")
+forma_colisao = SubResource("RectangleShape2D_0xxjv")
+largura_delineado = 10.0
+
+[node name="Coletável Ex2" parent="." instance=ExtResource("4_ougk0")]
+position = Vector2(-208, 392)
+sprite_objeto = SubResource("GradientTexture2D_etifk")
+forma_colisao = SubResource("RectangleShape2D_1sihp")
+largura_delineado = 10.0
+
+[node name="Coletável Ex3" parent="." instance=ExtResource("4_ougk0")]
+position = Vector2(-208, 344)
+sprite_objeto = SubResource("GradientTexture2D_ilqhf")
+forma_colisao = SubResource("RectangleShape2D_etifk")
+largura_delineado = 10.0
+
+[node name="Coletável Ex4" parent="." instance=ExtResource("4_ougk0")]
+position = Vector2(-144, 416)
+sprite_objeto = SubResource("GradientTexture2D_gdppd")
+forma_colisao = SubResource("RectangleShape2D_delm8")
+largura_delineado = 10.0
+
+[node name="Coletável Ex5" parent="." instance=ExtResource("4_ougk0")]
+position = Vector2(-184, 320)
+sprite_objeto = SubResource("GradientTexture2D_71emk")
+forma_colisao = SubResource("RectangleShape2D_ilqhf")
+largura_delineado = 10.0

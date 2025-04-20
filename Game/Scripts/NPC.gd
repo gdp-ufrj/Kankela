@@ -2,6 +2,13 @@ class_name NPC extends "res://Scripts/ObjetoInterativo.gd"
 
 # Nome do NPC
 @export var nome_npc: String = "NPC"
+# Sprite do NPC
+@export var sprite_npc: Texture2D	# Exporta a textura da imagem
+
+# Área de colisão do NPC:
+@onready var collision_shape: CollisionShape2D = $CollisionShape2D
+@export var forma_colisao: Shape2D
+@export var posicao_colisao: Vector2 = Vector2.ZERO
 
 # Referência ao arquivo de diálogo para o Dialogue Manager (se presente)
 @export_file("*.dialogue") var arquivo_dialogo: String
@@ -11,8 +18,16 @@ class_name NPC extends "res://Scripts/ObjetoInterativo.gd"
 var can_interact: bool = true
 var interaction_debound: float = 0.05
 
+
 func _ready() -> void:
 	$Label.text = nome_npc
+	
+	# Ativando o sprite do npc
+	sprite_texture = sprite_npc
+	CollisionShape = collision_shape
+	FormaColisao = forma_colisao
+	PosicaoColisao = posicao_colisao
+	super._ready()	# Força esse nó rodar a função _ready() do script que ele está estendendo
 
 func interact(_player: Node) -> void:
 	if not can_interact:
