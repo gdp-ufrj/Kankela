@@ -5,6 +5,9 @@ const SPEED = 300.0
 
 @onready var animacao := $Anim as AnimatedSprite2D
 @onready var cutscene_mode
+
+@onready var pause_menu = $Camera2D/Pause
+@onready var paused = false
 # Área de detecção de interações
 @onready var area_interacao := $AreaInteracao as Area2D
 
@@ -24,10 +27,24 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed("pause") and !cutscene_mode:
+		PauseMenu()
+
+
+func PauseMenu():
+	if paused:
+		pause_menu.hide()
+		Engine.time_scale = 1
+		#get_tree().paused = false
+	else:
+		pause_menu.show()
+		Engine.time_scale = 0
+		#get_tree().paused = true
+	paused = !paused
+
 
 func _physics_process(_delta: float) -> void:
-	if !cutscene_mode:
+	if !cutscene_mode and !paused:
 		# Movimentação no eixo X e no eixo Y  
 		var direction_x := Input.get_axis("ui_left", "ui_right")
 		var direction_y := Input.get_axis("ui_up", "ui_down")

@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://deki4efnv6lnl"]
+
+[ext_resource type="Script" uid="uid://5g38hdwqe6f4" path="res://Scripts/pause.gd" id="1_o80xk"]
+[ext_resource type="Shader" uid="uid://bp0oy4iyg7wrs" path="res://Shaders/pause.gdshader" id="2_l2mpd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5a6ek"]
+shader = ExtResource("2_l2mpd")
+shader_parameter/amount = 3.0
+
+[node name="Pause" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o80xk")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_5a6ek")
+layout_mode = 0
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = -62.0
+offset_top = -82.0
+offset_right = 62.0
+offset_bottom = 82.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 43
+text = "Pause"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Continue" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Continuar"
+
+[node name="Settings" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Configurações"
+
+[node name="MainMenu" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Menu Principal"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]

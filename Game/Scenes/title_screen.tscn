@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://43ex6s1emuj4"]
+
+[ext_resource type="Script" uid="uid://c3vyfg6uwsg21" path="res://Scripts/title_screen.gd" id="1_klylv"]
+[ext_resource type="AudioStream" uid="uid://cr1mf4yilnon1" path="res://Assets/Audio/Soundtracks/horror-story-149981.mp3" id="2_p3fck"]
+
+[sub_resource type="Gradient" id="Gradient_klylv"]
+colors = PackedColorArray(0.890196, 0.164706, 0, 1, 0.788235, 0.337255, 0.0862745, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_p3fck"]
+gradient = SubResource("Gradient_klylv")
+width = 1152
+height = 648
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_klylv")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+texture = SubResource("GradientTexture2D_p3fck")
+
+[node name="Soundtrack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_p3fck")
+autoplay = true
+parameters/looping = true
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 516.0
+offset_top = 453.0
+offset_right = -516.0
+offset_bottom = -164.0
+text = "Jogar"
+
+[node name="Settings" type="Button" parent="."]
+offset_left = 516.0
+offset_top = 500.0
+offset_right = 636.0
+offset_bottom = 531.0
+text = "Configurações"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 516.0
+offset_top = 547.0
+offset_right = 636.0
+offset_bottom = 578.0
+text = "Sair"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 355.0
+offset_top = 100.0
+offset_right = 797.0
+offset_bottom = 192.0
+theme_override_font_sizes/font_size = 67
+text = "Título do Jogo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
