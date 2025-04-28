@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="PP (25.1)"
-run/main_scene="uid://43ex6s1emuj4"
+run/main_scene="uid://dla6lljlmctmb"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

@@ -19,7 +19,7 @@ var _delineado_ativo: bool = false
 @onready var sprite: Sprite2D = $Sprite2D if has_node("Sprite2D") else null
 
 # Exportando sprite e área de colisão do objeto
-var sprite_texture: Texture2D	# Exporta a textura da imagem
+var sprite_texture: Texture2D # Exporta a textura da imagem
 var CollisionShape: CollisionShape2D
 var FormaColisao: Shape2D
 var PosicaoColisao: Vector2

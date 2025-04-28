@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dbx8qsvvgntwi"]
+[gd_scene load_steps=28 format=3 uid="uid://dfmo6jg4usghv"]
 
 [ext_resource type="Texture2D" uid="uid://bxonbkkyuocaq" path="res://Assets/Visuals/Sprites/exemplos/Sample.png" id="1_jll27"]
 [ext_resource type="PackedScene" uid="uid://camnftgon0rp" path="res://Scenes/Prefabs/door.tscn" id="2_6t17n"]

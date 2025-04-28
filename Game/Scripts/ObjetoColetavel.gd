@@ -5,7 +5,7 @@ class_name ObjetoColetavel extends "res://Scripts/ObjetoInterativo.gd"
 var hasInteracted: bool = false
 
 # Sprite do Objeto
-@export var sprite_objeto : Texture2D
+@export var sprite_objeto: Texture2D
 
 # Área de colisão do objeto:
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
@@ -18,7 +18,7 @@ func _ready() -> void:
 	CollisionShape = collision_shape
 	FormaColisao = forma_colisao
 	PosicaoColisao = posicao_colisao
-	super._ready()	# Força esse nó rodar a função _ready() do script que ele está estendendo
+	super._ready() # Força esse nó rodar a função _ready() do script que ele está estendendo
 
 func interact(_player: Node) -> void:
 	if hasInteracted: return

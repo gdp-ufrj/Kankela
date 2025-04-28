@@ -1,10 +1,10 @@
 class_name Porta extends "res://Scripts/ObjetoInterativo.gd"
 
 
-@onready var player : CharacterBody2D = %Player
-@export var area : String = "."
+@onready var player: CharacterBody2D = %Player
+@export var area: String = "."
 # Sprite da porta
-@export var sprite_porta: Texture2D	# Exporta a textura da imagem
+@export var sprite_porta: Texture2D # Exporta a textura da imagem
 
 # Área de colisão da porta:
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
@@ -17,7 +17,7 @@ func _ready() -> void:
 	CollisionShape = collision_shape
 	FormaColisao = forma_colisao
 	PosicaoColisao = posicao_colisao
-	super._ready()	# Força esse nó rodar a função _ready() do script que ele está estendendo
+	super._ready() # Força esse nó rodar a função _ready() do script que ele está estendendo
 	
 	'''
 	# Definindo a área de colisão da porta

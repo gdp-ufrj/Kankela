@@ -3,7 +3,7 @@ class_name NPC extends "res://Scripts/ObjetoInterativo.gd"
 # Nome do NPC
 @export var nome_npc: String = "NPC"
 # Sprite do NPC
-@export var sprite_npc: Texture2D	# Exporta a textura da imagem
+@export var sprite_npc: Texture2D # Exporta a textura da imagem
 
 # Área de colisão do NPC:
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
@@ -27,7 +27,7 @@ func _ready() -> void:
 	CollisionShape = collision_shape
 	FormaColisao = forma_colisao
 	PosicaoColisao = posicao_colisao
-	super._ready()	# Força esse nó rodar a função _ready() do script que ele está estendendo
+	super._ready() # Força esse nó rodar a função _ready() do script que ele está estendendo
 
 func interact(_player: Node) -> void:
 	if not can_interact:

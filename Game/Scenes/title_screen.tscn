@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://43ex6s1emuj4"]
+[gd_scene load_steps=5 format=3 uid="uid://dla6lljlmctmb"]
 
-[ext_resource type="Script" uid="uid://c3vyfg6uwsg21" path="res://Scripts/title_screen.gd" id="1_klylv"]
+[ext_resource type="Script" path="res://Scripts/title_screen.gd" id="1_klylv"]
 [ext_resource type="AudioStream" uid="uid://cr1mf4yilnon1" path="res://Assets/Audio/Soundtracks/horror-story-149981.mp3" id="2_p3fck"]
 
 [sub_resource type="Gradient" id="Gradient_klylv"]
@@ -38,9 +38,12 @@ offset_left = 516.0
 offset_top = 453.0
 offset_right = -516.0
 offset_bottom = -164.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "Jogar"
 
 [node name="Settings" type="Button" parent="."]
+layout_mode = 0
 offset_left = 516.0
 offset_top = 500.0
 offset_right = 636.0
