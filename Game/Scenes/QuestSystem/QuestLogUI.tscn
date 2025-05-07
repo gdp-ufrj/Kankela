@@ -1,0 +1,112 @@
+[gd_scene load_steps=2 format=3 uid="uid://6873q6cdmask"]
+
+[ext_resource type="Script" uid="uid://bn1i46rfv5yuj" path="res://Scripts/QuestSystem/QuestLogUI.gd" id="1_mq6gy"]
+
+[node name="QuestLogUI" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mq6gy")
+
+[node name="PainelQuest" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -140.0
+offset_right = 256.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TituloJanela" type="Label" parent="PainelQuest"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -85.5
+offset_top = 10.0
+offset_right = 85.5
+offset_bottom = 36.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "Missão Atual"
+horizontal_alignment = 1
+
+[node name="TituloMissao" type="Label" parent="PainelQuest"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.15
+anchor_right = 0.95
+anchor_bottom = 0.23
+theme_override_font_sizes/font_size = 18
+text = "Nome da Missão"
+horizontal_alignment = 1
+
+[node name="LinhaHorizontal" type="ColorRect" parent="PainelQuest"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.23
+anchor_right = 0.95
+anchor_bottom = 0.24
+grow_horizontal = 2
+color = Color(0.482353, 0.482353, 0.482353, 1)
+
+[node name="DescricaoMissao" type="Label" parent="PainelQuest"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.25
+anchor_right = 0.95
+anchor_bottom = 0.45
+text = "Descrição da missão aparecerá aqui."
+autowrap_mode = 3
+
+[node name="TituloObjetivos" type="Label" parent="PainelQuest"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.5
+anchor_right = 0.95
+anchor_bottom = 0.55
+text = "Objetivos:"
+horizontal_alignment = 1
+
+[node name="ListaObjetivos" type="ScrollContainer" parent="PainelQuest"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.55
+anchor_right = 0.95
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PainelQuest/ListaObjetivos"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BotaoFechar" type="Button" parent="PainelQuest"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -30.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 30.0
+grow_horizontal = 0
+text = "X"
+
+[connection signal="pressed" from="PainelQuest/BotaoFechar" to="." method="_on_fechar_pressed"]

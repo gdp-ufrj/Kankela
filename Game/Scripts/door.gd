@@ -11,6 +11,14 @@ class_name Porta extends "res://Scripts/ObjetoInterativo.gd"
 @export var forma_colisao: Shape2D
 @export var posicao_colisao: Vector2 = Vector2.ZERO
 
+# Sistema de itens necessários para abrir a porta
+@export var porta_destrancada: bool = false
+@export var item_necessario: String = "" # ID do item necessário (como uma chave)
+@export var consumir_item: bool = false # Se verdadeiro, o item será usado (removido do inventário)
+@export var mensagem_proibido_passar: String = "Você ainda não pode passar por aqui"
+
+# Se a porta foi destrancada permanentemente
+
 func _ready() -> void:
 	# Ativando o sprite da porta
 	sprite_texture = sprite_porta
@@ -24,9 +32,28 @@ func _ready() -> void:
 	if collision_shape and forma_colisao:
 		collision_shape.shape = forma_colisao
 		collision_shape.position = posicao_colisao
-'''
+	'''
 
 func interact(_player: Node) -> void:
+	# Verificar se a porta precisa de um item e se o sistema está disponível
+	if item_necessario != "" and Engine.has_singleton("QuestManager") and not porta_destrancada:
+		if QuestManager.tem_item_disponivel(item_necessario):
+			# Gasta o item se ativado
+			if consumir_item:
+				QuestManager.usar_item(item_necessario)
+			porta_destrancada = true
+		else:
+			DialogueManager.show_dialogue({
+				"title": "temp_dialogue",
+				"nodes": {
+					"start": {
+						"text": mensagem_proibido_passar,
+						"next": null
+					}
+				}
+			})
+			return
+	
 	self.desativar_delineado()
 	
 	# Emite o sinal de interação

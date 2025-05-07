@@ -1,0 +1,32 @@
+[
+  {
+    "descricao": "Um cristal azul que emite um brilho suave. Pertence ao viajante da superfície.",
+    "icone_path": "",
+    "id": "cristal_azul",
+    "nome": "Cristal Azul"
+  },
+  {
+    "descricao": "Um cristal vermelho com formato peculiar. Pertence ao viajante da superfície.",
+    "icone_path": "",
+    "id": "cristal_vermelho",
+    "nome": "Cristal Vermelho"
+  },
+  {
+    "descricao": "Um cristal verde cintilante. Pertence ao viajante da superfície.",
+    "icone_path": "",
+    "id": "cristal_verde",
+    "nome": "Cristal Verde"
+  },
+  {
+    "descricao": "Um cristal amarelo reluzente. Pertence ao viajante da superfície.",
+    "icone_path": "",
+    "id": "cristal_amarelo",
+    "nome": "Cristal Amarelo"
+  },
+  {
+    "descricao": "Um cristal roxo com formato estranho. Pertence ao viajante da superfície.",
+    "icone_path": "",
+    "id": "cristal_roxo",
+    "nome": "Cristal Roxo"
+  }
+]

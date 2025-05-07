@@ -25,6 +25,7 @@ region = Rect2(400, 0, 80, 110)
 size = Vector2(40, 80)
 
 [sub_resource type="Gradient" id="Gradient_ougk0"]
+colors = PackedColorArray(0, 0, 1, 1, 0.2, 0.2, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_0xxjv"]
 gradient = SubResource("Gradient_ougk0")
@@ -33,6 +34,7 @@ gradient = SubResource("Gradient_ougk0")
 size = Vector2(40, 40)
 
 [sub_resource type="Gradient" id="Gradient_1sihp"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 0.3, 0.3, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_etifk"]
 gradient = SubResource("Gradient_1sihp")
@@ -41,6 +43,7 @@ gradient = SubResource("Gradient_1sihp")
 size = Vector2(40, 40)
 
 [sub_resource type="Gradient" id="Gradient_delm8"]
+colors = PackedColorArray(0, 0.8, 0, 1, 0.2, 1, 0.2, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ilqhf"]
 gradient = SubResource("Gradient_delm8")
@@ -49,6 +52,7 @@ gradient = SubResource("Gradient_delm8")
 size = Vector2(40, 40)
 
 [sub_resource type="Gradient" id="Gradient_mt7aw"]
+colors = PackedColorArray(1, 1, 0, 1, 1, 1, 0.3, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_gdppd"]
 gradient = SubResource("Gradient_mt7aw")
@@ -57,6 +61,7 @@ gradient = SubResource("Gradient_mt7aw")
 size = Vector2(40, 40)
 
 [sub_resource type="Gradient" id="Gradient_di0hy"]
+colors = PackedColorArray(0.6, 0, 0.8, 1, 0.8, 0.2, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_71emk"]
 gradient = SubResource("Gradient_di0hy")
@@ -113,36 +118,59 @@ position = Vector2(1, 285)
 
 [node name="NPC Ex" parent="." instance=ExtResource("3_6t17n")]
 position = Vector2(232, 224)
+nome_npc = "Viajante"
 sprite_npc = SubResource("AtlasTexture_ougk0")
 forma_colisao = SubResource("RectangleShape2D_mt7aw")
+arquivo_dialogo = "uid://citravygd38yc"
+titulo_dialogo = "start"
 tamanho_spritesheet = Vector2(9, 3)
 
 [node name="Coletável Ex" parent="." instance=ExtResource("4_ougk0")]
 position = Vector2(-176, 416)
+texto_interacao = "Você coletou um Cristal Azul!"
 sprite_objeto = SubResource("GradientTexture2D_0xxjv")
 forma_colisao = SubResource("RectangleShape2D_0xxjv")
+item_id = "cristal_azul"
+item_nome = "Cristal Azul"
+item_descricao = "Um cristal azul que emite um brilho suave. Pertence ao viajante da superfície."
 largura_delineado = 10.0
 
 [node name="Coletável Ex2" parent="." instance=ExtResource("4_ougk0")]
 position = Vector2(-208, 392)
+texto_interacao = "Você coletou um Cristal Vermelho!"
 sprite_objeto = SubResource("GradientTexture2D_etifk")
 forma_colisao = SubResource("RectangleShape2D_1sihp")
+item_id = "cristal_vermelho"
+item_nome = "Cristal Vermelho"
+item_descricao = "Um cristal vermelho com formato peculiar. Pertence ao viajante da superfície."
 largura_delineado = 10.0
 
 [node name="Coletável Ex3" parent="." instance=ExtResource("4_ougk0")]
 position = Vector2(-208, 344)
+texto_interacao = "Você coletou um Cristal Verde!"
 sprite_objeto = SubResource("GradientTexture2D_ilqhf")
 forma_colisao = SubResource("RectangleShape2D_etifk")
+item_id = "cristal_verde"
+item_nome = "Cristal Verde"
+item_descricao = "Um cristal verde cintilante. Pertence ao viajante da superfície."
 largura_delineado = 10.0
 
 [node name="Coletável Ex4" parent="." instance=ExtResource("4_ougk0")]
 position = Vector2(-144, 416)
+texto_interacao = "Você coletou um Cristal Amarelo!"
 sprite_objeto = SubResource("GradientTexture2D_gdppd")
 forma_colisao = SubResource("RectangleShape2D_delm8")
+item_id = "cristal_amarelo"
+item_nome = "Cristal Amarelo"
+item_descricao = "Um cristal amarelo reluzente. Pertence ao viajante da superfície."
 largura_delineado = 10.0
 
 [node name="Coletável Ex5" parent="." instance=ExtResource("4_ougk0")]
 position = Vector2(-184, 320)
+texto_interacao = "Você coletou um Cristal Roxo!"
 sprite_objeto = SubResource("GradientTexture2D_71emk")
 forma_colisao = SubResource("RectangleShape2D_ilqhf")
+item_id = "cristal_roxo"
+item_nome = "Cristal Roxo"
+item_descricao = "Um cristal roxo com formato estranho. Pertence ao viajante da superfície."
 largura_delineado = 10.0

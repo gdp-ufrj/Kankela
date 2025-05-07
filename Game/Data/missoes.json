@@ -1,0 +1,17 @@
+[
+  {
+    "descricao": "Ajude o viajante encontrando os 5 cristais que ele perdeu na área da superfície.",
+    "id": "coletar_cristais",
+    "itens_necessarios": [
+      "cristal_azul",
+      "cristal_vermelho",
+      "cristal_verde",
+      "cristal_amarelo",
+      "cristal_roxo"
+    ],
+    "proxima_missao": "",
+    "titulo": "Cristais Perdidos",
+    "arquivo_dialogo_completo": "res://Dialogues/NPC_Surface.dialogue",
+    "titulo_dialogo_completo": "mission_complete"
+  }
+]

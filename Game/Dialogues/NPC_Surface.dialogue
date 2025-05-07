@@ -1,0 +1,51 @@
+~ start
+NPC: Olá, viajante! Você parece perdido.
+if QuestManager.todas_missoes["coletar_cristais"].is_nao_iniciada()
+	- Quem é você?
+		NPC: Eu sou apenas um viajante como você. Estou procurando por alguns itens que perdi nesta área.
+		NPC: Seriam 5 pequenos cristais coloridos. Você poderia me ajudar a encontrá-los?
+		- Claro, vou ajudar!
+			NPC: Maravilhoso! Eu ficarei muito grato se você conseguir encontrar todos eles.
+			NPC: Eles estão espalhados por esta área. Volte para me ver quando tiver coletado todos!
+			do QuestManager.iniciar_missao("coletar_cristais")
+			=> END
+		- Não posso agora.
+			NPC: Entendo, você deve estar ocupado. Se mudar de ideia, estarei aqui.
+			=> END
+	- Adeus.
+		NPC: Até mais! Tenha cuidado em sua jornada.
+		=> END
+
+elif QuestManager.todas_missoes["coletar_cristais"].is_em_andamento()
+	if QuestManager.tem_itens_para_missao("coletar_cristais")
+		- Consegui seus cristais => mission_complete
+	else
+		- Sobre os cristais... => mission_incomplete
+
+else
+	- Adeus.
+		NPC: Até mais! Tenha cuidado em sua jornada.
+		=> END
+
+~ mission_incomplete
+NPC: Conseguiu encontrar meus cristais?
+NPC: Ainda faltam alguns. Continue procurando pela área!
+- Continuarei procurando.
+	NPC: Obrigado! Estou esperando ansiosamente.
+	=> END
+- Onde posso encontrá-los?
+	NPC: Estão espalhados por esta área. Procure bem e você os encontrará!
+	=> END
+
+~ mission_complete
+NPC: Você encontrou todos os meus cristais! Muito obrigado!
+NPC: Sua ajuda foi muito valiosa. Tome isto como recompensa pela sua bondade.
+NPC: Agora posso continuar minha jornada. Boa sorte na sua!
+- Foi um prazer ajudar.
+	NPC: A bondade sempre encontra seu caminho de volta. Desejo-lhe boa sorte em sua jornada!
+	do QuestManager.completar_missao("coletar_cristais")
+	=> END
+- Não foi nada.
+	NPC: Para mim significou muito. Obrigado novamente!
+	do QuestManager.completar_missao("coletar_cristais")
+	=> END

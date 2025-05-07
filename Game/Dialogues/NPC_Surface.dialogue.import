@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://citravygd38yc"
+path="res://.godot/imported/NPC_Surface.dialogue-ca758cee15c150373b79a129cf1aa305.tres"
+
+[deps]
+
+source_file="res://Dialogues/NPC_Surface.dialogue"
+dest_files=["res://.godot/imported/NPC_Surface.dialogue-ca758cee15c150373b79a129cf1aa305.tres"]
+
+[params]
+
+defaults=true

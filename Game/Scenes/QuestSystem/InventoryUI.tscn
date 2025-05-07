@@ -1,0 +1,99 @@
+[gd_scene load_steps=2 format=3 uid="uid://qhycbli6dxoc"]
+
+[ext_resource type="Script" uid="uid://jsjt0kaq60wb" path="res://Scripts/QuestSystem/InventoryUI.gd" id="1_l5ku1"]
+
+[node name="InventoryUI" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l5ku1")
+
+[node name="PainelInventario" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -140.0
+offset_right = 256.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Titulo" type="Label" parent="PainelInventario"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -85.5
+offset_top = 10.0
+offset_right = 85.5
+offset_bottom = 36.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "Inventário"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PainelInventario"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.15
+anchor_right = 0.55
+anchor_bottom = 0.9
+grow_vertical = 2
+
+[node name="ListaItens" type="VBoxContainer" parent="PainelInventario/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PainelDescricao" type="Panel" parent="PainelInventario"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6
+anchor_top = 0.15
+anchor_right = 0.95
+anchor_bottom = 0.9
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Nome" type="Label" parent="PainelInventario/PainelDescricao"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.15
+text = "Nome do Item"
+horizontal_alignment = 1
+
+[node name="Descricao" type="Label" parent="PainelInventario/PainelDescricao"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.2
+anchor_right = 0.95
+anchor_bottom = 0.9
+text = "Descrição do item selecionado aparecerá aqui."
+autowrap_mode = 3
+
+[node name="BotaoFechar" type="Button" parent="PainelInventario"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -30.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 30.0
+grow_horizontal = 0
+text = "X"
+
+[connection signal="pressed" from="PainelInventario/BotaoFechar" to="." method="_on_fechar_pressed"]

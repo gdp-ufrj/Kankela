@@ -6,8 +6,16 @@ const SPEED = 300.0
 @onready var animacao := $Anim as AnimatedSprite2D
 @onready var cutscene_mode
 
+# Referência a tela de pause e controlador
 @onready var pause_menu = $Camera2D/Pause
 @onready var paused = false
+
+# Referências às telas de inventário e missões
+@onready var inventory_ui = $Camera2D/InventoryUI
+@onready var inventory_open = false
+@onready var quest_log_ui = $Camera2D/QuestLogUI
+@onready var quest_log_open = false
+
 # Área de detecção de interações
 @onready var area_interacao := $AreaInteracao as Area2D
 
@@ -29,6 +37,12 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("pause") and !cutscene_mode:
 		PauseMenu()
+		
+	if Input.is_action_just_pressed("inventory") and !cutscene_mode and !paused and inventory_ui:
+		InventoryMenu()
+		
+	if Input.is_action_just_pressed("quest_log") and !cutscene_mode and !paused and quest_log_ui:
+		QuestLogMenu()
 
 
 func PauseMenu():
@@ -41,6 +55,26 @@ func PauseMenu():
 		Engine.time_scale = 0
 		#get_tree().paused = true
 	paused = !paused
+
+func InventoryMenu():
+	if inventory_open:
+		inventory_ui.hide()
+		Engine.time_scale = 1
+	else:
+		inventory_ui.show()
+		inventory_ui.get_script().atualizar_inventario()
+		Engine.time_scale = 0
+	inventory_open = !inventory_open
+
+func QuestLogMenu():
+	if quest_log_open:
+		quest_log_ui.hide()
+		Engine.time_scale = 1
+	else:
+		quest_log_ui.show()
+		quest_log_ui.get_script().atualizar_quest_log("")
+		Engine.time_scale = 0
+	quest_log_open = !quest_log_open
 
 
 func _physics_process(_delta: float) -> void:
