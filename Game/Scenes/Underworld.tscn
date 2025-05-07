@@ -113,6 +113,7 @@ area = "Surface"
 sprite_porta = ExtResource("6_dje5t")
 forma_colisao = SubResource("RectangleShape2D_0350c")
 posicao_colisao = Vector2(0, -60)
+porta_destrancada = true
 
 [node name="Player" parent="." instance=ExtResource("2_tdpuf")]
 unique_name_in_owner = true

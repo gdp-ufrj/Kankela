@@ -111,6 +111,8 @@ area = "Underworld"
 sprite_porta = ExtResource("3_ougk0")
 forma_colisao = SubResource("RectangleShape2D_ougk0")
 posicao_colisao = Vector2(0, -60)
+porta_destrancada = false
+item_necessario = "cristal_roxo"
 
 [node name="Player" parent="." instance=ExtResource("2_jll27")]
 unique_name_in_owner = true

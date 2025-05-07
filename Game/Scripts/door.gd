@@ -12,7 +12,7 @@ class_name Porta extends "res://Scripts/ObjetoInterativo.gd"
 @export var posicao_colisao: Vector2 = Vector2.ZERO
 
 # Sistema de itens necessários para abrir a porta
-@export var porta_destrancada: bool = false
+@export var porta_destrancada: bool = true
 @export var item_necessario: String = "" # ID do item necessário (como uma chave)
 @export var consumir_item: bool = false # Se verdadeiro, o item será usado (removido do inventário)
 @export var mensagem_proibido_passar: String = "Você ainda não pode passar por aqui"
@@ -36,28 +36,26 @@ func _ready() -> void:
 
 func interact(_player: Node) -> void:
 	# Verificar se a porta precisa de um item e se o sistema está disponível
-	if item_necessario != "" and Engine.has_singleton("QuestManager") and not porta_destrancada:
-		if QuestManager.tem_item_disponivel(item_necessario):
-			# Gasta o item se ativado
-			if consumir_item:
-				QuestManager.usar_item(item_necessario)
-			porta_destrancada = true
-		else:
-			DialogueManager.show_dialogue({
-				"title": "temp_dialogue",
-				"nodes": {
-					"start": {
-						"text": mensagem_proibido_passar,
-						"next": null
-					}
-				}
-			})
-			return
+	if porta_destrancada:
+		get_tree().change_scene_to_file("res://Scenes/" + area + ".tscn")
+
+	else:
+		if item_necessario != "" and Engine.has_singleton("QuestManager"):
+			if QuestManager.tem_item_disponivel(item_necessario):
+				# Gasta o item se ativado
+				if consumir_item:
+					QuestManager.usar_item(item_necessario)
+				porta_destrancada = true
+				# Muda de cena para o novo cenário
+				get_tree().change_scene_to_file("res://Scenes/" + area + ".tscn")
+			else:
+				if Engine.has_singleton("DialogueManager"):
+						_player.start_cutscene(load("res://Dialogues/door.dialogue"))
+				else:
+					# Caso o Dialogue Manager não esteja disponível, exibe mensagem padrão
+					print("Sistema de diálogo não disponível.")
 	
 	self.desativar_delineado()
 	
 	# Emite o sinal de interação
 	interaction_finished.emit(InteractableType.Door)
-	
-	# Muda de cena para o novo cenário
-	get_tree().change_scene_to_file("res://Scenes/" + area + ".tscn")
