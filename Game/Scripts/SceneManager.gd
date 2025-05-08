@@ -1,16 +1,19 @@
 extends Node
 
 # Caminho direto ao GameRoot
-@onready var game_root = $GameViewportContainer/GameViewport/GameRoot
-@export_file("*.tscn") var cena_de_start: String
+var game_root: Node2D = null
 
-func _ready():
-	load_game_scene(cena_de_start)
+func setup(root: Node2D) -> void:
+	game_root = root
 
 func load_game_scene(path: String) -> void:
-	# Remove cena atual (se houver)
-	for child in game_root.get_children():
-		child.queue_free()
+	if game_root == null:
+		push_error("GameRoot não configurado!")
+		return
+
+	if game_root.get_child_count() > 0:
+		for child in game_root.get_children():
+			child.queue_free()
 
 	# Carrega e instancia nova cena
 	var scene = load(path)
