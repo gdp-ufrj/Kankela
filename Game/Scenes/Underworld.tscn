@@ -109,11 +109,10 @@ shape = SubResource("RectangleShape2D_1sihp")
 
 [node name="Door" parent="Arena" instance=ExtResource("2_dje5t")]
 position = Vector2(-444, -440)
-area = "Surface"
+area = "uid://dfmo6jg4usghv"
 sprite_porta = ExtResource("6_dje5t")
 forma_colisao = SubResource("RectangleShape2D_0350c")
 posicao_colisao = Vector2(0, -60)
-porta_destrancada = true
 
 [node name="Player" parent="." instance=ExtResource("2_tdpuf")]
 unique_name_in_owner = true

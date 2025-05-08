@@ -1,6 +1,7 @@
 extends Control
 
 @onready var player = get_node("../../")
+@export_file("*.tscn") var title_screen: String
 
 func _on_continue_pressed() -> void:
 	player.PauseMenu()
@@ -12,4 +13,4 @@ func _on_settings_pressed() -> void:
 
 func _on_main_menu_pressed() -> void:
 	player.PauseMenu()
-	get_tree().change_scene_to_file("res://Scenes/title_screen.tscn")
+	SceneManager.load_game_scene(title_screen)

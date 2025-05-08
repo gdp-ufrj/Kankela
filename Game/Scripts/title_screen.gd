@@ -1,8 +1,9 @@
 extends Control
 
+@export_file("*.tscn") var primeira_fase: String
 
 func _on_play_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Surface.tscn")
+	SceneManager.load_game_scene(primeira_fase)
 
 
 func _on_settings_pressed() -> void:

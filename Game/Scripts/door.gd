@@ -2,7 +2,7 @@ class_name Porta extends "res://Scripts/ObjetoInterativo.gd"
 
 
 @onready var player: CharacterBody2D = %Player
-@export var area: String = "."
+@export_file("*.tscn") var area: String
 # Sprite da porta
 @export var sprite_porta: Texture2D # Exporta a textura da imagem
 
@@ -37,7 +37,7 @@ func _ready() -> void:
 func interact(_player: Node) -> void:
 	# Verificar se a porta precisa de um item e se o sistema está disponível
 	if porta_destrancada:
-		get_tree().change_scene_to_file("res://Scenes/" + area + ".tscn")
+		SceneManager.load_game_scene(area)
 
 	else:
 		if item_necessario != "" and Engine.has_singleton("QuestManager"):
@@ -47,7 +47,7 @@ func interact(_player: Node) -> void:
 					QuestManager.usar_item(item_necessario)
 				porta_destrancada = true
 				# Muda de cena para o novo cenário
-				get_tree().change_scene_to_file("res://Scenes/" + area + ".tscn")
+				SceneManager.load_game_scene(area)
 			else:
 				if Engine.has_singleton("DialogueManager"):
 						_player.start_cutscene(load("res://Dialogues/door.dialogue"))

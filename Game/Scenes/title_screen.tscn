@@ -21,6 +21,7 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_klylv")
+primeira_fase = "uid://dfmo6jg4usghv"
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(-1.52588e-05, 0)

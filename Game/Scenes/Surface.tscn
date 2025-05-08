@@ -69,7 +69,7 @@ gradient = SubResource("Gradient_di0hy")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ilqhf"]
 size = Vector2(40, 40)
 
-[node name="Main" type="Node2D"]
+[node name="Surface" type="Node2D"]
 
 [node name="Arena" type="Node2D" parent="."]
 
@@ -107,7 +107,7 @@ shape = SubResource("RectangleShape2D_21xkr")
 
 [node name="Door" parent="Arena" instance=ExtResource("2_6t17n")]
 position = Vector2(2, 235)
-area = "Underworld"
+area = "uid://cgqyy3iep4pev"
 sprite_porta = ExtResource("3_ougk0")
 forma_colisao = SubResource("RectangleShape2D_ougk0")
 posicao_colisao = Vector2(0, -60)
