@@ -19,6 +19,10 @@ class_name Porta extends "res://Scripts/ObjetoInterativo.gd"
 
 # Se a porta foi destrancada permanentemente
 
+#transicao de cenario
+@onready var audio_player: AudioStreamPlayer = $AudioStreamPlayer
+@onready var transition: CanvasLayer = get_node("/root/TransicaoLayer")
+
 func _ready() -> void:
 	# Ativando o sprite da porta
 	sprite_texture = sprite_porta
@@ -37,7 +41,18 @@ func _ready() -> void:
 func interact(_player: Node) -> void:
 	# Verificar se a porta precisa de um item e se o sistema está disponível
 	if porta_destrancada:
+		#inicia a transição
+		transition.fade_out()
+		await transition.fade_out()
+		await get_tree().create_timer(0.5).timeout  # Pequeno delay
+		audio_player.play()
+		await audio_player.finished
+		await get_tree().create_timer(0.5).timeout 
+		
 		SceneManager.load_game_scene(area)
+		
+		#faz o fade_in após o carregamento
+		transition.fade_in()
 
 	else:
 		if item_necessario != "" and Engine.has_singleton("QuestManager"):
@@ -47,7 +62,17 @@ func interact(_player: Node) -> void:
 					QuestManager.usar_item(item_necessario)
 				porta_destrancada = true
 				# Muda de cena para o novo cenário
+				#inicia a transição
+				transition.fade_out()
+				await transition.fade_out()
+				await get_tree().create_timer(0.5).timeout  # Pequeno delay
+				audio_player.play()
+				await audio_player.finished
+				await get_tree().create_timer(0.5).timeout 
+				
 				SceneManager.load_game_scene(area)
+				#faz o fade_in após o carregamento
+				transition.fade_in()
 			else:
 				if Engine.has_singleton("DialogueManager"):
 						_player.start_cutscene(load("res://Dialogues/door.dialogue"))

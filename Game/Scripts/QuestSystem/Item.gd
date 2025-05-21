@@ -15,11 +15,14 @@ class_name Item extends Resource
 # Associação com missões (IDs das missões que precisam deste item)
 @export var missoes_relacionadas: Array[String] = []
 
+
+
+
 func usar() -> void:
-    usado = true
-    
+	usado = true
+	
 func coletar() -> void:
-    coletado = true
-    
+	coletado = true
+	
 func esta_disponivel() -> bool:
-    return coletado and not usado
+	return coletado and not usado

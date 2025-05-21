@@ -18,17 +18,17 @@ enum EstadoMissao {NAO_INICIADA, EM_ANDAMENTO, COMPLETA}
 @export var titulo_dialogo_completo: String = ""
 
 func iniciar() -> void:
-    estado = EstadoMissao.EM_ANDAMENTO
-    
+	estado = EstadoMissao.EM_ANDAMENTO
+	
 func completar() -> void:
-    estado = EstadoMissao.COMPLETA
+	estado = EstadoMissao.COMPLETA
 
-    
+	
 func is_nao_iniciada() -> bool:
-    return estado == EstadoMissao.NAO_INICIADA
+	return estado == EstadoMissao.NAO_INICIADA
 
 func is_em_andamento() -> bool:
-    return estado == EstadoMissao.EM_ANDAMENTO
-    
+	return estado == EstadoMissao.EM_ANDAMENTO
+	
 func is_completa() -> bool:
-    return estado == EstadoMissao.COMPLETA
+	return estado == EstadoMissao.COMPLETA

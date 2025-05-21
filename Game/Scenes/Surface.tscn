@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dfmo6jg4usghv"]
+[gd_scene load_steps=29 format=3 uid="uid://dfmo6jg4usghv"]
 
 [ext_resource type="Texture2D" uid="uid://bxonbkkyuocaq" path="res://Assets/Visuals/Sprites/exemplos/Sample.png" id="1_jll27"]
 [ext_resource type="PackedScene" uid="uid://camnftgon0rp" path="res://Scenes/Prefabs/door.tscn" id="2_6t17n"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b6nqunmq8d3mx" path="res://Assets/Visuals/Sprites/exemplos/tile_door.png" id="3_ougk0"]
 [ext_resource type="PackedScene" uid="uid://dfbikeb1245cv" path="res://Scenes/Prefabs/Coletável.tscn" id="4_ougk0"]
 [ext_resource type="Texture2D" uid="uid://bponj0ub2wsqp" path="res://Assets/Visuals/Sprites/exemplos/player_tilesheet.png" id="6_ougk0"]
+[ext_resource type="AudioStream" uid="uid://d1jdpq3l1fgpp" path="res://Assets/Audio/SFX/handleCoins.ogg" id="8_0xxjv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kry3j"]
 size = Vector2(0.000579834, 515)
@@ -170,6 +171,7 @@ largura_delineado = 10.0
 [node name="Coletável Ex5" parent="." instance=ExtResource("4_ougk0")]
 position = Vector2(-184, 320)
 texto_interacao = "Você coletou um Cristal Roxo!"
+som_coletar = ExtResource("8_0xxjv")
 sprite_objeto = SubResource("GradientTexture2D_71emk")
 forma_colisao = SubResource("RectangleShape2D_ilqhf")
 item_id = "cristal_roxo"

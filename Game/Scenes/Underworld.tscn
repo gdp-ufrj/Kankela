@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cgqyy3iep4pev"]
+[gd_scene load_steps=31 format=3 uid="uid://cgqyy3iep4pev"]
 
 [ext_resource type="Texture2D" uid="uid://dweyr33yvv8u6" path="res://Assets/Visuals/Sprites/exemplos/Sample3.png" id="1_r0gq2"]
 [ext_resource type="PackedScene" uid="uid://camnftgon0rp" path="res://Scenes/Prefabs/door.tscn" id="2_dje5t"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dfbikeb1245cv" path="res://Scenes/Prefabs/Coletável.tscn" id="4_0350c"]
 [ext_resource type="Texture2D" uid="uid://cxbni72y7pbqs" path="res://Assets/Visuals/Sprites/exemplos/zombie_tilesheet.png" id="6_0350c"]
 [ext_resource type="Texture2D" uid="uid://b6nqunmq8d3mx" path="res://Assets/Visuals/Sprites/exemplos/tile_door.png" id="6_dje5t"]
+[ext_resource type="AudioStream" uid="uid://csrl80ah5ixwy" path="res://Assets/Audio/Soundtracks/sala tutorial dos fusiveis.mp3" id="8_p8o0c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xxjv"]
 size = Vector2(0.000579834, 515)
@@ -161,3 +162,7 @@ position = Vector2(-597, 48)
 sprite_objeto = SubResource("GradientTexture2D_8er7u")
 forma_colisao = SubResource("RectangleShape2D_7iy1f")
 largura_delineado = 10.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_p8o0c")
+autoplay = true

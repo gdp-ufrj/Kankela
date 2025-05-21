@@ -4,6 +4,9 @@ class_name ObjetoColetavel extends "res://Scripts/ObjetoInterativo.gd"
 @export var texto_interacao: String = "Você coletou um item!"
 var hasInteracted: bool = false
 
+# som ao colotar o item
+@export var som_coletar: AudioStream
+
 # Sprite do Objeto
 @export var sprite_objeto: Texture2D
 
@@ -25,6 +28,8 @@ func _ready() -> void:
 	CollisionShape = collision_shape
 	FormaColisao = forma_colisao
 	PosicaoColisao = posicao_colisao
+	$AudioStreamPlayer.stream = som_coletar
+	
 	super._ready() # Força esse nó rodar a função _ready() do script que ele está estendendo
 	
 	# Registrar o item no sistema se ainda não estiver registrado
@@ -57,7 +62,12 @@ func interact(_player: Node) -> void:
 	# Emite o sinal de interação
 	interaction_finished.emit(InteractableType.Item)
 	
+	#Efeito audio
+	if $AudioStreamPlayer.stream != null:
+		$AudioStreamPlayer.play()
+	
 	# Efeito visual de coleta (pode adicionar partículas ou animação)
+	
 	var tween = create_tween()
 	tween.tween_property($Sprite2D, "scale", Vector2.ZERO, 0.5)
 	self.interaction_finished.disconnect(_player._on_objeto_interaction_finished)
