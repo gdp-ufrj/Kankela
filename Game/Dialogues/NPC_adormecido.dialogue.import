@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://ea7gvi2iqihc"
+path="res://.godot/imported/NPC_adormecido.dialogue-6cfc8a76b497885d8f3ff0b381f04f84.tres"
+
+[deps]
+
+source_file="res://Dialogues/NPC_adormecido.dialogue"
+dest_files=["res://.godot/imported/NPC_adormecido.dialogue-6cfc8a76b497885d8f3ff0b381f04f84.tres"]
+
+[params]
+
+defaults=true

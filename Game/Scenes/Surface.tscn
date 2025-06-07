@@ -25,11 +25,11 @@ region = Rect2(400, 0, 80, 110)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mt7aw"]
 size = Vector2(40, 80)
 
-[sub_resource type="Gradient" id="Gradient_ougk0"]
+[sub_resource type="Gradient" id="Gradient_0xxjv"]
 colors = PackedColorArray(0, 0, 1, 1, 0.2, 0.2, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_0xxjv"]
-gradient = SubResource("Gradient_ougk0")
+gradient = SubResource("Gradient_0xxjv")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xxjv"]
 size = Vector2(40, 40)
@@ -43,29 +43,29 @@ gradient = SubResource("Gradient_1sihp")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1sihp"]
 size = Vector2(40, 40)
 
-[sub_resource type="Gradient" id="Gradient_delm8"]
+[sub_resource type="Gradient" id="Gradient_etifk"]
 colors = PackedColorArray(0, 0.8, 0, 1, 0.2, 1, 0.2, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ilqhf"]
-gradient = SubResource("Gradient_delm8")
+gradient = SubResource("Gradient_etifk")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_etifk"]
 size = Vector2(40, 40)
 
-[sub_resource type="Gradient" id="Gradient_mt7aw"]
+[sub_resource type="Gradient" id="Gradient_delm8"]
 colors = PackedColorArray(1, 1, 0, 1, 1, 1, 0.3, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_gdppd"]
-gradient = SubResource("Gradient_mt7aw")
+gradient = SubResource("Gradient_delm8")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_delm8"]
 size = Vector2(40, 40)
 
-[sub_resource type="Gradient" id="Gradient_di0hy"]
+[sub_resource type="Gradient" id="Gradient_ilqhf"]
 colors = PackedColorArray(0.6, 0, 0.8, 1, 0.8, 0.2, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_71emk"]
-gradient = SubResource("Gradient_di0hy")
+gradient = SubResource("Gradient_ilqhf")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ilqhf"]
 size = Vector2(40, 40)

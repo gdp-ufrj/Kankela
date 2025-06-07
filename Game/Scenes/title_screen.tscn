@@ -19,7 +19,7 @@ offset_top = 180.0
 offset_right = 320.0
 offset_bottom = 180.0
 script = ExtResource("1_klylv")
-primeira_fase = "uid://dfmo6jg4usghv"
+primeira_fase = "uid://cgmng2iidaame"
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(-1.52588e-05, 0)

@@ -1,0 +1,191 @@
+[gd_scene load_steps=25 format=3 uid="uid://cgmng2iidaame"]
+
+[ext_resource type="Script" uid="uid://dfldsq546qti" path="res://Scripts/tutorial.gd" id="1_sgy12"]
+[ext_resource type="Texture2D" uid="uid://i7wophq6tacp" path="res://Assets/Visuals/Sprites/exemplos/Sample2.png" id="1_x7a1n"]
+[ext_resource type="PackedScene" uid="uid://camnftgon0rp" path="res://Scenes/Prefabs/door.tscn" id="2_vv0ms"]
+[ext_resource type="Texture2D" uid="uid://b6nqunmq8d3mx" path="res://Assets/Visuals/Sprites/exemplos/tile_door.png" id="3_hxa32"]
+[ext_resource type="PackedScene" uid="uid://v68omfsxr70q" path="res://Scenes/Player.tscn" id="4_dlght"]
+[ext_resource type="PackedScene" uid="uid://becr3kfbneco7" path="res://Scenes/Prefabs/NPC.tscn" id="5_8i65c"]
+[ext_resource type="Texture2D" uid="uid://cxbni72y7pbqs" path="res://Assets/Visuals/Sprites/exemplos/zombie_tilesheet.png" id="6_m35rq"]
+[ext_resource type="PackedScene" uid="uid://dfbikeb1245cv" path="res://Scenes/Prefabs/Coletável.tscn" id="7_sgy12"]
+[ext_resource type="AudioStream" uid="uid://d1jdpq3l1fgpp" path="res://Assets/Audio/SFX/handleCoins.ogg" id="8_m35rq"]
+[ext_resource type="Texture2D" uid="uid://bewvgqofsmjcm" path="res://Assets/Visuals/Sprites/exemplos/blue_brick.png" id="9_sgy12"]
+[ext_resource type="Texture2D" uid="uid://cnbtfrrx8op5u" path="res://Assets/Visuals/Sprites/exemplos/red_brick.png" id="10_5gw1s"]
+[ext_resource type="Texture2D" uid="uid://db800oenh8rau" path="res://Assets/Visuals/Sprites/exemplos/black_brick.png" id="11_brn58"]
+[ext_resource type="PackedScene" uid="uid://brorihu3te6dt" path="res://Scenes/Prefabs/lampada.tscn" id="12_fx2vl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5gw1s"]
+size = Vector2(0.000579834, 515)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_brn58"]
+size = Vector2(918, 0.001)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fx2vl"]
+size = Vector2(80, 59)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mqud2"]
+atlas = ExtResource("6_m35rq")
+region = Rect2(400, 0, 80, 110)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sswaw"]
+size = Vector2(40, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8nvbb"]
+size = Vector2(40, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m8quk"]
+size = Vector2(40, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jyml5"]
+size = Vector2(40, 40)
+
+[sub_resource type="Gradient" id="Gradient_ilqhf"]
+colors = PackedColorArray(0.6, 0, 0.8, 1, 0.8, 0.2, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sgy12"]
+gradient = SubResource("Gradient_ilqhf")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mqud2"]
+size = Vector2(40, 40)
+
+[node name="Tutorial" type="Node2D"]
+script = ExtResource("1_sgy12")
+
+[node name="Arena" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Arena"]
+scale = Vector2(1.88235, 1.88349)
+texture = ExtResource("1_x7a1n")
+
+[node name="esquerda" type="StaticBody2D" parent="Arena"]
+position = Vector2(-863.999, 0)
+scale = Vector2(1.88235, 1.88349)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/esquerda"]
+shape = SubResource("RectangleShape2D_5gw1s")
+
+[node name="direita" type="StaticBody2D" parent="Arena"]
+position = Vector2(863.999, 0)
+scale = Vector2(1.88235, 1.88349)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/direita"]
+shape = SubResource("RectangleShape2D_5gw1s")
+
+[node name="cima" type="StaticBody2D" parent="Arena"]
+position = Vector2(0, -484.999)
+scale = Vector2(1.88235, 1.88349)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/cima"]
+shape = SubResource("RectangleShape2D_brn58")
+
+[node name="baixo" type="StaticBody2D" parent="Arena"]
+position = Vector2(0, 484.999)
+scale = Vector2(1.88235, 1.88349)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/baixo"]
+shape = SubResource("RectangleShape2D_brn58")
+
+[node name="Door" parent="Arena" instance=ExtResource("2_vv0ms")]
+position = Vector2(4, -337)
+area = "uid://dfmo6jg4usghv"
+sprite_porta = ExtResource("3_hxa32")
+forma_colisao = SubResource("RectangleShape2D_fx2vl")
+posicao_colisao = Vector2(0, -60)
+porta_destrancada = false
+item_necessario = "cristal_roxo"
+
+[node name="Player" parent="." instance=ExtResource("4_dlght")]
+unique_name_in_owner = true
+position = Vector2(1, 285)
+
+[node name="NPC Ex" parent="." instance=ExtResource("5_8i65c")]
+position = Vector2(546, 73)
+nome_npc = "Beiçudo adormecido"
+sprite_npc = SubResource("AtlasTexture_mqud2")
+forma_colisao = SubResource("RectangleShape2D_sswaw")
+arquivo_dialogo = "uid://ea7gvi2iqihc"
+titulo_dialogo = "start"
+tamanho_spritesheet = Vector2(9, 3)
+
+[node name="Fusivel Azul" parent="." instance=ExtResource("7_sgy12")]
+position = Vector2(-735, 390)
+texto_interacao = "Você coletou um Fusível Azul!"
+som_coletar = ExtResource("8_m35rq")
+sprite_objeto = ExtResource("9_sgy12")
+forma_colisao = SubResource("RectangleShape2D_8nvbb")
+item_id = "fusivel_azul"
+item_nome = "Fusível Azul"
+item_descricao = "Um fusível de cor azul. Pode ser útil para ligar alguma lâmpada que tenha uma cor correspondente."
+largura_delineado = 10.0
+
+[node name="Fusivel Vermelho" parent="." instance=ExtResource("7_sgy12")]
+position = Vector2(731, -236)
+texto_interacao = "Você coletou um Fusível Vermelho!"
+som_coletar = ExtResource("8_m35rq")
+sprite_objeto = ExtResource("10_5gw1s")
+forma_colisao = SubResource("RectangleShape2D_m8quk")
+item_id = "fusivel_vermelho"
+item_nome = "Fusível Vermelho"
+item_descricao = "Um fusível de cor vermelha. Pode ser útil para ligar alguma lâmpada que tenha uma cor correspondente."
+largura_delineado = 10.0
+
+[node name="Fusivel Preto" parent="." instance=ExtResource("7_sgy12")]
+position = Vector2(-707, -258)
+texto_interacao = "Você coletou um Fusível Preto!!"
+som_coletar = ExtResource("8_m35rq")
+sprite_objeto = ExtResource("11_brn58")
+forma_colisao = SubResource("RectangleShape2D_jyml5")
+item_id = "fusivel_preto"
+item_nome = "Fusível Preto"
+item_descricao = "Um fusível de cor preta. Pode ser útil para ligar alguma lâmpada que tenha uma cor correspondente."
+largura_delineado = 10.0
+
+[node name="Lampada1" parent="." instance=ExtResource("12_fx2vl")]
+position = Vector2(-129, -100)
+item_necessario = "fusivel_azul"
+consumir_fusivel = true
+
+[node name="ColorRect" type="ColorRect" parent="Lampada1"]
+offset_left = -11.0
+offset_top = -11.0
+offset_right = 11.0
+offset_bottom = 11.0
+color = Color(0, 0.6, 1, 1)
+
+[node name="Lampada2" parent="." instance=ExtResource("12_fx2vl")]
+position = Vector2(0, -100)
+lampada_index = 1
+item_necessario = "fusivel_vermelho"
+consumir_fusivel = true
+
+[node name="ColorRect" type="ColorRect" parent="Lampada2"]
+offset_left = -11.0
+offset_top = -11.0
+offset_right = 11.0
+offset_bottom = 11.0
+color = Color(0.83, 0.2656, 0.2656, 1)
+
+[node name="Lampada3" parent="." instance=ExtResource("12_fx2vl")]
+position = Vector2(129, -100)
+lampada_index = 2
+item_necessario = "fusivel_preto"
+consumir_fusivel = true
+
+[node name="ColorRect" type="ColorRect" parent="Lampada3"]
+offset_left = -11.0
+offset_top = -11.0
+offset_right = 11.0
+offset_bottom = 11.0
+color = Color(0.09, 0.09, 0.09, 1)
+
+[node name="Chave" parent="." instance=ExtResource("7_sgy12")]
+visible = false
+position = Vector2(3, -210)
+texto_interacao = "Você coletou um Cristal Roxo!"
+som_coletar = ExtResource("8_m35rq")
+sprite_objeto = SubResource("GradientTexture2D_sgy12")
+forma_colisao = SubResource("RectangleShape2D_mqud2")
+item_id = "cristal_roxo"
+item_nome = "Cristal Roxo"
+item_descricao = "Um cristal roxo com formato estranho. Pertence ao viajante da superfície."
+largura_delineado = 10.0
