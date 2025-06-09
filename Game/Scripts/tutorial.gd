@@ -18,10 +18,7 @@ func _ready():
 
 # Chamado quando interage com a lâmpada
 func _on_lampada_interagida(index):
-	if QuestManager.todas_missoes["coletar_fusiveis"].is_em_andamento():
-		fusiveis_conectados[index] = true
-
-	elif QuestManager.todas_missoes["ligar_lampadas"].is_em_andamento():
+	if QuestManager.todas_missoes["ligar_lampadas"].is_em_andamento():
 		luzes_acesas[index] = !luzes_acesas[index]
 		if index != 1:
 			luzes_acesas[1] = !luzes_acesas[1]

@@ -16,9 +16,9 @@
   },
 
   {
-	"descricao": "Encontre os 3 fusíveis para conseguir ligar as lâmpadas e, assim, encontrar a chave para sair desse local.",
+	"descricao": "Encontre o fusível para conseguir ligar as lâmpadas e, assim, encontrar a chave para sair desse local.",
 	"id": "coletar_fusiveis",
-	"itens_necessarios": ["fusivel_azul", "fusivel_vermelho", "fusivel_preto"],
+	"itens_necessarios": "fusivel",
 	"proxima_missao": "ligar_lampadas",
 	"titulo": "A procura de Fusíveis",
 	"arquivo_dialogo_completo": "",

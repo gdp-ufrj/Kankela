@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cgmng2iidaame"]
+[gd_scene load_steps=23 format=3 uid="uid://cgmng2iidaame"]
 
 [ext_resource type="Script" uid="uid://dfldsq546qti" path="res://Scripts/tutorial.gd" id="1_sgy12"]
 [ext_resource type="Texture2D" uid="uid://i7wophq6tacp" path="res://Assets/Visuals/Sprites/exemplos/Sample2.png" id="1_x7a1n"]
@@ -9,8 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://cxbni72y7pbqs" path="res://Assets/Visuals/Sprites/exemplos/zombie_tilesheet.png" id="6_m35rq"]
 [ext_resource type="PackedScene" uid="uid://dfbikeb1245cv" path="res://Scenes/Prefabs/Coletável.tscn" id="7_sgy12"]
 [ext_resource type="AudioStream" uid="uid://d1jdpq3l1fgpp" path="res://Assets/Audio/SFX/handleCoins.ogg" id="8_m35rq"]
-[ext_resource type="Texture2D" uid="uid://bewvgqofsmjcm" path="res://Assets/Visuals/Sprites/exemplos/blue_brick.png" id="9_sgy12"]
-[ext_resource type="Texture2D" uid="uid://cnbtfrrx8op5u" path="res://Assets/Visuals/Sprites/exemplos/red_brick.png" id="10_5gw1s"]
+[ext_resource type="PackedScene" uid="uid://dfkajxwjd3px5" path="res://Scenes/Prefabs/caixa_de_luz.tscn" id="8_sgy12"]
+[ext_resource type="Texture2D" uid="uid://p78pqt0mlfok" path="res://Assets/Visuals/Sprites/exemplos/boxItem_disabled.png" id="9_sgy12"]
 [ext_resource type="Texture2D" uid="uid://db800oenh8rau" path="res://Assets/Visuals/Sprites/exemplos/black_brick.png" id="11_brn58"]
 [ext_resource type="PackedScene" uid="uid://brorihu3te6dt" path="res://Scenes/Prefabs/lampada.tscn" id="12_fx2vl"]
 
@@ -29,12 +29,6 @@ region = Rect2(400, 0, 80, 110)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sswaw"]
 size = Vector2(40, 80)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8nvbb"]
-size = Vector2(40, 40)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m8quk"]
-size = Vector2(40, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyml5"]
 size = Vector2(40, 40)
@@ -107,76 +101,33 @@ arquivo_dialogo = "uid://ea7gvi2iqihc"
 titulo_dialogo = "start"
 tamanho_spritesheet = Vector2(9, 3)
 
-[node name="Fusivel Azul" parent="." instance=ExtResource("7_sgy12")]
-position = Vector2(-735, 390)
-texto_interacao = "Você coletou um Fusível Azul!"
-som_coletar = ExtResource("8_m35rq")
-sprite_objeto = ExtResource("9_sgy12")
-forma_colisao = SubResource("RectangleShape2D_8nvbb")
-item_id = "fusivel_azul"
-item_nome = "Fusível Azul"
-item_descricao = "Um fusível de cor azul. Pode ser útil para ligar alguma lâmpada que tenha uma cor correspondente."
-largura_delineado = 10.0
+[node name="Caixa_de_luz" parent="." instance=ExtResource("8_sgy12")]
+position = Vector2(395, -113)
+sprite_caixa = ExtResource("9_sgy12")
+item_necessario = "fusivel"
+consumir_fusivel = true
 
-[node name="Fusivel Vermelho" parent="." instance=ExtResource("7_sgy12")]
-position = Vector2(731, -236)
-texto_interacao = "Você coletou um Fusível Vermelho!"
-som_coletar = ExtResource("8_m35rq")
-sprite_objeto = ExtResource("10_5gw1s")
-forma_colisao = SubResource("RectangleShape2D_m8quk")
-item_id = "fusivel_vermelho"
-item_nome = "Fusível Vermelho"
-item_descricao = "Um fusível de cor vermelha. Pode ser útil para ligar alguma lâmpada que tenha uma cor correspondente."
-largura_delineado = 10.0
-
-[node name="Fusivel Preto" parent="." instance=ExtResource("7_sgy12")]
+[node name="Fusivel" parent="." instance=ExtResource("7_sgy12")]
 position = Vector2(-707, -258)
 texto_interacao = "Você coletou um Fusível Preto!!"
 som_coletar = ExtResource("8_m35rq")
 sprite_objeto = ExtResource("11_brn58")
 forma_colisao = SubResource("RectangleShape2D_jyml5")
-item_id = "fusivel_preto"
+item_id = "fusivel"
 item_nome = "Fusível Preto"
 item_descricao = "Um fusível de cor preta. Pode ser útil para ligar alguma lâmpada que tenha uma cor correspondente."
 largura_delineado = 10.0
 
 [node name="Lampada1" parent="." instance=ExtResource("12_fx2vl")]
 position = Vector2(-129, -100)
-item_necessario = "fusivel_azul"
-consumir_fusivel = true
-
-[node name="ColorRect" type="ColorRect" parent="Lampada1"]
-offset_left = -11.0
-offset_top = -11.0
-offset_right = 11.0
-offset_bottom = 11.0
-color = Color(0, 0.6, 1, 1)
 
 [node name="Lampada2" parent="." instance=ExtResource("12_fx2vl")]
 position = Vector2(0, -100)
 lampada_index = 1
-item_necessario = "fusivel_vermelho"
-consumir_fusivel = true
-
-[node name="ColorRect" type="ColorRect" parent="Lampada2"]
-offset_left = -11.0
-offset_top = -11.0
-offset_right = 11.0
-offset_bottom = 11.0
-color = Color(0.83, 0.2656, 0.2656, 1)
 
 [node name="Lampada3" parent="." instance=ExtResource("12_fx2vl")]
 position = Vector2(129, -100)
 lampada_index = 2
-item_necessario = "fusivel_preto"
-consumir_fusivel = true
-
-[node name="ColorRect" type="ColorRect" parent="Lampada3"]
-offset_left = -11.0
-offset_top = -11.0
-offset_right = 11.0
-offset_bottom = 11.0
-color = Color(0.09, 0.09, 0.09, 1)
 
 [node name="Chave" parent="." instance=ExtResource("7_sgy12")]
 visible = false

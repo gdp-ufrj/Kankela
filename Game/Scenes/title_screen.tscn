@@ -1,15 +1,48 @@
-[gd_scene load_steps=5 format=3 uid="uid://dla6lljlmctmb"]
+[gd_scene load_steps=14 format=3 uid="uid://dla6lljlmctmb"]
 
 [ext_resource type="Script" uid="uid://c3vyfg6uwsg21" path="res://Scripts/title_screen.gd" id="1_klylv"]
+[ext_resource type="Texture2D" uid="uid://i5mn4jl5i4vb" path="res://Assets/Visuals/HUD/SpritesheetUI.png" id="2_4gxqj"]
 [ext_resource type="AudioStream" uid="uid://cr1mf4yilnon1" path="res://Assets/Audio/Soundtracks/horror-story-149981.mp3" id="2_p3fck"]
 
-[sub_resource type="Gradient" id="Gradient_klylv"]
-colors = PackedColorArray(0.890196, 0.164706, 0, 1, 0.788235, 0.337255, 0.0862745, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_twnyg"]
+atlas = ExtResource("2_4gxqj")
+region = Rect2(868, 0, 640, 360)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_p3fck"]
-gradient = SubResource("Gradient_klylv")
-width = 1152
-height = 648
+[sub_resource type="AtlasTexture" id="AtlasTexture_55kwv"]
+atlas = ExtResource("2_4gxqj")
+region = Rect2(153, 0, 115, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12m1t"]
+atlas = ExtResource("2_4gxqj")
+region = Rect2(153, 58, 115, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vd4x"]
+atlas = ExtResource("2_4gxqj")
+region = Rect2(153, 29, 115, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n82rj"]
+atlas = ExtResource("2_4gxqj")
+region = Rect2(153, 0, 115, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0061g"]
+atlas = ExtResource("2_4gxqj")
+region = Rect2(153, 58, 115, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8mikk"]
+atlas = ExtResource("2_4gxqj")
+region = Rect2(153, 29, 115, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gxqj"]
+atlas = ExtResource("2_4gxqj")
+region = Rect2(153, 0, 115, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqelc"]
+atlas = ExtResource("2_4gxqj")
+region = Rect2(153, 58, 115, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5sh6"]
+atlas = ExtResource("2_4gxqj")
+region = Rect2(153, 29, 115, 29)
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -23,15 +56,15 @@ primeira_fase = "uid://cgmng2iidaame"
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(-1.52588e-05, 0)
-scale = Vector2(0.555556, 0.555556)
-texture = SubResource("GradientTexture2D_p3fck")
+texture = SubResource("AtlasTexture_twnyg")
 
 [node name="Soundtrack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_p3fck")
+volume_db = -10.0
 autoplay = true
 parameters/looping = true
 
-[node name="Play" type="Button" parent="."]
+[node name="Play" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -43,9 +76,19 @@ offset_right = 60.0
 offset_bottom = 31.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Jogar"
+texture_normal = SubResource("AtlasTexture_55kwv")
+texture_pressed = SubResource("AtlasTexture_12m1t")
+texture_hover = SubResource("AtlasTexture_6vd4x")
 
-[node name="Settings" type="Button" parent="."]
+[node name="Label" type="Label" parent="Play"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 115.0
+offset_bottom = 23.0
+text = "Jogar"
+horizontal_alignment = 1
+
+[node name="Settings" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -58,9 +101,20 @@ offset_right = 60.0
 offset_bottom = 71.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Configurações"
+texture_normal = SubResource("AtlasTexture_n82rj")
+texture_pressed = SubResource("AtlasTexture_0061g")
+texture_hover = SubResource("AtlasTexture_8mikk")
 
-[node name="Quit" type="Button" parent="."]
+[node name="Label" type="Label" parent="Settings"]
+layout_mode = 0
+offset_top = 2.0
+offset_right = 144.0
+offset_bottom = 25.0
+scale = Vector2(0.8, 0.8)
+text = "Configurações"
+horizontal_alignment = 1
+
+[node name="Quit" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -73,7 +127,16 @@ offset_right = 60.0
 offset_bottom = 111.0
 grow_horizontal = 2
 grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_4gxqj")
+texture_pressed = SubResource("AtlasTexture_sqelc")
+texture_hover = SubResource("AtlasTexture_w5sh6")
+
+[node name="Label" type="Label" parent="Quit"]
+layout_mode = 0
+offset_right = 115.0
+offset_bottom = 23.0
 text = "Sair"
+horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
