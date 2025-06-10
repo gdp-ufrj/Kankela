@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://dla6lljlmctmb"]
+[gd_scene load_steps=15 format=3 uid="uid://dla6lljlmctmb"]
 
 [ext_resource type="Script" uid="uid://c3vyfg6uwsg21" path="res://Scripts/title_screen.gd" id="1_klylv"]
 [ext_resource type="Texture2D" uid="uid://i5mn4jl5i4vb" path="res://Assets/Visuals/HUD/SpritesheetUI.png" id="2_4gxqj"]
 [ext_resource type="AudioStream" uid="uid://cr1mf4yilnon1" path="res://Assets/Audio/Soundtracks/horror-story-149981.mp3" id="2_p3fck"]
+[ext_resource type="Texture2D" uid="uid://b440ox2em3xoa" path="res://Assets/Visuals/HUD/logo.png" id="4_twnyg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_twnyg"]
 atlas = ExtResource("2_4gxqj")
@@ -138,23 +139,9 @@ offset_bottom = 23.0
 text = "Sair"
 horizontal_alignment = 1
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -221.0
-offset_top = -150.0
-offset_right = 221.0
-offset_bottom = -58.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 67
-text = "Título do Jogo"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(-3, -64)
+texture = ExtResource("4_twnyg")
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
