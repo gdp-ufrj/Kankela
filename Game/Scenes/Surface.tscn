@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dfmo6jg4usghv"]
+[gd_scene load_steps=34 format=3 uid="uid://dfmo6jg4usghv"]
 
 [ext_resource type="Texture2D" uid="uid://bxonbkkyuocaq" path="res://Assets/Visuals/Sprites/exemplos/Sample.png" id="1_jll27"]
 [ext_resource type="PackedScene" uid="uid://camnftgon0rp" path="res://Scenes/Prefabs/door.tscn" id="2_6t17n"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dfbikeb1245cv" path="res://Scenes/Prefabs/Coletável.tscn" id="4_ougk0"]
 [ext_resource type="Texture2D" uid="uid://bponj0ub2wsqp" path="res://Assets/Visuals/Sprites/exemplos/player_tilesheet.png" id="6_ougk0"]
 [ext_resource type="AudioStream" uid="uid://d1jdpq3l1fgpp" path="res://Assets/Audio/SFX/handleCoins.ogg" id="8_0xxjv"]
+[ext_resource type="Shader" uid="uid://c3hh270nvb7xf" path="res://Shaders/objeto_secreto.gdshader" id="9_etifk"]
+[ext_resource type="Script" uid="uid://b2l6kx5s5dv63" path="res://Scripts/objeto_secreto.gd" id="10_etifk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kry3j"]
 size = Vector2(0.000579834, 515)
@@ -69,6 +71,18 @@ gradient = SubResource("Gradient_ilqhf")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ilqhf"]
 size = Vector2(40, 40)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ilqhf"]
+shader = ExtResource("9_etifk")
+shader_parameter/local_mask_center = Vector2(0, 0)
+shader_parameter/mask_radius = 100.0
+shader_parameter/edge_softness = 0.05
+shader_parameter/reveal_active = 0.0
+
+[sub_resource type="Gradient" id="Gradient_mt7aw"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_di0hy"]
+gradient = SubResource("Gradient_mt7aw")
 
 [node name="Surface" type="Node2D"]
 
@@ -178,3 +192,9 @@ item_id = "cristal_roxo"
 item_nome = "Cristal Roxo"
 item_descricao = "Um cristal roxo com formato estranho. Pertence ao viajante da superfície."
 largura_delineado = 10.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_ilqhf")
+position = Vector2(112, 344)
+texture = SubResource("GradientTexture2D_di0hy")
+script = ExtResource("10_etifk")
