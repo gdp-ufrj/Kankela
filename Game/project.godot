@@ -39,6 +39,18 @@ window/stretch/scale_mode="integer"
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
+[file_customization]
+
+folder_colors={
+"res://Assets/": "yellow",
+"res://Data/": "teal",
+"res://Dialogues/": "green",
+"res://Scenes/": "orange",
+"res://Scripts/": "red",
+"res://Shaders/": "gray",
+"res://addons/": "pink"
+}
+
 [input]
 
 ui_accept={

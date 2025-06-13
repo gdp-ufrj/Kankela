@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://dla6lljlmctmb"]
+[gd_scene load_steps=15 format=3 uid="uid://dla6lljlmctmb"]
 
 [ext_resource type="Script" uid="uid://c3vyfg6uwsg21" path="res://Scripts/title_screen.gd" id="1_klylv"]
 [ext_resource type="Texture2D" uid="uid://i5mn4jl5i4vb" path="res://Assets/Visuals/HUD/SpritesheetUI.png" id="2_4gxqj"]
 [ext_resource type="AudioStream" uid="uid://cr1mf4yilnon1" path="res://Assets/Audio/Soundtracks/horror-story-149981.mp3" id="2_p3fck"]
+[ext_resource type="FontFile" uid="uid://c7ofx4fuogaot" path="res://Assets/Visuals/HUD/Dialogues Themes/Tiny5-Regular.ttf" id="4_twnyg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_twnyg"]
 atlas = ExtResource("2_4gxqj")
@@ -72,8 +73,8 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -60.0
-offset_right = 60.0
-offset_bottom = 31.0
+offset_right = 55.0
+offset_bottom = 29.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = SubResource("AtlasTexture_55kwv")
@@ -82,9 +83,10 @@ texture_hover = SubResource("AtlasTexture_6vd4x")
 
 [node name="Label" type="Label" parent="Play"]
 layout_mode = 0
-offset_top = -1.0
+offset_top = 3.0
 offset_right = 115.0
-offset_bottom = 23.0
+offset_bottom = 27.0
+theme_override_fonts/font = ExtResource("4_twnyg")
 text = "Jogar"
 horizontal_alignment = 1
 
@@ -97,8 +99,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -60.0
 offset_top = 40.0
-offset_right = 60.0
-offset_bottom = 71.0
+offset_right = 55.0
+offset_bottom = 69.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = SubResource("AtlasTexture_n82rj")
@@ -107,10 +109,11 @@ texture_hover = SubResource("AtlasTexture_8mikk")
 
 [node name="Label" type="Label" parent="Settings"]
 layout_mode = 0
-offset_top = 2.0
+offset_top = 3.0
 offset_right = 144.0
-offset_bottom = 25.0
+offset_bottom = 26.0
 scale = Vector2(0.8, 0.8)
+theme_override_fonts/font = ExtResource("4_twnyg")
 text = "Configurações"
 horizontal_alignment = 1
 
@@ -123,8 +126,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -60.0
 offset_top = 80.0
-offset_right = 60.0
-offset_bottom = 111.0
+offset_right = 55.0
+offset_bottom = 109.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = SubResource("AtlasTexture_4gxqj")
@@ -133,8 +136,10 @@ texture_hover = SubResource("AtlasTexture_w5sh6")
 
 [node name="Label" type="Label" parent="Quit"]
 layout_mode = 0
+offset_top = 3.0
 offset_right = 115.0
-offset_bottom = 23.0
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("4_twnyg")
 text = "Sair"
 horizontal_alignment = 1
 
@@ -151,6 +156,7 @@ offset_right = 221.0
 offset_bottom = -58.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_twnyg")
 theme_override_font_sizes/font_size = 67
 text = "Título do Jogo"
 horizontal_alignment = 1

@@ -21,11 +21,11 @@ const SPEED = 300.0
 
 # Objeto atual com o qual o jogador pode interact
 var objeto_interagivel: Array[Node] = []
-
+@onready var interacting: bool = false
 
 func _ready() -> void:
 	# Inicia a cutscene inicial
-	#start_cutscene(preload("res://Dialogues/Start.dialogue"))
+	start_cutscene(preload("res://Dialogues/Start.dialogue"))
 	# Conecta o sinal para detectar quando um objeto entra na área de interação
 	area_interacao.body_entered.connect(_on_area_interacao_body_entered)
 	area_interacao.body_exited.connect(_on_area_interacao_body_exited)
@@ -35,13 +35,13 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("pause") and !cutscene_mode:
+	if Input.is_action_just_pressed("pause") and !cutscene_mode and !interacting:
 		PauseMenu()
 		
-	if Input.is_action_just_pressed("inventory") and !cutscene_mode and !paused and inventory_ui:
+	if Input.is_action_just_pressed("inventory") and !cutscene_mode and !paused and inventory_ui and !interacting:
 		InventoryMenu()
 		
-	if Input.is_action_just_pressed("quest_log") and !cutscene_mode and !paused and quest_log_ui:
+	if Input.is_action_just_pressed("quest_log") and !cutscene_mode and !paused and quest_log_ui and !interacting:
 		QuestLogMenu()
 
 
@@ -78,7 +78,7 @@ func QuestLogMenu():
 
 
 func _physics_process(_delta: float) -> void:
-	if !cutscene_mode and !paused:
+	if !cutscene_mode and !paused and !interacting:
 		# Movimentação no eixo X e no eixo Y  
 		var direction_x := Input.get_axis("ui_left", "ui_right")
 		var direction_y := Input.get_axis("ui_up", "ui_down")
@@ -181,6 +181,12 @@ func _on_objeto_interaction_finished(type: ObjetoInterativo.InteractableType) ->
 			
 		ObjetoInterativo.InteractableType.Door:
 			print("Porta :)")
+		
+		ObjetoInterativo.InteractableType.Lamp:
+			print("Interagiu com uma lâmpada!")
 			
+		ObjetoInterativo.InteractableType.Clues:
+			print("Terminou de ver a pista!")
+		
 		_: # Caso padrão
 			pass
