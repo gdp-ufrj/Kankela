@@ -1,6 +1,7 @@
 [remap]
 
-importer="dialogue_manager_compiler_14"
+importer="dialogue_manager"
+importer_version=15
 type="Resource"
 uid="uid://ea7gvi2iqihc"
 path="res://.godot/imported/NPC_adormecido.dialogue-6cfc8a76b497885d8f3ff0b381f04f84.tres"

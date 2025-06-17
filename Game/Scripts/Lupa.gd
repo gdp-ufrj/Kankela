@@ -1,10 +1,9 @@
-# Lupa.gd
 extends Sprite2D
 
 var is_lupa_active: bool = false
 
-func _ready():
-	self.visible = false
+func _on_player_activate_lupa(esta_ativa: bool):
+	is_lupa_active = esta_ativa
 
 func _process(_delta):
 	if Input.is_action_just_pressed("lupa"):

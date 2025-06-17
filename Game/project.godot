@@ -30,7 +30,6 @@ runtime/balloon_path="uid://b34hjsx6knlav"
 
 window/size/viewport_width=640
 window/size/viewport_height=360
-window/size/resizable=false
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_height"
 window/stretch/scale_mode="integer"
@@ -50,6 +49,10 @@ folder_colors={
 "res://Shaders/": "gray",
 "res://addons/": "pink"
 }
+
+[global_group]
+
+objeto_secreto=""
 
 [input]
 

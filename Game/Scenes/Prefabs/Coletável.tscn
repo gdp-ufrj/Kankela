@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://dfbikeb1245cv"]
+[gd_scene load_steps=5 format=3 uid="uid://dfbikeb1245cv"]
 
 [ext_resource type="Script" uid="uid://dho3fsaxo38vu" path="res://Scripts/ObjetoColetavel.gd" id="1_51g5d"]
+
+[sub_resource type="Gradient" id="Gradient_rknao"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ndbwv"]
+gradient = SubResource("Gradient_rknao")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rknao"]
+size = Vector2(32, 32)
 
 [node name="Coletável Ex" type="StaticBody2D"]
 script = ExtResource("1_51g5d")
@@ -8,7 +16,9 @@ texto_interacao = "Você coletou uma poção!"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
+texture = SubResource("GradientTexture2D_ndbwv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rknao")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

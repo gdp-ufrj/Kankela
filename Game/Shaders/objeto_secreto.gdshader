@@ -2,7 +2,7 @@ shader_type canvas_item;
 
 // Uniforms
 uniform vec2 local_mask_center;
-uniform float mask_radius = 100.0;
+uniform float mask_radius = 500.0;
 uniform float edge_softness = 0.05;
 uniform float reveal_active; // <-- NOSSO NOVO INTERRUPTOR (recebe 0.0 ou 1.0)
 
