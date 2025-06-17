@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1dkx7t0o8rho"]
+
+[ext_resource type="Script" uid="uid://dunvco0k8lc8c" path="res://Scripts/pistas.gd" id="1_lx3y4"]
+
+[node name="Pistas" type="StaticBody2D"]
+script = ExtResource("1_lx3y4")
+texto_interacao = "Você encontrou uma pista!"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="SpriteClue" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

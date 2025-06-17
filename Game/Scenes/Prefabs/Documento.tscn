@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://bx47i5ifcfg73"]
+
+[ext_resource type="Script" uid="uid://cjfyg1svnpj0r" path="res://Scripts/Documento.gd" id="1_f3ykg"]
+[ext_resource type="Texture2D" uid="uid://cj3p8hioadgqt" path="res://Assets/Visuals/Sprites/exemplos/folha-poema.png" id="1_ogyqe"]
+[ext_resource type="PackedScene" uid="uid://c2vsibalraxb0" path="res://Scenes/Prefabs/ObjetoSecreto.tscn" id="3_30w5n"]
+
+[sub_resource type="Gradient" id="Gradient_f3ykg"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_30w5n"]
+gradient = SubResource("Gradient_f3ykg")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aunrs"]
+size = Vector2(32, 32)
+
+[node name="Documento" type="StaticBody2D"]
+script = ExtResource("1_f3ykg")
+texto_interacao = "Você encontrou uma pista!"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = SubResource("GradientTexture2D_30w5n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_aunrs")
+
+[node name="Documento" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_ogyqe")
+
+[node name="Segredos" type="Node2D" parent="."]
+visible = false
+
+[node name="ObjetoSecreto" parent="Segredos" instance=ExtResource("3_30w5n")]
+position = Vector2(64, -96)
+
+[node name="ObjetoSecreto2" parent="Segredos" instance=ExtResource("3_30w5n")]
+position = Vector2(-64, 96)

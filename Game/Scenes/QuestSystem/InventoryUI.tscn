@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://qhycbli6dxoc"]
+[gd_scene load_steps=4 format=3 uid="uid://qhycbli6dxoc"]
 
 [ext_resource type="Script" uid="uid://jsjt0kaq60wb" path="res://Scripts/QuestSystem/InventoryUI.gd" id="1_l5ku1"]
+[ext_resource type="Shader" uid="uid://bp0oy4iyg7wrs" path="res://Shaders/pause.gdshader" id="2_syhp1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w08mr"]
+shader = ExtResource("2_syhp1")
+shader_parameter/amount = 3.0
 
 [node name="InventoryUI" type="Control"]
 layout_mode = 3
@@ -12,6 +17,13 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l5ku1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_w08mr")
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
 
 [node name="PainelInventario" type="Panel" parent="."]
 layout_mode = 1

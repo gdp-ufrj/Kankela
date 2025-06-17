@@ -84,5 +84,6 @@ enum InteractableType {
 	Dialogue,
 	Item,
 	Door,
-	Lamp
+	Lamp,
+	Clues
 }
