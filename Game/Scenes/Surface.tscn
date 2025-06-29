@@ -184,5 +184,9 @@ largura_delineado = 10.0
 [node name="Documento" parent="." instance=ExtResource("13_mt7aw")]
 position = Vector2(56, 384)
 
+[node name="ObjetoSecreto2" parent="." instance=ExtResource("14_gdppd")]
+position = Vector2(112, 296)
+scale = Vector2(0.056875, 0.160625)
+
 [node name="ObjetoSecreto" parent="." instance=ExtResource("14_gdppd")]
 position = Vector2(152, 248)

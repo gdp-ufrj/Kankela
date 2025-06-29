@@ -13,6 +13,7 @@ gradient = SubResource("Gradient_f3ykg")
 size = Vector2(32, 32)
 
 [node name="Documento" type="StaticBody2D"]
+z_index = 1
 script = ExtResource("1_f3ykg")
 texto_interacao = "Você encontrou uma pista!"
 

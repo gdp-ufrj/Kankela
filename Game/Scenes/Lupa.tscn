@@ -1,5 +1,31 @@
-[gd_scene format=3 uid="uid://cnkkca6w1u74r"]
+[gd_scene load_steps=5 format=3 uid="uid://btq425b2xmdkc"]
 
-[node name="Lupa" type="Node2D"]
+[ext_resource type="Shader" uid="uid://gqvbbdo02lcn" path="res://Shaders/lupa_circular.gdshader" id="1_w6461"]
+[ext_resource type="Script" uid="uid://ck4iv20jj7op6" path="res://Scripts/Lupa.gd" id="2_dq5qv"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dq5qv"]
+shader = ExtResource("1_w6461")
+shader_parameter/edge_softness = 0.0
+shader_parameter/border_thickness = 0.01
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_7jkgn"]
+
+[node name="Lupa" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_dq5qv")
+
+[node name="Referencia" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_dq5qv")
+layout_mode = 0
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+texture = SubResource("CanvasTexture_7jkgn")

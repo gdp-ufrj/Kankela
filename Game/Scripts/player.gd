@@ -8,8 +8,8 @@ const SPEED = 300.0
 
 # Referência à tela, controlador e sinal da lupa
 signal activate_lupa(is_lupa_active: bool)
-#@onready var lupa_ui = $Camera2D/Lupa
-var is_lupa_active: bool = false
+@onready var lupa = $Camera2D/Lupa
+@onready var is_lupa_active = false
 
 # Referência a tela de pause e controlador
 @onready var pause_menu = $Camera2D/Pause
@@ -17,8 +17,8 @@ var is_lupa_active: bool = false
 
 # Referências às telas de inventário e missões
 @onready var inventory_ui = $Camera2D/InventoryUI
-@onready var inventory_open = false
-@onready var quest_log_ui = $Camera2D/QuestLogUI
+@onready var is_inventory_open = false
+@onready var is_quest_log_ui = $Camera2D/QuestLogUI
 @onready var quest_log_open = false
 
 # Área de detecção de interações
@@ -35,6 +35,9 @@ func _ready() -> void:
 	# Conecta o sinal para detectar quando um objeto entra na área de interação
 	area_interacao.body_entered.connect(_on_area_interacao_body_entered)
 	area_interacao.body_exited.connect(_on_area_interacao_body_exited)
+
+	# Conecta o sinal para o sprite da lupa receber o estado da lupa
+	self.activate_lupa.connect(lupa._on_player_activate_lupa)
 
 	# Conecta o sinal para objetos secretos receberem o estado da lupa
 	var objetos_secretos = get_tree().get_nodes_in_group("objeto_secreto")
@@ -61,7 +64,7 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("inventory") and !cutscene_mode and !paused and inventory_ui and !interacting:
 		InventoryMenu()
 
-	if Input.is_action_just_pressed("quest_log") and !cutscene_mode and !paused and quest_log_ui and !interacting:
+	if Input.is_action_just_pressed("quest_log") and !cutscene_mode and !paused and is_quest_log_ui and !interacting:
 		QuestLogMenu()
 
 	if Input.is_action_just_pressed("lupa"):
@@ -70,7 +73,6 @@ func _process(_delta: float) -> void:
 func Lupa():
 	is_lupa_active = not is_lupa_active
 	emit_signal("activate_lupa", is_lupa_active)
-	print("ativei a lupa e lancei o sinal")
 
 func PauseMenu():
 	if paused:
@@ -84,22 +86,22 @@ func PauseMenu():
 	paused = !paused
 
 func InventoryMenu():
-	if inventory_open:
+	if is_inventory_open:
 		inventory_ui.hide()
 		Engine.time_scale = 1
 	else:
 		inventory_ui.show()
 		inventory_ui.get_script().atualizar_inventario()
 		Engine.time_scale = 0
-	inventory_open = !inventory_open
+	is_inventory_open = !is_inventory_open
 
 func QuestLogMenu():
 	if quest_log_open:
-		quest_log_ui.hide()
+		is_quest_log_ui.hide()
 		Engine.time_scale = 1
 	else:
-		quest_log_ui.show()
-		quest_log_ui.get_script().atualizar_quest_log("")
+		is_quest_log_ui.show()
+		is_quest_log_ui.get_script().atualizar_quest_log("")
 		Engine.time_scale = 0
 	quest_log_open = !quest_log_open
 
