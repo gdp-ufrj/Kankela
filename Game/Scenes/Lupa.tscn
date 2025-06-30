@@ -1,22 +1,27 @@
-[gd_scene load_steps=10 format=3 uid="uid://btq425b2xmdkc"]
+[gd_scene load_steps=12 format=3 uid="uid://btq425b2xmdkc"]
 
 [ext_resource type="Shader" uid="uid://gqvbbdo02lcn" path="res://Shaders/lupa_circular.gdshader" id="1_w6461"]
 [ext_resource type="Script" uid="uid://ck4iv20jj7op6" path="res://Scripts/Lupa.gd" id="2_dq5qv"]
+[ext_resource type="Shader" uid="uid://cwf6bdbflamap" path="res://Shaders/zoom_lens.gdshader" id="2_eidwx"]
 [ext_resource type="Texture2D" uid="uid://rqas31jchy2t" path="res://Assets/Visuals/UI/Lupa isolada menor.png" id="3_7jkgn"]
+[ext_resource type="Texture2D" uid="uid://cwtf2u02aofvs" path="res://Assets/circle_normal.jpg" id="3_akexw"]
 [ext_resource type="Texture2D" uid="uid://cuyp1os6e5yue" path="res://Assets/Visuals/UI/Lupa isolada fullscreen.png" id="4_i6w4d"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_tipo1"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_tipo2"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_tipo3"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eidwx"]
+shader = ExtResource("2_eidwx")
+shader_parameter/magnitude = 25.0
+shader_parameter/flipGreen = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dq5qv"]
 shader = ExtResource("1_w6461")
 shader_parameter/edge_softness = 0.0
 shader_parameter/border_thickness = 0.01
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_7jkgn"]
+[sub_resource type="CanvasTexture" id="CanvasTexture_tipo1"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_tipo2"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_tipo3"]
 
 [node name="Lupa" type="Control"]
 layout_mode = 3
@@ -28,6 +33,33 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_dq5qv")
+
+[node name="Zoom effect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_eidwx")
+layout_mode = 0
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 846.0
+offset_bottom = 846.0
+scale = Vector2(0.172, 0.172)
+texture = ExtResource("3_akexw")
+
+[node name="Referencia" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_dq5qv")
+layout_mode = 0
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = 80.0
+
+[node name="LupaIsoladaMenor" type="Sprite2D" parent="."]
+position = Vector2(43, 12)
+texture = ExtResource("3_7jkgn")
+
+[node name="LupaIsoladaFullscreen" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(84, 24)
+texture = ExtResource("4_i6w4d")
 
 [node name="LupaTipo1" type="TextureRect" parent="."]
 modulate = Color(1, 0.5, 0.5, 1)
@@ -55,21 +87,3 @@ offset_top = -100.0
 offset_right = -75.0
 offset_bottom = -75.0
 texture = SubResource("CanvasTexture_tipo3")
-
-[node name="Referencia" type="TextureRect" parent="."]
-material = SubResource("ShaderMaterial_dq5qv")
-layout_mode = 0
-offset_left = -80.0
-offset_top = -80.0
-offset_right = 80.0
-offset_bottom = 80.0
-texture = SubResource("CanvasTexture_7jkgn")
-
-[node name="LupaIsoladaMenor" type="Sprite2D" parent="."]
-position = Vector2(43, 12)
-texture = ExtResource("3_7jkgn")
-
-[node name="LupaIsoladaFullscreen" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(84, 24)
-texture = ExtResource("4_i6w4d")
