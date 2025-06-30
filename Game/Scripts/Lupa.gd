@@ -4,8 +4,7 @@ extends Control
 enum LupaType {
 	DESLIGADA = 0,
 	TIPO_1 = 1,
-	TIPO_2 = 2,
-	TIPO_3 = 3
+	TIPO_2 = 2
 }
 
 @export var mask_radius: float = 80.0 # Sincronizado com objeto_secreto
@@ -17,7 +16,6 @@ var current_lupa_type: LupaType = LupaType.DESLIGADA
 # Referências aos diferentes sprites de lupa (será configurado na cena)
 @onready var lupa_tipo_1 = $LupaTipo1
 @onready var lupa_tipo_2 = $LupaTipo2
-@onready var lupa_tipo_3 = $LupaTipo3
 
 # Sinal para comunicar mudanças de tipo
 signal lupa_type_changed(lupa_type: LupaType)
@@ -39,8 +37,8 @@ func _ready():
 	update_lupa_sprites()
 
 func cycle_lupa_type():
-	# Alterna entre os 4 estados (0, 1, 2, 3)
-	var next_type = (current_lupa_type + 1) % 4
+	# Alterna entre os 3 estados (0, 1, 2)
+	var next_type = (current_lupa_type + 1) % 3
 	current_lupa_type = next_type as LupaType
 	update_lupa_sprites()
 	emit_signal("lupa_type_changed", current_lupa_type)
@@ -60,8 +58,6 @@ func update_lupa_sprites():
 		lupa_tipo_1.visible = current_lupa_type == LupaType.TIPO_1
 	if lupa_tipo_2:
 		lupa_tipo_2.visible = current_lupa_type == LupaType.TIPO_2
-	if lupa_tipo_3:
-		lupa_tipo_3.visible = current_lupa_type == LupaType.TIPO_3
 
 func get_current_lupa_type() -> LupaType:
 	return current_lupa_type

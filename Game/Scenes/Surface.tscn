@@ -131,7 +131,7 @@ titulo_dialogo = "start"
 tamanho_spritesheet = Vector2(9, 3)
 
 [node name="Coletável Ex" parent="." instance=ExtResource("4_ougk0")]
-position = Vector2(-184, 432)
+position = Vector2(-560, 240)
 texto_interacao = "Você coletou um Cristal Azul!"
 sprite_objeto = SubResource("GradientTexture2D_0xxjv")
 forma_colisao = SubResource("RectangleShape2D_0xxjv")
@@ -141,7 +141,7 @@ item_descricao = "Um cristal azul que emite um brilho suave. Pertence ao viajant
 largura_delineado = 10.0
 
 [node name="Coletável Ex2" parent="." instance=ExtResource("4_ougk0")]
-position = Vector2(-208, 392)
+position = Vector2(-584, 200)
 texto_interacao = "Você coletou um Cristal Vermelho!"
 sprite_objeto = SubResource("GradientTexture2D_etifk")
 forma_colisao = SubResource("RectangleShape2D_1sihp")
@@ -151,7 +151,7 @@ item_descricao = "Um cristal vermelho com formato peculiar. Pertence ao viajante
 largura_delineado = 10.0
 
 [node name="Coletável Ex3" parent="." instance=ExtResource("4_ougk0")]
-position = Vector2(-208, 344)
+position = Vector2(-584, 152)
 texto_interacao = "Você coletou um Cristal Verde!"
 sprite_objeto = SubResource("GradientTexture2D_ilqhf")
 forma_colisao = SubResource("RectangleShape2D_etifk")
@@ -161,7 +161,7 @@ item_descricao = "Um cristal verde cintilante. Pertence ao viajante da superfíc
 largura_delineado = 10.0
 
 [node name="Coletável Ex4" parent="." instance=ExtResource("4_ougk0")]
-position = Vector2(-144, 416)
+position = Vector2(-520, 224)
 texto_interacao = "Você coletou um Cristal Amarelo!"
 sprite_objeto = SubResource("GradientTexture2D_gdppd")
 forma_colisao = SubResource("RectangleShape2D_delm8")
@@ -171,7 +171,7 @@ item_descricao = "Um cristal amarelo reluzente. Pertence ao viajante da superfí
 largura_delineado = 10.0
 
 [node name="Coletável Ex5" parent="." instance=ExtResource("4_ougk0")]
-position = Vector2(-184, 320)
+position = Vector2(-152, 280)
 texto_interacao = "Você coletou um Cristal Roxo!"
 som_coletar = ExtResource("8_0xxjv")
 sprite_objeto = SubResource("GradientTexture2D_71emk")
@@ -182,18 +182,18 @@ item_descricao = "Um cristal roxo com formato estranho. Pertence ao viajante da 
 largura_delineado = 10.0
 
 [node name="Documento" parent="." instance=ExtResource("13_mt7aw")]
-position = Vector2(56, 384)
-
-[node name="ObjetoSecreto2" parent="." instance=ExtResource("14_gdppd")]
-position = Vector2(112, 296)
-scale = Vector2(0.056875, 0.160625)
-required_lupa_type = 1
-
-[node name="ObjetoSecreto3" parent="." instance=ExtResource("14_gdppd")]
-position = Vector2(72, 224)
-scale = Vector2(0.35125, 0.095)
-required_lupa_type = 2
+position = Vector2(0, 392)
 
 [node name="ObjetoSecreto" parent="." instance=ExtResource("14_gdppd")]
-position = Vector2(152, 248)
-required_lupa_type = 3
+position = Vector2(348.96, 336.32)
+required_lupa_type = 1
+
+[node name="ObjetoSecreto2" parent="." instance=ExtResource("14_gdppd")]
+position = Vector2(276.96, 384.32)
+scale = Vector2(0.056875, 0.160625)
+required_lupa_type = 2
+
+[node name="ObjetoSecreto3" parent="." instance=ExtResource("14_gdppd")]
+position = Vector2(254.48, 300.16)
+scale = Vector2(0.275312, 0.14125)
+required_lupa_type = 2

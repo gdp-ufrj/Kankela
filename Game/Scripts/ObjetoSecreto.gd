@@ -4,8 +4,7 @@ extends Sprite2D
 enum LupaType {
 	DESLIGADA = 0,
 	TIPO_1 = 1,
-	TIPO_2 = 2,
-	TIPO_3 = 3
+	TIPO_2 = 2
 }
 
 var is_lupa_active: bool = false
