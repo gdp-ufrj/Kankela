@@ -8,7 +8,7 @@ enum LupaType {
 	TIPO_3 = 3
 }
 
-@export var mask_radius: float = 100.0 # Sincronizado com objeto_secreto
+@export var mask_radius: float = 80.0 # Sincronizado com objeto_secreto
 @onready var circulo_ref = $Referencia
 
 # Variável para controlar o tipo atual da lupa

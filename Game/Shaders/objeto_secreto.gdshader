@@ -2,7 +2,7 @@ shader_type canvas_item;
 
 // Uniforms
 uniform vec2 screen_mask_center; // Mudança: coordenadas da tela
-uniform float mask_radius = 100.0; // Agora em pixels da tela
+uniform float mask_radius = 80.0; // Agora em pixels da tela
 uniform float edge_softness = 0;
 uniform float reveal_active; // 0.0 = não revelado, 1.0 = revelado
 
