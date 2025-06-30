@@ -187,6 +187,13 @@ position = Vector2(56, 384)
 [node name="ObjetoSecreto2" parent="." instance=ExtResource("14_gdppd")]
 position = Vector2(112, 296)
 scale = Vector2(0.056875, 0.160625)
+required_lupa_type = 1
+
+[node name="ObjetoSecreto3" parent="." instance=ExtResource("14_gdppd")]
+position = Vector2(72, 224)
+scale = Vector2(0.35125, 0.095)
+required_lupa_type = 2
 
 [node name="ObjetoSecreto" parent="." instance=ExtResource("14_gdppd")]
 position = Vector2(152, 248)
+required_lupa_type = 3

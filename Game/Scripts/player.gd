@@ -11,6 +11,11 @@ signal activate_lupa(is_lupa_active: bool)
 @onready var lupa = $Camera2D/Lupa
 @onready var is_lupa_active = false
 
+# Variáveis para controle da tecla L
+var l_key_pressed_time: float = 0.0
+var l_key_hold_threshold: float = 0.5 # 0.5 segundos para considerar "segurar"
+var l_key_just_pressed: bool = false
+
 # Referência a tela de pause e controlador
 @onready var pause_menu = $Camera2D/Pause
 @onready var paused = false
@@ -35,23 +40,15 @@ func _ready() -> void:
 	# Conecta o sinal para detectar quando um objeto entra na área de interação
 	area_interacao.body_entered.connect(_on_area_interacao_body_entered)
 	area_interacao.body_exited.connect(_on_area_interacao_body_exited)
-
-	# Conecta o sinal para o sprite da lupa receber o estado da lupa
-	self.activate_lupa.connect(lupa._on_player_activate_lupa)
+	
+	# Conecta o sinal da lupa para mudanças de tipo
+	lupa.lupa_type_changed.connect(_on_lupa_type_changed)
 
 	# Conecta o sinal para objetos secretos receberem o estado da lupa
 	var objetos_secretos = get_tree().get_nodes_in_group("objeto_secreto")
 	for objeto in objetos_secretos:
 		self.activate_lupa.connect(objeto._on_player_activate_lupa)
-
-	# Conecta o sinal para a UI da lupa ativar com o sinal
-
-	# Não era necessário usar esse sinal, já que a UI da lupa é uma filha da
-	# cena do player, mas achei melhor fazer assim pois dessa forma, tanto os
-	# objetos quanto a UI ficam dependentes do mesmo sinal, então se algum erro
-	# acontecer, nenhum dos dois é exibido
-
-	#self.activate_lupa.connect(lupa_ui._on_player_activate_lupa)
+		lupa.lupa_type_changed.connect(objeto._on_lupa_type_changed)
 
 	# Desativa o ícone de interação inicialmente
 	$IconeInteracao.visible = false
@@ -67,11 +64,37 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("quest_log") and !cutscene_mode and !paused and is_quest_log_ui and !interacting:
 		QuestLogMenu()
 
-	if Input.is_action_just_pressed("lupa"):
-		Lupa()
+	# Nova lógica para a tecla L
+	handle_lupa_input(_delta)
 
-func Lupa():
-	is_lupa_active = not is_lupa_active
+func handle_lupa_input(delta: float):
+	if Input.is_action_just_pressed("lupa"):
+		l_key_just_pressed = true
+		l_key_pressed_time = 0.0
+	
+	if Input.is_action_pressed("lupa") and l_key_just_pressed:
+		l_key_pressed_time += delta
+		
+		# Se segurou por tempo suficiente, desliga imediatamente
+		if l_key_pressed_time >= l_key_hold_threshold:
+			lupa.turn_off_lupa()
+			update_lupa_state()
+			l_key_just_pressed = false
+	
+	if Input.is_action_just_released("lupa") and l_key_just_pressed:
+		# Se soltou antes do threshold, alterna entre tipos
+		if l_key_pressed_time < l_key_hold_threshold:
+			lupa.cycle_lupa_type()
+			update_lupa_state()
+		l_key_just_pressed = false
+
+func update_lupa_state():
+	is_lupa_active = lupa.is_lupa_active()
+	emit_signal("activate_lupa", is_lupa_active)
+
+func _on_lupa_type_changed(_lupa_type):
+	# Atualiza o estado interno quando o tipo da lupa muda
+	is_lupa_active = lupa.is_lupa_active()
 	emit_signal("activate_lupa", is_lupa_active)
 
 func PauseMenu():

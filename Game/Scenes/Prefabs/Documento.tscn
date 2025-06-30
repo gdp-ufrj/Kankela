@@ -35,6 +35,8 @@ visible = false
 
 [node name="ObjetoSecreto" parent="Segredos" instance=ExtResource("3_30w5n")]
 position = Vector2(64, -96)
+required_lupa_type = 1
 
 [node name="ObjetoSecreto2" parent="Segredos" instance=ExtResource("3_30w5n")]
 position = Vector2(-64, 96)
+required_lupa_type = 1
