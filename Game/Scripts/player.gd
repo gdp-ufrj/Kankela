@@ -1,10 +1,15 @@
 extends CharacterBody2D
 
-
 const SPEED = 300.0
 
 @onready var animacao := $Anim as AnimatedSprite2D
 @onready var cutscene_mode
+
+# Variáveis para controle de cutscenes avançadas
+var is_moving_to_position: bool = false
+var target_position: Vector2
+var cutscene_movement_speed: float = 200.0
+var cutscene_tween: Tween
 
 # Referência à tela, controlador e sinal da lupa
 signal activate_lupa(is_lupa_active: bool)
@@ -166,13 +171,127 @@ func _physics_process(_delta: float) -> void:
 		if Input.is_action_just_pressed("ui_select") and objeto_interagivel:
 			$Anim.play("Parada")
 			self.interact_with_objects()
+	
+	# Durante cutscenes, ainda aplica o movimento se estiver sendo controlado por Tween
+	elif cutscene_mode and is_moving_to_position:
+		move_and_slide()
 
 
-func start_cutscene(dialogue_resource: DialogueResource, title: String = "") -> void:
+func start_cutscene(dialogue_resource: DialogueResource, title: String = "", move_to_position: Vector2 = Vector2.ZERO, new_scene_path: String = "", movement_speed: float = 0.0) -> void:
 	cutscene_mode = true
-	DialogueManager.show_dialogue_balloon(dialogue_resource, title)
-	await DialogueManager.dialogue_ended
+	
+	# Define a velocidade de movimento da cutscene se especificada
+	if movement_speed > 0:
+		cutscene_movement_speed = movement_speed
+	
+	# Move o player para a posição especificada (se fornecida)
+	if move_to_position != Vector2.ZERO:
+		await move_player_to_position(move_to_position)
+	
+	# Exibe o diálogo (se fornecido)
+	if dialogue_resource != null:
+		DialogueManager.show_dialogue_balloon(dialogue_resource, title)
+		await DialogueManager.dialogue_ended
+	
+	# Muda de cena (se especificada)
+	if new_scene_path != "":
+		change_scene_to(new_scene_path)
+	
 	cutscene_mode = false
+
+
+# Método para mover o player para uma posição específica durante cutscenes
+func move_player_to_position(target_pos: Vector2) -> void:
+	if cutscene_tween:
+		cutscene_tween.kill()
+	
+	cutscene_tween = create_tween()
+	target_position = target_pos
+	is_moving_to_position = true
+	
+	# Calcula a direção para a animação
+	var direction = (target_position - global_position).normalized()
+	
+	# Define a animação baseada na direção
+	if direction != Vector2.ZERO:
+		$Anim.play("Andando")
+		
+		# Vira o sprite horizontalmente conforme a direção
+		if direction.x > 0:
+			animacao.scale.x = 1
+		elif direction.x < 0:
+			animacao.scale.x = -1
+	
+	# Calcula o tempo baseado na distância e velocidade
+	var distance = global_position.distance_to(target_position)
+	var duration = distance / cutscene_movement_speed
+	
+	# Move o player usando Tween
+	cutscene_tween.tween_property(self, "global_position", target_position, duration)
+	await cutscene_tween.finished
+	
+	# Para a animação quando chegar ao destino
+	$Anim.play("Parada")
+	is_moving_to_position = false
+
+
+# Método para mudança de cena durante cutscenes
+func change_scene_to(scene_path: String) -> void:
+	# Verifica se o SceneManager está disponível como singleton/autoload
+	if has_node("/root/SceneManager"):
+		var scene_manager = get_node("/root/SceneManager")
+		if scene_manager.has_method("load_game_scene"):
+			scene_manager.load_game_scene(scene_path)
+		else:
+			# Fallback para mudança direta
+			get_tree().change_scene_to_file(scene_path)
+	else:
+		# Mudança direta de cena
+		get_tree().change_scene_to_file(scene_path)
+
+
+# Versão simplificada do método original para compatibilidade
+func start_simple_cutscene(dialogue_resource: DialogueResource, title: String = "") -> void:
+	await start_cutscene(dialogue_resource, title)
+
+
+# Métodos de conveniência para casos específicos de cutscenes
+
+# Apenas move o player para uma posição
+func start_movement_cutscene(move_to_position: Vector2, movement_speed: float = 200.0) -> void:
+	await start_cutscene(null, "", move_to_position, "", movement_speed)
+
+# Apenas muda de cena
+func start_scene_change_cutscene(new_scene_path: String) -> void:
+	await start_cutscene(null, "", Vector2.ZERO, new_scene_path)
+
+# Move player e depois muda de cena
+func start_move_and_change_scene_cutscene(move_to_position: Vector2, new_scene_path: String, movement_speed: float = 200.0) -> void:
+	await start_cutscene(null, "", move_to_position, new_scene_path, movement_speed)
+
+# Diálogo e depois mudança de cena
+func start_dialogue_and_scene_change_cutscene(dialogue_resource: DialogueResource, new_scene_path: String, title: String = "") -> void:
+	await start_cutscene(dialogue_resource, title, Vector2.ZERO, new_scene_path)
+
+# Cutscene completa: movimento, diálogo e mudança de cena
+func start_full_cutscene(dialogue_resource: DialogueResource, move_to_position: Vector2, new_scene_path: String, title: String = "", movement_speed: float = 200.0) -> void:
+	await start_cutscene(dialogue_resource, title, move_to_position, new_scene_path, movement_speed)
+
+# Método para parar uma cutscene em andamento (útil para debugging ou situações especiais)
+func stop_cutscene() -> void:
+	if cutscene_tween:
+		cutscene_tween.kill()
+	is_moving_to_position = false
+	cutscene_mode = false
+	$Anim.play("Parada")
+
+# Método para verificar se está em uma cutscene
+func is_in_cutscene() -> bool:
+	return cutscene_mode
+
+# Método para verificar se está se movendo durante uma cutscene
+func is_cutscene_moving() -> bool:
+	return is_moving_to_position
 
 
 # Chamado quando um objeto entra na área de interação
