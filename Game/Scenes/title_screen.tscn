@@ -1,9 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://dla6lljlmctmb"]
+[gd_scene load_steps=17 format=3 uid="uid://dla6lljlmctmb"]
 
 [ext_resource type="Script" uid="uid://c3vyfg6uwsg21" path="res://Scripts/title_screen.gd" id="1_klylv"]
 [ext_resource type="Texture2D" uid="uid://i5mn4jl5i4vb" path="res://Assets/Visuals/HUD/SpritesheetUI.png" id="2_4gxqj"]
 [ext_resource type="AudioStream" uid="uid://cr1mf4yilnon1" path="res://Assets/Audio/Soundtracks/horror-story-149981.mp3" id="2_p3fck"]
+[ext_resource type="FontFile" uid="uid://c7ofx4fuogaot" path="res://Assets/Visuals/HUD/Dialogues Themes/Tiny5-Regular.ttf" id="4_12m1t"]
 [ext_resource type="Texture2D" uid="uid://b440ox2em3xoa" path="res://Assets/Visuals/HUD/logo.png" id="4_twnyg"]
+[ext_resource type="PackedScene" uid="uid://c3gfpsiik2q8j" path="res://Scenes/Configuracoes.tscn" id="5_55kwv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_twnyg"]
 atlas = ExtResource("2_4gxqj")
@@ -83,9 +85,10 @@ texture_hover = SubResource("AtlasTexture_6vd4x")
 
 [node name="Label" type="Label" parent="Play"]
 layout_mode = 0
-offset_top = -1.0
+offset_top = 2.0
 offset_right = 115.0
-offset_bottom = 23.0
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("4_12m1t")
 text = "Jogar"
 horizontal_alignment = 1
 
@@ -108,10 +111,11 @@ texture_hover = SubResource("AtlasTexture_8mikk")
 
 [node name="Label" type="Label" parent="Settings"]
 layout_mode = 0
-offset_top = 2.0
+offset_top = 5.0
 offset_right = 144.0
-offset_bottom = 25.0
+offset_bottom = 28.0
 scale = Vector2(0.8, 0.8)
+theme_override_fonts/font = ExtResource("4_12m1t")
 text = "Configurações"
 horizontal_alignment = 1
 
@@ -134,14 +138,24 @@ texture_hover = SubResource("AtlasTexture_w5sh6")
 
 [node name="Label" type="Label" parent="Quit"]
 layout_mode = 0
+offset_top = 3.0
 offset_right = 115.0
-offset_bottom = 23.0
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("4_12m1t")
 text = "Sair"
 horizontal_alignment = 1
 
 [node name="Logo" type="Sprite2D" parent="."]
 position = Vector2(-3, -64)
 texture = ExtResource("4_twnyg")
+
+[node name="Configuracoes" parent="." instance=ExtResource("5_55kwv")]
+visible = false
+layout_mode = 1
+offset_left = -320.0
+offset_top = -180.0
+offset_right = -320.0
+offset_bottom = -180.0
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]

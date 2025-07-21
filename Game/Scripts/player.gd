@@ -39,8 +39,6 @@ var objeto_interagivel: Array[Node] = []
 @onready var interacting: bool = false
 
 func _ready() -> void:
-	# Inicia a cutscene inicial
-	start_cutscene(preload("res://Dialogues/Start.dialogue"))
 
 	# Conecta o sinal para detectar quando um objeto entra na área de interação
 	area_interacao.body_entered.connect(_on_area_interacao_body_entered)

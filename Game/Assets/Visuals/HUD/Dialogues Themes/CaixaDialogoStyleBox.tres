@@ -8,3 +8,4 @@ region = Rect2(465, 0, 403, 106)
 
 [resource]
 texture = SubResource("AtlasTexture_10u2j")
+axis_stretch_vertical = 2

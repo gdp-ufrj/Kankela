@@ -8,7 +8,7 @@ func _on_continue_pressed() -> void:
 
 
 func _on_settings_pressed() -> void:
-	print("Configurações pressionado!")
+	get_node("Configuracoes").show()
 
 
 func _on_main_menu_pressed() -> void:

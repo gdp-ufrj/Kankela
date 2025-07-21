@@ -4,6 +4,10 @@ extends Node2D
 @onready var luzes_acesas: Array = [false, false, false]
 
 func _ready():
+	
+	# Inicia a cutscene inicial
+	%Player.start_cutscene(preload("res://Dialogues/Start.dialogue"))
+	
 	# Iniciando a missão do tutorial
 	QuestManager.iniciar_missao("coletar_fusiveis")
 	

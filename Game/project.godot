@@ -21,6 +21,7 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 QuestManager="*res://Scripts/QuestSystem/QuestManager.gd"
 SceneManager="*res://Scripts/SceneManager.gd"
 TransicaoLayer="*res://Scenes/transicao_layer.tscn"
+GlobalSettings="*res://Scripts/GlobalSettings.gd"
 
 [dialogue_manager]
 

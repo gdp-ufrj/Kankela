@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://deki4efnv6lnl"]
+[gd_scene load_steps=17 format=3 uid="uid://deki4efnv6lnl"]
 
 [ext_resource type="Script" uid="uid://5g38hdwqe6f4" path="res://Scripts/pause.gd" id="1_o80xk"]
 [ext_resource type="Shader" uid="uid://bp0oy4iyg7wrs" path="res://Shaders/pause.gdshader" id="2_l2mpd"]
 [ext_resource type="Texture2D" uid="uid://i5mn4jl5i4vb" path="res://Assets/Visuals/HUD/SpritesheetUI.png" id="3_5a6ek"]
 [ext_resource type="FontFile" uid="uid://c7ofx4fuogaot" path="res://Assets/Visuals/HUD/Dialogues Themes/Tiny5-Regular.ttf" id="4_e0jm0"]
+[ext_resource type="PackedScene" uid="uid://c3gfpsiik2q8j" path="res://Scenes/Configuracoes.tscn" id="5_3fojq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5a6ek"]
 shader = ExtResource("2_l2mpd")
@@ -136,6 +137,14 @@ theme_override_fonts/font = ExtResource("4_e0jm0")
 text = "Menu Principal
 "
 horizontal_alignment = 1
+
+[node name="Configuracoes" parent="." instance=ExtResource("5_3fojq")]
+visible = false
+layout_mode = 1
+offset_left = -320.0
+offset_top = -180.0
+offset_right = -320.0
+offset_bottom = -180.0
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
