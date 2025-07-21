@@ -1,9 +1,24 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
+const SPEED = 200.0
 
 @onready var animacao := $Anim as AnimatedSprite2D
 @onready var cutscene_mode
+
+# Variável para rastrear a última animação de caminhada
+var last_walk_animation: String = "Walk_front"
+
+# Função auxiliar para obter a animação idle correspondente
+func get_idle_animation() -> String:
+	match last_walk_animation:
+		"Walk_front":
+			return "Idle_front"
+		"Walk_back":
+			return "Idle_back"
+		"Walk_side":
+			return "Idle_side"
+		_:
+			return "Idle_front" # Fallback
 
 # Variáveis para controle de cutscenes avançadas
 var is_moving_to_position: bool = false
@@ -145,29 +160,41 @@ func _physics_process(_delta: float) -> void:
 			velocity.x = direction.x * SPEED
 			velocity.y = direction.y * SPEED
 
-			# Animação de andar
-			$Anim.play("Andando")
+			# Sistema de animações baseado na direção
+			var current_animation: String
+			
+			# Prioridade para movimentos verticais
+			if direction_y > 0: # Movendo para baixo
+				current_animation = "Walk_front"
+			elif direction_y < 0: # Movendo para cima
+				current_animation = "Walk_back"
+			else: # Apenas movimento horizontal
+				current_animation = "Walk_side"
+			
+			# Aplica a animação e salva como última animação
+			$Anim.play(current_animation)
+			last_walk_animation = current_animation
 
 			# Vira o sprite horizontalmente conforme a direção
 			if direction.x > 0:
-				animacao.scale.x = 1
+				animacao.scale.x = animacao.scale.x if animacao.scale.x > 0 else -animacao.scale.x
 			elif direction.x < 0:
-				animacao.scale.x = -1
+				animacao.scale.x = animacao.scale.x if animacao.scale.x < 0 else -animacao.scale.x
 
 		else:
 			# Desacelera suavemente até parar
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			velocity.y = move_toward(velocity.y, 0, SPEED)
 
-			# Animação de idle (parado)
-			$Anim.play("Parada")
+			# Animação de idle baseada na última animação de caminhada
+			$Anim.play(get_idle_animation())
 
 		# Aplicando o movimento
 		move_and_slide()
 
 		# Verifica interação
 		if Input.is_action_just_pressed("ui_select") and objeto_interagivel:
-			$Anim.play("Parada")
+			$Anim.play(get_idle_animation())
 			self.interact_with_objects()
 	
 	# Durante cutscenes, ainda aplica o movimento se estiver sendo controlado por Tween
@@ -212,13 +239,25 @@ func move_player_to_position(target_pos: Vector2) -> void:
 	
 	# Define a animação baseada na direção
 	if direction != Vector2.ZERO:
-		$Anim.play("Andando")
+		# Sistema de animações baseado na direção (mesma lógica do movimento normal)
+		var current_animation: String
+		
+		# Prioridade para movimentos verticais
+		if direction.y > 0: # Movendo para baixo
+			current_animation = "Walk_front"
+		elif direction.y < 0: # Movendo para cima
+			current_animation = "Walk_back"
+		else: # Apenas movimento horizontal
+			current_animation = "Walk_side"
+		
+		$Anim.play(current_animation)
+		last_walk_animation = current_animation
 		
 		# Vira o sprite horizontalmente conforme a direção
 		if direction.x > 0:
-			animacao.scale.x = 1
+			animacao.scale.x = animacao.scale.x if animacao.scale.x > 0 else -animacao.scale.x
 		elif direction.x < 0:
-			animacao.scale.x = -1
+			animacao.scale.x = animacao.scale.x if animacao.scale.x < 0 else -animacao.scale.x
 	
 	# Calcula o tempo baseado na distância e velocidade
 	var distance = global_position.distance_to(target_position)
@@ -229,7 +268,7 @@ func move_player_to_position(target_pos: Vector2) -> void:
 	await cutscene_tween.finished
 	
 	# Para a animação quando chegar ao destino
-	$Anim.play("Parada")
+	$Anim.play(get_idle_animation())
 	is_moving_to_position = false
 
 
@@ -281,7 +320,7 @@ func stop_cutscene() -> void:
 		cutscene_tween.kill()
 	is_moving_to_position = false
 	cutscene_mode = false
-	$Anim.play("Parada")
+	$Anim.play(get_idle_animation())
 
 # Método para verificar se está em uma cutscene
 func is_in_cutscene() -> bool:

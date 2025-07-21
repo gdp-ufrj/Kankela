@@ -1,6 +1,6 @@
 [gd_scene load_steps=39 format=3 uid="uid://cgmng2iidaame"]
 
-[ext_resource type="Script" path="res://Scripts/tutorial.gd" id="1_sgy12"]
+[ext_resource type="Script" uid="uid://dfldsq546qti" path="res://Scripts/tutorial.gd" id="1_sgy12"]
 [ext_resource type="Texture2D" uid="uid://bl6ncpn10kknl" path="res://Assets/Visuals/Scenarios/Sala-Tutorial.png" id="2_sgy12"]
 [ext_resource type="PackedScene" uid="uid://camnftgon0rp" path="res://Scenes/Prefabs/door.tscn" id="2_vv0ms"]
 [ext_resource type="Texture2D" uid="uid://b6nqunmq8d3mx" path="res://Assets/Visuals/Sprites/exemplos/tile_door.png" id="3_hxa32"]
@@ -113,28 +113,28 @@ script = ExtResource("1_sgy12")
 texture = ExtResource("2_sgy12")
 
 [node name="esquerda" type="StaticBody2D" parent="Arena"]
-position = Vector2(-184, 24)
+position = Vector2(-192, 24)
 scale = Vector2(1.88235, 1.88349)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/esquerda"]
 shape = SubResource("RectangleShape2D_5gw1s")
 
 [node name="direita" type="StaticBody2D" parent="Arena"]
-position = Vector2(184, 0)
+position = Vector2(192, 0)
 scale = Vector2(1.88235, 1.88349)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/direita"]
 shape = SubResource("RectangleShape2D_5gw1s")
 
 [node name="cima" type="StaticBody2D" parent="Arena"]
-position = Vector2(0, -56)
+position = Vector2(0, -51)
 scale = Vector2(1.88235, 1.88349)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/cima"]
 shape = SubResource("RectangleShape2D_brn58")
 
 [node name="baixo" type="StaticBody2D" parent="Arena"]
-position = Vector2(32, 96)
+position = Vector2(32, 100)
 scale = Vector2(1.88235, 1.88349)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/baixo"]
@@ -142,7 +142,7 @@ shape = SubResource("RectangleShape2D_brn58")
 
 [node name="Door" parent="Arena" instance=ExtResource("2_vv0ms")]
 visible = false
-position = Vector2(264, 200)
+position = Vector2(136, 152)
 area = "uid://dfmo6jg4usghv"
 sprite_porta = ExtResource("3_hxa32")
 forma_colisao = SubResource("RectangleShape2D_fx2vl")
@@ -229,7 +229,6 @@ forma_colisao = SubResource("RectangleShape2D_jyml5")
 item_id = "fusivel"
 item_nome = "Fusível Preto"
 item_descricao = "Um fusível de cor preta. Pode ser útil para ligar alguma lâmpada que tenha uma cor correspondente."
-largura_delineado = 10.0
 
 [node name="Caixa_de_luz" parent="." instance=ExtResource("8_sgy12")]
 position = Vector2(168, -96)
@@ -238,16 +237,16 @@ item_necessario = "fusivel"
 consumir_fusivel = true
 
 [node name="Lampada1" parent="." instance=ExtResource("12_fx2vl")]
-position = Vector2(-176, -104)
+position = Vector2(-176, -80)
 scale = Vector2(0.3, 0.3)
 
 [node name="Lampada2" parent="." instance=ExtResource("12_fx2vl")]
-position = Vector2(-144, -104)
+position = Vector2(-144, -80)
 scale = Vector2(0.3, 0.3)
 lampada_index = 1
 
 [node name="Lampada3" parent="." instance=ExtResource("12_fx2vl")]
-position = Vector2(-112, -104)
+position = Vector2(-112, -80)
 scale = Vector2(0.3, 0.3)
 lampada_index = 2
 
@@ -261,11 +260,9 @@ forma_colisao = SubResource("RectangleShape2D_mqud2")
 item_id = "cristal_roxo"
 item_nome = "Cristal Roxo"
 item_descricao = "Um cristal roxo com formato estranho. Pertence ao viajante da superfície."
-largura_delineado = 10.0
 
 [node name="Player" parent="." instance=ExtResource("4_dlght")]
 unique_name_in_owner = true
-position = Vector2(0, 24)
 
 [node name="NPC Ex" parent="." instance=ExtResource("5_8i65c")]
 position = Vector2(200, 72)
