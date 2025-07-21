@@ -1,16 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfkajxwjd3px5"]
+[gd_scene load_steps=5 format=3 uid="uid://dfkajxwjd3px5"]
 
-[ext_resource type="Texture2D" uid="uid://p78pqt0mlfok" path="res://Assets/Visuals/Sprites/exemplos/boxItem_disabled.png" id="1_1vwg2"]
-[ext_resource type="Script" uid="uid://br1ul7xh3edm0" path="res://Scripts/caixa_de_luz.gd" id="1_3hsdu"]
+[ext_resource type="Script" path="res://Scripts/caixa_de_luz.gd" id="1_3hsdu"]
+[ext_resource type="Texture2D" uid="uid://drcg2t0oeinav" path="res://Assets/Visuals/Scenarios/Sala-Tutorial-Objetos.png" id="2_3hsdu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nrx0i"]
+atlas = ExtResource("2_3hsdu")
+region = Rect2(323, 64, 22, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3hsdu"]
-size = Vector2(70, 106)
+size = Vector2(22.2663, 32)
 
 [node name="Caixa_de_luz" type="StaticBody2D"]
 script = ExtResource("1_3hsdu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_1vwg2")
+texture = SubResource("AtlasTexture_nrx0i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_3hsdu")

@@ -1,7 +1,7 @@
-[gd_scene load_steps=23 format=3 uid="uid://cgmng2iidaame"]
+[gd_scene load_steps=39 format=3 uid="uid://cgmng2iidaame"]
 
-[ext_resource type="Script" uid="uid://dfldsq546qti" path="res://Scripts/tutorial.gd" id="1_sgy12"]
-[ext_resource type="Texture2D" uid="uid://i7wophq6tacp" path="res://Assets/Visuals/Sprites/exemplos/Sample2.png" id="1_x7a1n"]
+[ext_resource type="Script" path="res://Scripts/tutorial.gd" id="1_sgy12"]
+[ext_resource type="Texture2D" uid="uid://bl6ncpn10kknl" path="res://Assets/Visuals/Scenarios/Sala-Tutorial.png" id="2_sgy12"]
 [ext_resource type="PackedScene" uid="uid://camnftgon0rp" path="res://Scenes/Prefabs/door.tscn" id="2_vv0ms"]
 [ext_resource type="Texture2D" uid="uid://b6nqunmq8d3mx" path="res://Assets/Visuals/Sprites/exemplos/tile_door.png" id="3_hxa32"]
 [ext_resource type="PackedScene" uid="uid://v68omfsxr70q" path="res://Scenes/Player.tscn" id="4_dlght"]
@@ -10,8 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dfbikeb1245cv" path="res://Scenes/Prefabs/Coletável.tscn" id="7_sgy12"]
 [ext_resource type="AudioStream" uid="uid://d1jdpq3l1fgpp" path="res://Assets/Audio/SFX/handleCoins.ogg" id="8_m35rq"]
 [ext_resource type="PackedScene" uid="uid://dfkajxwjd3px5" path="res://Scenes/Prefabs/caixa_de_luz.tscn" id="8_sgy12"]
-[ext_resource type="Texture2D" uid="uid://p78pqt0mlfok" path="res://Assets/Visuals/Sprites/exemplos/boxItem_disabled.png" id="9_sgy12"]
-[ext_resource type="Texture2D" uid="uid://db800oenh8rau" path="res://Assets/Visuals/Sprites/exemplos/black_brick.png" id="11_brn58"]
+[ext_resource type="Texture2D" uid="uid://drcg2t0oeinav" path="res://Assets/Visuals/Scenarios/Sala-Tutorial-Objetos.png" id="9_sgy12"]
 [ext_resource type="PackedScene" uid="uid://brorihu3te6dt" path="res://Scenes/Prefabs/lampada.tscn" id="12_fx2vl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5gw1s"]
@@ -23,15 +22,71 @@ size = Vector2(918, 0.001)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fx2vl"]
 size = Vector2(80, 59)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mqud2"]
-atlas = ExtResource("6_m35rq")
-region = Rect2(400, 0, 80, 110)
+[sub_resource type="AtlasTexture" id="AtlasTexture_m35rq"]
+atlas = ExtResource("9_sgy12")
+region = Rect2(249, 154, 134, 72)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sswaw"]
-size = Vector2(40, 80)
+[sub_resource type="AtlasTexture" id="AtlasTexture_sgy12"]
+atlas = ExtResource("9_sgy12")
+region = Rect2(231, 44, 66, 86)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpk71"]
+size = Vector2(66, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8nvbb"]
+atlas = ExtResource("9_sgy12")
+region = Rect2(142, 28, 54, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orlbv"]
+size = Vector2(54, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8quk"]
+atlas = ExtResource("9_sgy12")
+region = Rect2(75, 140, 30, 84)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qae3o"]
+size = Vector2(30, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyml5"]
+atlas = ExtResource("9_sgy12")
+region = Rect2(153, 178, 34, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8brlw"]
+atlas = ExtResource("9_sgy12")
+region = Rect2(212, 172, 15, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fk76v"]
+atlas = ExtResource("9_sgy12")
+region = Rect2(410, 58, 34, 51)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_spg5l"]
+size = Vector2(30, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqlkg"]
+atlas = ExtResource("9_sgy12")
+region = Rect2(413, 172, 20, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ctw03"]
+size = Vector2(20, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sihuq"]
+atlas = ExtResource("9_sgy12")
+region = Rect2(84, 31, 18, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_amhwl"]
+atlas = ExtResource("9_sgy12")
+region = Rect2(36, 29, 21, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6u8i"]
+atlas = ExtResource("9_sgy12")
+region = Rect2(371, 71, 4, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyml5"]
-size = Vector2(40, 40)
+size = Vector2(2, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nrx0i"]
+atlas = ExtResource("9_sgy12")
+region = Rect2(323, 64, 22, 30)
 
 [sub_resource type="Gradient" id="Gradient_ilqhf"]
 colors = PackedColorArray(0.6, 0, 0.8, 1, 0.8, 0.2, 1, 1)
@@ -42,45 +97,52 @@ gradient = SubResource("Gradient_ilqhf")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mqud2"]
 size = Vector2(40, 40)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_mqud2"]
+atlas = ExtResource("6_m35rq")
+region = Rect2(400, 0, 80, 110)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sswaw"]
+size = Vector2(40, 80)
+
 [node name="Tutorial" type="Node2D"]
 script = ExtResource("1_sgy12")
 
 [node name="Arena" type="Node2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="Arena"]
-scale = Vector2(1.88235, 1.88349)
-texture = ExtResource("1_x7a1n")
+[node name="background" type="Sprite2D" parent="Arena"]
+texture = ExtResource("2_sgy12")
 
 [node name="esquerda" type="StaticBody2D" parent="Arena"]
-position = Vector2(-863.999, 0)
+position = Vector2(-184, 24)
 scale = Vector2(1.88235, 1.88349)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/esquerda"]
 shape = SubResource("RectangleShape2D_5gw1s")
 
 [node name="direita" type="StaticBody2D" parent="Arena"]
-position = Vector2(863.999, 0)
+position = Vector2(184, 0)
 scale = Vector2(1.88235, 1.88349)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/direita"]
 shape = SubResource("RectangleShape2D_5gw1s")
 
 [node name="cima" type="StaticBody2D" parent="Arena"]
-position = Vector2(0, -484.999)
+position = Vector2(0, -56)
 scale = Vector2(1.88235, 1.88349)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/cima"]
 shape = SubResource("RectangleShape2D_brn58")
 
 [node name="baixo" type="StaticBody2D" parent="Arena"]
-position = Vector2(0, 484.999)
+position = Vector2(32, 96)
 scale = Vector2(1.88235, 1.88349)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/baixo"]
 shape = SubResource("RectangleShape2D_brn58")
 
 [node name="Door" parent="Arena" instance=ExtResource("2_vv0ms")]
-position = Vector2(4, -337)
+visible = false
+position = Vector2(264, 200)
 area = "uid://dfmo6jg4usghv"
 sprite_porta = ExtResource("3_hxa32")
 forma_colisao = SubResource("RectangleShape2D_fx2vl")
@@ -88,50 +150,110 @@ posicao_colisao = Vector2(0, -60)
 porta_destrancada = false
 item_necessario = "cristal_roxo"
 
-[node name="Player" parent="." instance=ExtResource("4_dlght")]
-unique_name_in_owner = true
-position = Vector2(1, 285)
+[node name="Cenário" type="Node2D" parent="."]
 
-[node name="NPC Ex" parent="." instance=ExtResource("5_8i65c")]
-position = Vector2(546, 73)
-nome_npc = "Beiçudo adormecido"
-sprite_npc = SubResource("AtlasTexture_mqud2")
-forma_colisao = SubResource("RectangleShape2D_sswaw")
-arquivo_dialogo = "uid://ea7gvi2iqihc"
-titulo_dialogo = "start"
-tamanho_spritesheet = Vector2(9, 3)
+[node name="tapete" type="Sprite2D" parent="Cenário"]
+position = Vector2(0, 16)
+texture = SubResource("AtlasTexture_m35rq")
 
-[node name="Caixa_de_luz" parent="." instance=ExtResource("8_sgy12")]
-position = Vector2(395, -113)
-sprite_caixa = ExtResource("9_sgy12")
-item_necessario = "fusivel"
-consumir_fusivel = true
+[node name="Comoda" type="StaticBody2D" parent="Cenário"]
+position = Vector2(112, -72)
+
+[node name="sprite" type="Sprite2D" parent="Cenário/Comoda"]
+texture = SubResource("AtlasTexture_sgy12")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenário/Comoda"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_kpk71")
+
+[node name="Relógio" type="StaticBody2D" parent="Cenário"]
+position = Vector2(0, -80)
+
+[node name="sprite" type="Sprite2D" parent="Cenário/Relógio"]
+texture = SubResource("AtlasTexture_8nvbb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenário/Relógio"]
+position = Vector2(-9.53674e-07, 0)
+shape = SubResource("RectangleShape2D_orlbv")
+
+[node name="Mesa na esquerda" type="StaticBody2D" parent="Cenário"]
+position = Vector2(-175, 18)
+
+[node name="sprite" type="Sprite2D" parent="Cenário/Mesa na esquerda"]
+texture = SubResource("AtlasTexture_m8quk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenário/Mesa na esquerda"]
+shape = SubResource("RectangleShape2D_qae3o")
+
+[node name="Cadeira caida 1" type="Sprite2D" parent="Cenário"]
+position = Vector2(-113, 4)
+texture = SubResource("AtlasTexture_jyml5")
+
+[node name="Cadeira caida 2" type="Sprite2D" parent="Cenário"]
+position = Vector2(-95, 31)
+texture = SubResource("AtlasTexture_8brlw")
+
+[node name="Poltrona na direita" type="StaticBody2D" parent="Cenário"]
+position = Vector2(173, 8)
+
+[node name="sprite" type="Sprite2D" parent="Cenário/Poltrona na direita"]
+texture = SubResource("AtlasTexture_fk76v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenário/Poltrona na direita"]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_spg5l")
+
+[node name="Mesinha da poltrona" type="StaticBody2D" parent="Cenário"]
+position = Vector2(173, 48)
+
+[node name="sprite" type="Sprite2D" parent="Cenário/Mesinha da poltrona"]
+texture = SubResource("AtlasTexture_qqlkg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenário/Mesinha da poltrona"]
+shape = SubResource("RectangleShape2D_ctw03")
+
+[node name="quadro 1" type="Sprite2D" parent="Cenário"]
+position = Vector2(-96, -88)
+texture = SubResource("AtlasTexture_sihuq")
+
+[node name="quadro 2" type="Sprite2D" parent="Cenário"]
+position = Vector2(-136, -112)
+texture = SubResource("AtlasTexture_amhwl")
 
 [node name="Fusivel" parent="." instance=ExtResource("7_sgy12")]
-position = Vector2(-707, -258)
+position = Vector2(128, -64)
 texto_interacao = "Você coletou um Fusível Preto!!"
 som_coletar = ExtResource("8_m35rq")
-sprite_objeto = ExtResource("11_brn58")
+sprite_objeto = SubResource("AtlasTexture_v6u8i")
 forma_colisao = SubResource("RectangleShape2D_jyml5")
 item_id = "fusivel"
 item_nome = "Fusível Preto"
 item_descricao = "Um fusível de cor preta. Pode ser útil para ligar alguma lâmpada que tenha uma cor correspondente."
 largura_delineado = 10.0
 
+[node name="Caixa_de_luz" parent="." instance=ExtResource("8_sgy12")]
+position = Vector2(168, -96)
+sprite_caixa = SubResource("AtlasTexture_nrx0i")
+item_necessario = "fusivel"
+consumir_fusivel = true
+
 [node name="Lampada1" parent="." instance=ExtResource("12_fx2vl")]
-position = Vector2(-129, -100)
+position = Vector2(-176, -104)
+scale = Vector2(0.3, 0.3)
 
 [node name="Lampada2" parent="." instance=ExtResource("12_fx2vl")]
-position = Vector2(0, -100)
+position = Vector2(-144, -104)
+scale = Vector2(0.3, 0.3)
 lampada_index = 1
 
 [node name="Lampada3" parent="." instance=ExtResource("12_fx2vl")]
-position = Vector2(129, -100)
+position = Vector2(-112, -104)
+scale = Vector2(0.3, 0.3)
 lampada_index = 2
 
 [node name="Chave" parent="." instance=ExtResource("7_sgy12")]
 visible = false
-position = Vector2(3, -210)
+position = Vector2(-176, 0)
 texto_interacao = "Você coletou um Cristal Roxo!"
 som_coletar = ExtResource("8_m35rq")
 sprite_objeto = SubResource("GradientTexture2D_sgy12")
@@ -140,3 +262,16 @@ item_id = "cristal_roxo"
 item_nome = "Cristal Roxo"
 item_descricao = "Um cristal roxo com formato estranho. Pertence ao viajante da superfície."
 largura_delineado = 10.0
+
+[node name="Player" parent="." instance=ExtResource("4_dlght")]
+unique_name_in_owner = true
+position = Vector2(0, 24)
+
+[node name="NPC Ex" parent="." instance=ExtResource("5_8i65c")]
+position = Vector2(200, 72)
+nome_npc = "Beiçudo adormecido"
+sprite_npc = SubResource("AtlasTexture_mqud2")
+forma_colisao = SubResource("RectangleShape2D_sswaw")
+arquivo_dialogo = "uid://ea7gvi2iqihc"
+titulo_dialogo = "start"
+tamanho_spritesheet = Vector2(9, 3)
