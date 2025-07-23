@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=3 uid="uid://cwreyagl13w2r"]
+
+[ext_resource type="Texture2D" uid="uid://cyg8egy10q5w" path="res://Assets/Visuals/Sprites/Personagens/natalia_spriteshe2.png" id="1_kcx70"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ug7d6"]
+size = Vector2(27, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bsry4"]
+atlas = ExtResource("1_kcx70")
+region = Rect2(0, 0, 320, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgsp5"]
+atlas = ExtResource("1_kcx70")
+region = Rect2(320, 0, 320, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cds0f"]
+atlas = ExtResource("1_kcx70")
+region = Rect2(640, 0, 320, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3bwj"]
+atlas = ExtResource("1_kcx70")
+region = Rect2(960, 0, 320, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8mbbj"]
+atlas = ExtResource("1_kcx70")
+region = Rect2(1280, 0, 320, 400)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nn08x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bsry4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgsp5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cds0f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j3bwj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8mbbj")
+}],
+"loop": true,
+"name": &"Idle_front",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kyqiw"]
+radius = 20.0
+
+[node name="Natália" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_ug7d6")
+
+[node name="Animator" type="AnimationPlayer" parent="."]
+
+[node name="Anim" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.09, 0.09)
+sprite_frames = SubResource("SpriteFrames_nn08x")
+animation = &"Idle_front"
+autoplay = "Idle_front"
+frame_progress = 0.85775
+
+[node name="AreaInteracao" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaInteracao"]
+scale = Vector2(1.15, 1.15)
+shape = SubResource("CircleShape2D_kyqiw")
+debug_color = Color(0, 0.650612, 0.0807452, 0.42)

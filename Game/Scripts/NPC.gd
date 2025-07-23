@@ -1,10 +1,8 @@
+@tool
 class_name NPC extends "res://Scripts/ObjetoInterativo.gd"
 
 # Nome do NPC
 @export var nome_npc: String = "NPC"
-# Sprite do NPC
-@export var sprite_npc: Texture2D # Exporta a textura da imagem
-
 # Área de colisão do NPC:
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 @export var forma_colisao: Shape2D
@@ -16,14 +14,11 @@ class_name NPC extends "res://Scripts/ObjetoInterativo.gd"
 @export var titulo_dialogo: String = ""
 
 var can_interact: bool = true
-var interaction_debound: float = 0.05
+var interaction_debounce: float = 0.05
 
 
 func _ready() -> void:
 	$Label.text = nome_npc
-	
-	# Ativando o sprite do npc
-	sprite_texture = sprite_npc
 	CollisionShape = collision_shape
 	FormaColisao = forma_colisao
 	PosicaoColisao = posicao_colisao
@@ -50,7 +45,7 @@ func interact(_player: Node) -> void:
 		print("Sistema de diálogo não disponível.")
 
 	await DialogueManager.dialogue_ended
-	get_tree().create_timer(interaction_debound).timeout.connect(func(): can_interact = true)
+	get_tree().create_timer(interaction_debounce).timeout.connect(func(): can_interact = true)
 	
 	_player.get_node("IconeInteracao").visible = true
 	ativar_delineado()

@@ -1,29 +1,17 @@
-[gd_scene load_steps=35 format=3 uid="uid://v68omfsxr70q"]
+[gd_scene load_steps=32 format=3 uid="uid://v68omfsxr70q"]
 
 [ext_resource type="Script" uid="uid://btchp5fbd7iy5" path="res://Scripts/player.gd" id="1_k4ujt"]
 [ext_resource type="PackedScene" uid="uid://deki4efnv6lnl" path="res://Scenes/pause.tscn" id="2_gntrk"]
-[ext_resource type="Texture2D" uid="uid://b1ij5ujdgcr1c" path="res://Assets/Visuals/Sprites/exemplos/female_tilesheet.png" id="2_kyqiw"]
 [ext_resource type="PackedScene" uid="uid://qhycbli6dxoc" path="res://Scenes/QuestSystem/InventoryUI.tscn" id="3_5ixxa"]
 [ext_resource type="PackedScene" uid="uid://6873q6cdmask" path="res://Scenes/QuestSystem/QuestLogUI.tscn" id="4_nn08x"]
 [ext_resource type="PackedScene" uid="uid://btq425b2xmdkc" path="res://Scenes/Lupa.tscn" id="5_nn08x"]
 [ext_resource type="Texture2D" uid="uid://ca3w8bex44exk" path="res://Assets/Visuals/Sprites/Personagens/Protagonista, frontal.png" id="7_52ee3"]
 [ext_resource type="Texture2D" uid="uid://bg1s46vbld55f" path="res://Assets/Visuals/Sprites/Personagens/Protagonista, costas.png" id="7_megsn"]
 [ext_resource type="Texture2D" uid="uid://depny5i4p4r3c" path="res://Assets/Visuals/Sprites/Personagens/Protagonista, lateral (direita e esquerda).png" id="9_yoq75"]
+[ext_resource type="Texture2D" uid="uid://dcu4y756ssxr6" path="res://Assets/Visuals/HUD/002_Controllers.png" id="10_yoq75"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ug7d6"]
 size = Vector2(27, 7)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dewec"]
-atlas = ExtResource("2_kyqiw")
-region = Rect2(0, 110, 80, 110)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5ixxa"]
-atlas = ExtResource("2_kyqiw")
-region = Rect2(80, 110, 80, 110)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gntrk"]
-atlas = ExtResource("2_kyqiw")
-region = Rect2(640, 110, 80, 110)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_miouo"]
 atlas = ExtResource("7_megsn")
@@ -69,10 +57,6 @@ region = Rect2(1036, 0, 1036, 1148)
 atlas = ExtResource("9_yoq75")
 region = Rect2(2072, 0, 1036, 1148)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kyqiw"]
-atlas = ExtResource("2_kyqiw")
-region = Rect2(400, 220, 80, 110)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_1iu4k"]
 atlas = ExtResource("7_megsn")
 region = Rect2(3108, 0, 1036, 1148)
@@ -103,23 +87,6 @@ region = Rect2(5180, 0, 1036, 1148)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nn08x"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dewec")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5ixxa")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gntrk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dewec")
-}],
-"loop": true,
-"name": &"Andando",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_miouo")
@@ -182,14 +149,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kyqiw")
-}],
-"loop": true,
-"name": &"Parada",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_1iu4k")
 }, {
 "duration": 1.0,
@@ -243,7 +202,11 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_kyqiw"]
 radius = 20.0
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8flut"]
+atlas = ExtResource("10_yoq75")
+region = Rect2(15, 201, 52, 13)
+
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_k4ujt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -288,36 +251,5 @@ visible = false
 z_index = 5
 position = Vector2(0, -32)
 
-[node name="ColorRect" type="ColorRect" parent="IconeInteracao"]
-clip_contents = true
-custom_minimum_size = Vector2(65, 30)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -32.5
-offset_top = -15.0
-offset_right = 32.5
-offset_bottom = 15.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.14902, 0.14902, 0.14902, 0.533333)
-
-[node name="Label" type="Label" parent="IconeInteracao/ColorRect"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -29.5
-offset_top = -11.5
-offset_right = 29.5
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "[Space]"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
+[node name="Sprite2D" type="Sprite2D" parent="IconeInteracao"]
+texture = SubResource("AtlasTexture_8flut")

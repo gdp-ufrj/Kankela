@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bvgb7gouill04"
+path="res://.godot/imported/praça.dialogue-3d3564fd129d142682d488eebc6ab86d.tres"
+
+[deps]
+
+source_file="res://Dialogues/praça.dialogue"
+dest_files=["res://.godot/imported/praça.dialogue-3d3564fd129d142682d488eebc6ab86d.tres"]
+
+[params]
+
+defaults=true

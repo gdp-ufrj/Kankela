@@ -1,3 +1,4 @@
+@tool
 class_name Documento extends "res://Scripts/ObjetoInterativo.gd"
 
 var hasInteracted: bool = false

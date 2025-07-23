@@ -1,0 +1,102 @@
+[gd_scene load_steps=14 format=3 uid="uid://b0r2u5jb61v82"]
+
+[ext_resource type="Texture2D" uid="uid://dgl1bbiieydbe" path="res://Assets/Visuals/Sprites/Personagens/Maga2_spriteshe.png" id="1_xgbtf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ug7d6"]
+size = Vector2(27, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_513es"]
+atlas = ExtResource("1_xgbtf")
+region = Rect2(0, 0, 320, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28rfu"]
+atlas = ExtResource("1_xgbtf")
+region = Rect2(320, 0, 320, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trc86"]
+atlas = ExtResource("1_xgbtf")
+region = Rect2(640, 0, 320, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vqr0g"]
+atlas = ExtResource("1_xgbtf")
+region = Rect2(960, 0, 320, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5qp5"]
+atlas = ExtResource("1_xgbtf")
+region = Rect2(1280, 0, 320, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txyo4"]
+atlas = ExtResource("1_xgbtf")
+region = Rect2(1600, 0, 320, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wht6e"]
+atlas = ExtResource("1_xgbtf")
+region = Rect2(1920, 0, 320, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uaoj8"]
+atlas = ExtResource("1_xgbtf")
+region = Rect2(2240, 0, 320, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oc5bn"]
+atlas = ExtResource("1_xgbtf")
+region = Rect2(2560, 0, 320, 400)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nn08x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_513es")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28rfu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_trc86")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vqr0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5qp5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txyo4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wht6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uaoj8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oc5bn")
+}],
+"loop": true,
+"name": &"Idle_front",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kyqiw"]
+radius = 20.0
+
+[node name="Maga" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_ug7d6")
+
+[node name="Animator" type="AnimationPlayer" parent="."]
+
+[node name="Anim" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.09, 0.09)
+sprite_frames = SubResource("SpriteFrames_nn08x")
+animation = &"Idle_front"
+autoplay = "Idle_front"
+frame_progress = 0.0441217
+
+[node name="AreaInteracao" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaInteracao"]
+scale = Vector2(1.15, 1.15)
+shape = SubResource("CircleShape2D_kyqiw")
+debug_color = Color(0, 0.650612, 0.0807452, 0.42)

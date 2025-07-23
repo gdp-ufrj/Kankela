@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://camnftgon0rp"]
+[gd_scene load_steps=4 format=3 uid="uid://camnftgon0rp"]
 
 [ext_resource type="Script" uid="uid://ctvye5qiwwkkg" path="res://Scripts/door.gd" id="1_q13iw"]
 [ext_resource type="AudioStream" uid="uid://dfdht2383144o" path="res://Assets/Audio/SFX/doorOpen_2.ogg" id="2_egjfl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_egjfl"]
+size = Vector2(40, 10)
 
 [node name="Door" type="StaticBody2D"]
 script = ExtResource("1_q13iw")
@@ -9,6 +12,7 @@ script = ExtResource("1_q13iw")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_egjfl")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_egjfl")

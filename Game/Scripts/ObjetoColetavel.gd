@@ -1,3 +1,4 @@
+@tool
 class_name ObjetoColetavel extends "res://Scripts/ObjetoInterativo.gd"
 
 # Texto exibido ao interagir com este objeto
@@ -6,9 +7,6 @@ var hasInteracted: bool = false
 
 # som ao colotar o item
 @export var som_coletar: AudioStream
-
-# Sprite do Objeto
-@export var sprite_objeto: Texture2D
 
 # Área de colisão do objeto:
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
@@ -23,8 +21,6 @@ var hasInteracted: bool = false
 var quest_manager = Engine.get_singleton("QuestManager")
 
 func _ready() -> void:
-	# Ativando o sprite do objeto
-	sprite_texture = sprite_objeto
 	CollisionShape = collision_shape
 	FormaColisao = forma_colisao
 	PosicaoColisao = posicao_colisao
@@ -39,7 +35,7 @@ func _ready() -> void:
 			item_id,
 			item_nome if item_nome != "" else str(name),
 			item_descricao,
-			sprite_objeto
+			sprite_texture
 		)
 		
 		# Verificar se o item já foi coletado anteriormente

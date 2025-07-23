@@ -1,10 +1,11 @@
+@tool
 class_name Porta extends "res://Scripts/ObjetoInterativo.gd"
-
 
 @onready var player: CharacterBody2D = %Player
 @export_file("*.tscn") var area: String
-# Sprite da porta
-@export var sprite_porta: Texture2D # Exporta a textura da imagem
+
+var can_interact: bool = true
+var interaction_debounce: float = 0.05
 
 # Área de colisão da porta:
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
@@ -24,8 +25,6 @@ class_name Porta extends "res://Scripts/ObjetoInterativo.gd"
 @onready var transition: CanvasLayer = get_node("/root/TransicaoLayer")
 
 func _ready() -> void:
-	# Ativando o sprite da porta
-	sprite_texture = sprite_porta
 	CollisionShape = collision_shape
 	FormaColisao = forma_colisao
 	PosicaoColisao = posicao_colisao
@@ -39,15 +38,20 @@ func _ready() -> void:
 	'''
 
 func interact(_player: Node) -> void:
+	if not can_interact:
+		return
+
+	can_interact = false
+
 	# Verificar se a porta precisa de um item e se o sistema está disponível
 	if porta_destrancada:
 		#inicia a transição
 		transition.fade_out()
 		await transition.fade_out()
-		await get_tree().create_timer(0.5).timeout  # Pequeno delay
+		await get_tree().create_timer(0.5).timeout # Pequeno delay
 		audio_player.play()
 		await audio_player.finished
-		await get_tree().create_timer(0.5).timeout 
+		await get_tree().create_timer(0.5).timeout
 		
 		SceneManager.load_game_scene(area)
 		
@@ -65,22 +69,24 @@ func interact(_player: Node) -> void:
 				#inicia a transição
 				transition.fade_out()
 				await transition.fade_out()
-				await get_tree().create_timer(0.5).timeout  # Pequeno delay
+				await get_tree().create_timer(0.5).timeout # Pequeno delay
 				audio_player.play()
 				await audio_player.finished
-				await get_tree().create_timer(0.5).timeout 
+				await get_tree().create_timer(0.5).timeout
 				
 				SceneManager.load_game_scene(area)
 				#faz o fade_in após o carregamento
 				transition.fade_in()
 			else:
 				if Engine.has_singleton("DialogueManager"):
-						_player.start_cutscene(load("res://Dialogues/door.dialogue"))
+						_player.start_cutscene_from_string(mensagem_proibido_passar)
 				else:
 					# Caso o Dialogue Manager não esteja disponível, exibe mensagem padrão
 					print("Sistema de diálogo não disponível.")
 	
-	self.desativar_delineado()
+	await DialogueManager.dialogue_ended
+	get_tree().create_timer(interaction_debounce).timeout.connect(func(): can_interact = true)
+	desativar_delineado()
 	
 	# Emite o sinal de interação
 	interaction_finished.emit(InteractableType.Door)

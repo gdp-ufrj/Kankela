@@ -1,0 +1,59 @@
+# Definição dos personagens para que o Dialogue Manager possa associar cores ou nomes customizados se necessário.
+character "Geraldo" color="#e3a13f"
+character "Aprendiz" color="#6dbbe5"
+character "Natália" color="#8b55e0"
+character "Maga" color="#55e06f"
+character "Todos" color="#cccccc"
+
+
+~ start
+
+# Diálogo
+Geraldo: Ai que merda. Mais um jogo que perdemos...
+
+#do set_character_emotion("aprendiz", "culpada")
+Aprendiz: Sinto que a culpa foi minha. De novo.
+
+Natália: É normal no começo mesmo, fica tranquila.
+
+#do set_character_emotion("aprendiz", "chorando")
+Aprendiz: Sério gente, sei que fizemos isso para nos divertirmos
+Aprendiz: mas eu me sinto incapaz de tudo aqui.
+Aprendiz: Não consigo fazer nada, nem lembrar de quem eu era. Que isso...
+
+# Geraldo e Natália tentam consolar, mas não funciona.
+Natália: Calma amiga, tá tudo bem.
+Geraldo: Fica tranquila, é assim mesmo.
+
+=> END
+
+~ maga_entrance
+
+# Maga entra em cena.
+# Todos reagem à chegada de Maga. Ação de saudar.
+Todos: Oh, poderoso Maga! Todos saudemos o Todo Poderoso Maga!
+
+Maga: Paz e amor, queridos! Sobre o que vocês estavam falando?
+
+Natália: Ela está em crise existencial. Não sabe quem ela é, nem mesmo seu nome.
+
+Maga: Óbvio que matar, roubar, estuprar e destruir o que não é seu
+Maga: já garante uma passagem direto pra cá
+Maga: mas vocês esquecem que a mentira é tão grave quanto. A maior parte tá aqui por isso.
+
+Aprendiz: O senhor com certeza sabe quando estou mentindo ou não, meu senhor! Pode conferir.
+
+# Maga "escaneia" a alma da aprendiz.
+Maga: Uhm... vou te escanear então.
+do SceneManager.play_audio("res://Assets/Audio/doorOpen_2.ogg")
+Maga: ...
+
+Maga: Tá. Agora acredito.
+
+# Maga recebe uma ligação.
+do SceneManager.play_audio("res://Assets/Audio/doorOpen_2.ogg")
+
+Maga: Foi mal meus amores, mas precisa ir embora.
+Maga: Você ai, esquecida. Vai no casarão e me liga.
+
+=> END

@@ -1,15 +1,14 @@
-[gd_scene load_steps=39 format=3 uid="uid://cgmng2iidaame"]
+[gd_scene load_steps=33 format=3 uid="uid://cgmng2iidaame"]
 
 [ext_resource type="Script" uid="uid://dfldsq546qti" path="res://Scripts/tutorial.gd" id="1_sgy12"]
 [ext_resource type="Texture2D" uid="uid://bl6ncpn10kknl" path="res://Assets/Visuals/Scenarios/Sala-Tutorial.png" id="2_sgy12"]
 [ext_resource type="PackedScene" uid="uid://camnftgon0rp" path="res://Scenes/Prefabs/door.tscn" id="2_vv0ms"]
-[ext_resource type="Texture2D" uid="uid://b6nqunmq8d3mx" path="res://Assets/Visuals/Sprites/exemplos/tile_door.png" id="3_hxa32"]
 [ext_resource type="PackedScene" uid="uid://v68omfsxr70q" path="res://Scenes/Player.tscn" id="4_dlght"]
 [ext_resource type="PackedScene" uid="uid://becr3kfbneco7" path="res://Scenes/Prefabs/NPC.tscn" id="5_8i65c"]
-[ext_resource type="Texture2D" uid="uid://cxbni72y7pbqs" path="res://Assets/Visuals/Sprites/exemplos/zombie_tilesheet.png" id="6_m35rq"]
 [ext_resource type="PackedScene" uid="uid://dfbikeb1245cv" path="res://Scenes/Prefabs/Coletável.tscn" id="7_sgy12"]
 [ext_resource type="AudioStream" uid="uid://d1jdpq3l1fgpp" path="res://Assets/Audio/SFX/handleCoins.ogg" id="8_m35rq"]
 [ext_resource type="PackedScene" uid="uid://dfkajxwjd3px5" path="res://Scenes/Prefabs/caixa_de_luz.tscn" id="8_sgy12"]
+[ext_resource type="Texture2D" uid="uid://d0f2gvwu7ehej" path="res://Assets/Visuals/Sprites/exemplos/lampada_desl.png" id="9_m35rq"]
 [ext_resource type="Texture2D" uid="uid://drcg2t0oeinav" path="res://Assets/Visuals/Scenarios/Sala-Tutorial-Objetos.png" id="9_sgy12"]
 [ext_resource type="PackedScene" uid="uid://brorihu3te6dt" path="res://Scenes/Prefabs/lampada.tscn" id="12_fx2vl"]
 
@@ -18,9 +17,6 @@ size = Vector2(0.000579834, 515)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_brn58"]
 size = Vector2(918, 0.001)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fx2vl"]
-size = Vector2(80, 59)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m35rq"]
 atlas = ExtResource("9_sgy12")
@@ -77,32 +73,17 @@ region = Rect2(84, 31, 18, 29)
 atlas = ExtResource("9_sgy12")
 region = Rect2(36, 29, 21, 26)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v6u8i"]
-atlas = ExtResource("9_sgy12")
-region = Rect2(371, 71, 4, 14)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyml5"]
 size = Vector2(2, 7)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nrx0i"]
 atlas = ExtResource("9_sgy12")
-region = Rect2(323, 64, 22, 30)
-
-[sub_resource type="Gradient" id="Gradient_ilqhf"]
-colors = PackedColorArray(0.6, 0, 0.8, 1, 0.8, 0.2, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_sgy12"]
-gradient = SubResource("Gradient_ilqhf")
+region = Rect2(322, 63, 24, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mqud2"]
 size = Vector2(40, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mqud2"]
-atlas = ExtResource("6_m35rq")
-region = Rect2(400, 0, 80, 110)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sswaw"]
-size = Vector2(40, 80)
 
 [node name="Tutorial" type="Node2D"]
 script = ExtResource("1_sgy12")
@@ -141,14 +122,12 @@ scale = Vector2(1.88235, 1.88349)
 shape = SubResource("RectangleShape2D_brn58")
 
 [node name="Door" parent="Arena" instance=ExtResource("2_vv0ms")]
-visible = false
-position = Vector2(136, 152)
+position = Vector2(138, 105)
 area = "uid://dfmo6jg4usghv"
-sprite_porta = ExtResource("3_hxa32")
-forma_colisao = SubResource("RectangleShape2D_fx2vl")
-posicao_colisao = Vector2(0, -60)
 porta_destrancada = false
-item_necessario = "cristal_roxo"
+item_necessario = "chave_tutorial"
+consumir_item = true
+mensagem_proibido_passar = "Espante o beiçudo e obtenha a chave."
 
 [node name="Cenário" type="Node2D" parent="."]
 
@@ -221,10 +200,10 @@ position = Vector2(-136, -112)
 texture = SubResource("AtlasTexture_amhwl")
 
 [node name="Fusivel" parent="." instance=ExtResource("7_sgy12")]
-position = Vector2(128, -64)
+position = Vector2(130, -63)
+scale = Vector2(1.75, 1.75)
 texto_interacao = "Você coletou um Fusível Preto!!"
 som_coletar = ExtResource("8_m35rq")
-sprite_objeto = SubResource("AtlasTexture_v6u8i")
 forma_colisao = SubResource("RectangleShape2D_jyml5")
 item_id = "fusivel"
 item_nome = "Fusível Preto"
@@ -232,43 +211,43 @@ item_descricao = "Um fusível de cor preta. Pode ser útil para ligar alguma lâ
 
 [node name="Caixa_de_luz" parent="." instance=ExtResource("8_sgy12")]
 position = Vector2(168, -96)
-sprite_caixa = SubResource("AtlasTexture_nrx0i")
 item_necessario = "fusivel"
 consumir_fusivel = true
+sprite_texture = SubResource("AtlasTexture_nrx0i")
 
 [node name="Lampada1" parent="." instance=ExtResource("12_fx2vl")]
 position = Vector2(-176, -80)
 scale = Vector2(0.3, 0.3)
+sprite_texture = ExtResource("9_m35rq")
 
 [node name="Lampada2" parent="." instance=ExtResource("12_fx2vl")]
 position = Vector2(-144, -80)
 scale = Vector2(0.3, 0.3)
 lampada_index = 1
+sprite_texture = ExtResource("9_m35rq")
 
 [node name="Lampada3" parent="." instance=ExtResource("12_fx2vl")]
 position = Vector2(-112, -80)
 scale = Vector2(0.3, 0.3)
 lampada_index = 2
+sprite_texture = ExtResource("9_m35rq")
 
 [node name="Chave" parent="." instance=ExtResource("7_sgy12")]
 visible = false
 position = Vector2(-176, 0)
 texto_interacao = "Você coletou um Cristal Roxo!"
 som_coletar = ExtResource("8_m35rq")
-sprite_objeto = SubResource("GradientTexture2D_sgy12")
 forma_colisao = SubResource("RectangleShape2D_mqud2")
-item_id = "cristal_roxo"
-item_nome = "Cristal Roxo"
-item_descricao = "Um cristal roxo com formato estranho. Pertence ao viajante da superfície."
+item_id = "chave_tutorial"
+item_nome = "Chave da sala escura"
+item_descricao = "Uma chave gasta e enferrujada."
 
 [node name="Player" parent="." instance=ExtResource("4_dlght")]
 unique_name_in_owner = true
 
 [node name="NPC Ex" parent="." instance=ExtResource("5_8i65c")]
-position = Vector2(200, 72)
+position = Vector2(-128, 48)
 nome_npc = "Beiçudo adormecido"
-sprite_npc = SubResource("AtlasTexture_mqud2")
 forma_colisao = SubResource("RectangleShape2D_sswaw")
 arquivo_dialogo = "uid://ea7gvi2iqihc"
 titulo_dialogo = "start"
-tamanho_spritesheet = Vector2(9, 3)
