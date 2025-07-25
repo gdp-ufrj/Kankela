@@ -669,10 +669,6 @@ position = Vector2(-328.5, 272)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cenário/Sala/Movel da tv"]
 shape = SubResource("RectangleShape2D_msyqj")
 
-[node name="Player" parent="." instance=ExtResource("2_4du07")]
-unique_name_in_owner = true
-position = Vector2(-413, -279)
-
 [node name="Documentos" type="Node2D" parent="."]
 
 [node name="Documento!" parent="Documentos" instance=ExtResource("4_3kile")]
@@ -742,3 +738,7 @@ sprite_objeto = ExtResource("5_wy2or")
 [node name="Documento12" parent="Documentos" instance=ExtResource("4_3kile")]
 position = Vector2(255, -249)
 sprite_objeto = ExtResource("8_m2h5s")
+
+[node name="Player" parent="." instance=ExtResource("2_4du07")]
+unique_name_in_owner = true
+position = Vector2(-413, -279)
