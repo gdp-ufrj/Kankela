@@ -75,12 +75,6 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("pause") and !cutscene_mode and !interacting:
 		PauseMenu()
 
-	if Input.is_action_just_pressed("inventory") and !cutscene_mode and !paused and inventory_ui and !interacting:
-		InventoryMenu()
-
-	if Input.is_action_just_pressed("quest_log") and !cutscene_mode and !paused and is_quest_log_ui and !interacting:
-		QuestLogMenu()
-
 	# Nova lógica para a tecla L
 	handle_lupa_input(_delta)
 
