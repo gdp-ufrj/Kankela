@@ -1,18 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://brorihu3te6dt"]
 
-[ext_resource type="Texture2D" uid="uid://d0f2gvwu7ehej" path="res://Assets/Visuals/Sprites/exemplos/lampada_desl.png" id="1_fvcqc"]
 [ext_resource type="Script" uid="uid://crc0bw6o0n8rk" path="res://Scripts/lampada.gd" id="1_pxd22"]
+[ext_resource type="Texture2D" uid="uid://dt8q30ck62axd" path="res://Assets/Visuals/Scenarios/luminária_apagada.png" id="2_pxd22"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pxd22"]
-size = Vector2(64, 64)
+size = Vector2(76, 208)
 
 [node name="Lampada" type="StaticBody2D"]
 script = ExtResource("1_pxd22")
-sprite_lampada = ExtResource("1_fvcqc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.284, 0.284)
-texture = ExtResource("1_fvcqc")
+position = Vector2(-2.5, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_pxd22")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_pxd22")

@@ -4,7 +4,6 @@ extends Node2D
 @onready var luzes_acesas: Array = [false, false, false]
 
 func _ready():
-	
 	# Inicia a cutscene inicial
 	%Player.start_cutscene(preload("res://Dialogues/Start.dialogue"))
 	
@@ -27,16 +26,16 @@ func _on_lampada_interagida(index):
 		if index != 1:
 			luzes_acesas[1] = !luzes_acesas[1]
 		
-		for i in range(1,4):
-			if luzes_acesas[i-1]:
-				get_node("Lampada"+str(i)).sprite.texture = load("res://Assets/Visuals/Sprites/exemplos/lampada_ligada.png")
+		for i in range(1, 4):
+			if luzes_acesas[i - 1]:
+				get_node("Lampada" + str(i)).sprite.texture = load("res://Assets/Visuals/Scenarios/luminária_acesa.png")
 				if !luzes_acesas.has(false):
 					QuestManager.completar_missao("ligar_lampadas")
 					get_node("Chave").visible = true
 					get_node("Chave/CollisionShape2D").disabled = false
 					print("Missão de luzes concluída!")
 			else:
-				get_node("Lampada"+str(i)).sprite.texture = load("res://Assets/Visuals/Sprites/exemplos/lampada_desl.png")
+				get_node("Lampada" + str(i)).sprite.texture = load("res://Assets/Visuals/Scenarios/luminária_apagada.png")
 		
 		
 	else:

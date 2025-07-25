@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dfbikeb1245cv" path="res://Scenes/Prefabs/Coletável.tscn" id="7_sgy12"]
 [ext_resource type="AudioStream" uid="uid://d1jdpq3l1fgpp" path="res://Assets/Audio/SFX/handleCoins.ogg" id="8_m35rq"]
 [ext_resource type="PackedScene" uid="uid://dfkajxwjd3px5" path="res://Scenes/Prefabs/caixa_de_luz.tscn" id="8_sgy12"]
-[ext_resource type="Texture2D" uid="uid://d0f2gvwu7ehej" path="res://Assets/Visuals/Sprites/exemplos/lampada_desl.png" id="9_m35rq"]
+[ext_resource type="Texture2D" uid="uid://dt8q30ck62axd" path="res://Assets/Visuals/Scenarios/luminária_apagada.png" id="9_8i65c"]
 [ext_resource type="Texture2D" uid="uid://drcg2t0oeinav" path="res://Assets/Visuals/Scenarios/Sala-Tutorial-Objetos.png" id="9_sgy12"]
 [ext_resource type="PackedScene" uid="uid://brorihu3te6dt" path="res://Scenes/Prefabs/lampada.tscn" id="12_fx2vl"]
 
@@ -192,11 +192,11 @@ texture = SubResource("AtlasTexture_qqlkg")
 shape = SubResource("RectangleShape2D_ctw03")
 
 [node name="quadro 1" type="Sprite2D" parent="Cenário"]
-position = Vector2(-96, -88)
+position = Vector2(-64, -88)
 texture = SubResource("AtlasTexture_sihuq")
 
 [node name="quadro 2" type="Sprite2D" parent="Cenário"]
-position = Vector2(-136, -112)
+position = Vector2(-96, -120)
 texture = SubResource("AtlasTexture_amhwl")
 
 [node name="Fusivel" parent="." instance=ExtResource("7_sgy12")]
@@ -216,21 +216,21 @@ consumir_fusivel = true
 sprite_texture = SubResource("AtlasTexture_nrx0i")
 
 [node name="Lampada1" parent="." instance=ExtResource("12_fx2vl")]
-position = Vector2(-176, -80)
+position = Vector2(-168, -72)
 scale = Vector2(0.3, 0.3)
-sprite_texture = ExtResource("9_m35rq")
+sprite_texture = ExtResource("9_8i65c")
 
 [node name="Lampada2" parent="." instance=ExtResource("12_fx2vl")]
-position = Vector2(-144, -80)
+position = Vector2(-136, -72)
 scale = Vector2(0.3, 0.3)
 lampada_index = 1
-sprite_texture = ExtResource("9_m35rq")
+sprite_texture = ExtResource("9_8i65c")
 
 [node name="Lampada3" parent="." instance=ExtResource("12_fx2vl")]
-position = Vector2(-112, -80)
+position = Vector2(-104, -72)
 scale = Vector2(0.3, 0.3)
 lampada_index = 2
-sprite_texture = ExtResource("9_m35rq")
+sprite_texture = ExtResource("9_8i65c")
 
 [node name="Chave" parent="." instance=ExtResource("7_sgy12")]
 visible = false
