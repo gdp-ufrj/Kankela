@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://deki4efnv6lnl"]
+[gd_scene load_steps=18 format=3 uid="uid://deki4efnv6lnl"]
 
 [ext_resource type="Script" uid="uid://5g38hdwqe6f4" path="res://Scripts/pause.gd" id="1_o80xk"]
 [ext_resource type="Shader" uid="uid://bp0oy4iyg7wrs" path="res://Shaders/pause.gdshader" id="2_l2mpd"]
 [ext_resource type="Texture2D" uid="uid://i5mn4jl5i4vb" path="res://Assets/Visuals/HUD/SpritesheetUI.png" id="3_5a6ek"]
+[ext_resource type="Texture2D" uid="uid://wyjov2yio5mq" path="res://Assets/Visuals/HUD/TeladePausa3_SemBotoesSemX.png" id="3_nsogc"]
 [ext_resource type="FontFile" uid="uid://c7ofx4fuogaot" path="res://Assets/Visuals/HUD/Dialogues Themes/Tiny5-Regular.ttf" id="4_e0jm0"]
-[ext_resource type="PackedScene" uid="uid://c3gfpsiik2q8j" path="res://Scenes/Configuracoes.tscn" id="5_3fojq"]
+[ext_resource type="PackedScene" uid="uid://1pajo5yeppm3" path="res://Scenes/Configuracoes.tscn" id="5_3fojq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5a6ek"]
 shader = ExtResource("2_l2mpd")
@@ -70,6 +71,9 @@ offset_top = -324.0
 offset_right = 576.0
 offset_bottom = 324.0
 
+[node name="TeladePausa3SemBotoesSemX" type="Sprite2D" parent="."]
+texture = ExtResource("3_nsogc")
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
 offset_left = -62.0
@@ -79,8 +83,10 @@ offset_bottom = 82.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+alignment = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
+visible = false
 position = Vector2(57, 6)
 texture = SubResource("AtlasTexture_e0jm0")
 
