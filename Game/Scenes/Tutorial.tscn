@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cgmng2iidaame"]
+[gd_scene load_steps=32 format=3 uid="uid://cgmng2iidaame"]
 
 [ext_resource type="Script" uid="uid://dfldsq546qti" path="res://Scripts/tutorial.gd" id="1_sgy12"]
 [ext_resource type="Texture2D" uid="uid://bl6ncpn10kknl" path="res://Assets/Visuals/Scenarios/Sala-Tutorial.png" id="2_sgy12"]
@@ -72,8 +72,16 @@ region = Rect2(84, 31, 18, 29)
 atlas = ExtResource("9_sgy12")
 region = Rect2(36, 29, 21, 26)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlght"]
+atlas = ExtResource("9_sgy12")
+region = Rect2(369, 69, 8, 18)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyml5"]
 size = Vector2(2, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8i65c"]
+atlas = ExtResource("9_sgy12")
+region = Rect2(321, 62, 26, 34)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mqud2"]
 size = Vector2(40, 40)
@@ -195,6 +203,7 @@ texture = SubResource("AtlasTexture_amhwl")
 [node name="Fusivel" parent="." instance=ExtResource("7_sgy12")]
 position = Vector2(130, -63)
 scale = Vector2(1.75, 1.75)
+sprite_objeto = SubResource("AtlasTexture_dlght")
 texto_interacao = "Você coletou um Fusível Preto!!"
 som_coletar = ExtResource("8_m35rq")
 forma_colisao = SubResource("RectangleShape2D_jyml5")
@@ -204,6 +213,7 @@ item_descricao = "Um fusível de cor preta. Pode ser útil para ligar alguma lâ
 
 [node name="Caixa_de_luz" parent="." instance=ExtResource("8_sgy12")]
 position = Vector2(168, -96)
+sprite_objeto = SubResource("AtlasTexture_8i65c")
 item_necessario = "fusivel"
 consumir_fusivel = true
 

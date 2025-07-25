@@ -1,36 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://dfbikeb1245cv"]
+[gd_scene load_steps=4 format=3 uid="uid://dfbikeb1245cv"]
 
 [ext_resource type="Script" uid="uid://dho3fsaxo38vu" path="res://Scripts/ObjetoColetavel.gd" id="1_51g5d"]
-[ext_resource type="Shader" uid="uid://2bk1ym2xu6wi" path="res://Shaders/delineado.gdshader" id="2_tovd3"]
-[ext_resource type="Texture2D" uid="uid://drcg2t0oeinav" path="res://Assets/Visuals/Scenarios/Sala-Tutorial-Objetos.png" id="3_cphmc"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_gn2se"]
-shader = ExtResource("2_tovd3")
-shader_parameter/color = Color(1, 1, 1, 1)
-shader_parameter/width = 5.0
-shader_parameter/pattern = 2
-shader_parameter/inside = false
-shader_parameter/add_margins = true
-shader_parameter/number_of_images = Vector2(1, 1)
+[sub_resource type="Gradient" id="Gradient_ndbwv"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nrx0i"]
-atlas = ExtResource("3_cphmc")
-region = Rect2(323, 64, 22, 30)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rknao"]
-size = Vector2(32, 32)
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tovd3"]
+gradient = SubResource("Gradient_ndbwv")
 
 [node name="Coletável Ex" type="StaticBody2D"]
 script = ExtResource("1_51g5d")
 texto_interacao = "Você coletou uma poção!"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_gn2se")
 scale = Vector2(0.5, 0.5)
-texture = SubResource("AtlasTexture_nrx0i")
+texture = SubResource("GradientTexture2D_tovd3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-shape = SubResource("RectangleShape2D_rknao")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

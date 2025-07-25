@@ -74,6 +74,8 @@ func ativar_delineado() -> void:
 	
 	# Configurar o delineado com os novos parâmetros do shader
 	sprite.material.set_shader_parameter("outline_color", cor_delineado)
+	sprite.material.set_shader_parameter("outline_size", 1)
+	sprite.material.set_shader_parameter("alpha_threshold", 0)
 	sprite.material.set_shader_parameter("shade_color", Color(0, 0, 0, 0))
 
 # Desativa o delineado do objeto
@@ -81,7 +83,7 @@ func desativar_delineado() -> void:
 	_delineado_ativo = false
 	# Para esta versão do shader, podemos simplesmente definir largura como 0 para desativar
 	if sprite and sprite.material:
-		sprite.material.set_shader_parameter("outline_color", Color(0, 0, 0, 0))
+		sprite.material.set_shader_parameter("outline_size", 0)
 
 enum InteractableType {
 	None,

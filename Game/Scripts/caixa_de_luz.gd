@@ -5,10 +5,12 @@ var can_interact: bool = true
 var interaction_debounce: float = 0.05
 
 # Sistema de itens necessários para ligar a caixa de luz
+@export var sprite_objeto: Texture2D # Imagem do objeto no cenário
 @export var item_necessario: String # ID do item necessário (No caso, o fusivel)
 @export var consumir_fusivel: bool = false # Se verdadeiro, o item será usado (removido do inventário)
 
 func _ready() -> void:
+	if sprite_objeto: sprite_texture = sprite_objeto
 	super._ready()
 	
 func interact(_player: Node) -> void:
