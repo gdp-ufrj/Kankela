@@ -9,6 +9,9 @@ func _on_play_pressed() -> void:
 func _on_settings_pressed() -> void:
 	get_node("Configuracoes").show()
 
+func _on_credits_pressed() -> void:
+	get_node("Créditos").show()
+
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()

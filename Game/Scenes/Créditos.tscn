@@ -1,0 +1,70 @@
+[gd_scene load_steps=9 format=3 uid="uid://b5w2rs7n0fldm"]
+
+[ext_resource type="Script" uid="uid://boaod6r7j4awe" path="res://Scripts/créditos.gd" id="1_d10i0"]
+[ext_resource type="Texture2D" uid="uid://i5mn4jl5i4vb" path="res://Assets/Visuals/HUD/SpritesheetUI.png" id="2_ukld5"]
+[ext_resource type="Texture2D" uid="uid://m7rkcja5hc5h" path="res://Assets/Visuals/HUD/TelaDeCréditos_SemTituloSemBotoesSemFundo.png" id="3_12new"]
+[ext_resource type="FontFile" uid="uid://c7ofx4fuogaot" path="res://Assets/Visuals/HUD/Dialogues Themes/Tiny5-Regular.ttf" id="4_oa6u6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_died0"]
+atlas = ExtResource("2_ukld5")
+region = Rect2(868, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ik24"]
+atlas = ExtResource("2_ukld5")
+region = Rect2(153, 0, 115, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vb76c"]
+atlas = ExtResource("2_ukld5")
+region = Rect2(153, 58, 115, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfus6"]
+atlas = ExtResource("2_ukld5")
+region = Rect2(153, 29, 115, 29)
+
+[node name="Créditos" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d10i0")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(320, 180)
+texture = SubResource("AtlasTexture_died0")
+
+[node name="TelaDeCréditosSemTituloSemBotoesSemFundo" type="Sprite2D" parent="."]
+position = Vector2(320, 180)
+texture = ExtResource("3_12new")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 292.0
+offset_top = 24.0
+offset_right = 350.0
+offset_bottom = 47.0
+theme_override_fonts/font = ExtResource("4_oa6u6")
+text = "Créditos"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Fechar" type="TextureButton" parent="."]
+offset_left = 264.0
+offset_top = 312.0
+offset_right = 379.0
+offset_bottom = 341.0
+texture_normal = SubResource("AtlasTexture_4ik24")
+texture_pressed = SubResource("AtlasTexture_vb76c")
+texture_hover = SubResource("AtlasTexture_sfus6")
+
+[node name="Label" type="Label" parent="Fechar"]
+layout_mode = 0
+offset_top = 3.0
+offset_right = 115.0
+offset_bottom = 27.0
+theme_override_fonts/font = ExtResource("4_oa6u6")
+text = "Fechar"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Fechar" to="." method="_on_back_pressed"]

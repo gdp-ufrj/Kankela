@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dla6lljlmctmb"]
+[gd_scene load_steps=18 format=3 uid="uid://dla6lljlmctmb"]
 
 [ext_resource type="Script" uid="uid://c3vyfg6uwsg21" path="res://Scripts/title_screen.gd" id="1_klylv"]
 [ext_resource type="Texture2D" uid="uid://i5mn4jl5i4vb" path="res://Assets/Visuals/HUD/SpritesheetUI.png" id="2_4gxqj"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://c7ofx4fuogaot" path="res://Assets/Visuals/HUD/Dialogues Themes/Tiny5-Regular.ttf" id="4_12m1t"]
 [ext_resource type="Texture2D" uid="uid://b440ox2em3xoa" path="res://Assets/Visuals/HUD/logo.png" id="4_twnyg"]
 [ext_resource type="PackedScene" uid="uid://1pajo5yeppm3" path="res://Scenes/Configuracoes.tscn" id="5_55kwv"]
+[ext_resource type="PackedScene" uid="uid://b5w2rs7n0fldm" path="res://Scenes/Créditos.tscn" id="7_6vd4x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_twnyg"]
 atlas = ExtResource("2_4gxqj")
@@ -119,7 +120,7 @@ theme_override_fonts/font = ExtResource("4_12m1t")
 text = "Configurações"
 horizontal_alignment = 1
 
-[node name="Quit" type="TextureButton" parent="."]
+[node name="Credits" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -130,6 +131,32 @@ offset_left = -60.0
 offset_top = 80.0
 offset_right = 60.0
 offset_bottom = 111.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_4gxqj")
+texture_pressed = SubResource("AtlasTexture_sqelc")
+texture_hover = SubResource("AtlasTexture_w5sh6")
+
+[node name="Label" type="Label" parent="Credits"]
+layout_mode = 0
+offset_top = 3.0
+offset_right = 115.0
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("4_12m1t")
+text = "Créditos"
+horizontal_alignment = 1
+
+[node name="Quit" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = 120.0
+offset_right = 60.0
+offset_bottom = 151.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = SubResource("AtlasTexture_4gxqj")
@@ -157,6 +184,15 @@ offset_top = -180.0
 offset_right = -320.0
 offset_bottom = -180.0
 
+[node name="Créditos" parent="." instance=ExtResource("7_6vd4x")]
+visible = false
+layout_mode = 1
+offset_left = -320.0
+offset_top = -180.0
+offset_right = -320.0
+offset_bottom = -180.0
+
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
