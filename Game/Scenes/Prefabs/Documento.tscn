@@ -1,9 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://bx47i5ifcfg73"]
+[gd_scene load_steps=8 format=3 uid="uid://bx47i5ifcfg73"]
 
 [ext_resource type="Script" uid="uid://cjfyg1svnpj0r" path="res://Scripts/Documento.gd" id="1_f3ykg"]
 [ext_resource type="Texture2D" uid="uid://cj3p8hioadgqt" path="res://Assets/Visuals/Sprites/exemplos/folha-poema.png" id="1_ogyqe"]
 [ext_resource type="Texture2D" uid="uid://cpeuj7ihl43oq" path="res://Assets/Visuals/Sprites/individual/papel_1.png" id="2_aunrs"]
+[ext_resource type="Shader" uid="uid://bp0oy4iyg7wrs" path="res://Shaders/pause.gdshader" id="2_y7ew3"]
 [ext_resource type="PackedScene" uid="uid://c2vsibalraxb0" path="res://Scenes/Prefabs/ObjetoSecreto.tscn" id="3_30w5n"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cqoe8"]
+shader = ExtResource("2_y7ew3")
+shader_parameter/amount = 3.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aunrs"]
 size = Vector2(12, 10)
@@ -13,14 +18,22 @@ z_index = 1
 script = ExtResource("1_f3ykg")
 texto_interacao = "Você encontrou uma pista!"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Blur" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_cqoe8")
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_aunrs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_aunrs")
+one_way_collision_margin = 0.0
 
 [node name="Documento" type="Sprite2D" parent="."]
 visible = false

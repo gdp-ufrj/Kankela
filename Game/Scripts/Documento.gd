@@ -1,18 +1,16 @@
 @tool
 class_name Documento extends "res://Scripts/ObjetoInterativo.gd"
 
-var hasInteracted: bool = false
+var isInteracting: bool = false
 
 # Dados para o player poder interagir
 @onready var player = %Player
 
 @onready var documento: Sprite2D = $Documento if has_node("Sprite2D") else null
 @onready var segredos: Node2D = $Segredos
+@onready var blur: ColorRect = $Blur
 @onready var button_pressed: bool = false
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
-
-# som ao colotar o item
-@export var som_coletar: AudioStream
 
 # Texto exibido ao interagir com este objeto
 @export var texto_interacao: String = "Você coletou um item!"
@@ -44,7 +42,6 @@ func _ready() -> void:
 	CollisionShape = collision_shape
 	FormaColisao = forma_colisao
 	PosicaoColisao = posicao_colisao
-	$AudioStreamPlayer.stream = som_coletar
 
 	# Instanciar objetos secretos configurados
 	_criar_objetos_secretos()
@@ -84,9 +81,10 @@ func interact(_player: Node) -> void:
 	# request_interaction.emit(_player)
 	# Define uma variável para indicar se o player está analisando a pista ou não
 	player.interacting = not player.interacting
-	hasInteracted = not hasInteracted
+	isInteracting = not isInteracting
 
 	documento.visible = player.interacting
+	blur.visible = player.interacting
 	segredos.visible = player.interacting
 	player.get_node("IconeInteracao").visible = not player.interacting
 	player.get_node("AreaInteracao").monitoring = not player.get_node("AreaInteracao").monitoring
@@ -96,10 +94,6 @@ func interact(_player: Node) -> void:
 		documento.global_position = player.global_position
 		segredos.global_position = player.global_position
 		self.desativar_delineado()
-
-		#Efeito audio
-		if $AudioStreamPlayer.stream != null:
-			$AudioStreamPlayer.play()
 
 	else:
 		# Emite o sinal de interação
@@ -115,7 +109,7 @@ func interact(_player: Node) -> void:
 
 
 func _input(event):
-	if player.interacting:
+	if player.interacting and isInteracting:
 		# Se o player pressiona "Espaço" enquanto analisa a pista, para de analisar ela
 		if event.is_action_pressed("ui_select") and not event.is_echo():
 			interact(player)
