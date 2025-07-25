@@ -5,6 +5,9 @@ var game_root: Node2D = null
 # Player de áudio para efeitos sonoros
 var audio_player: AudioStreamPlayer = null
 
+#transição de cenário
+@onready var transition: CanvasLayer = get_node("/root/TransicaoLayer")
+
 func setup(root: Node2D) -> void:
 	game_root = root
 	# Cria o AudioStreamPlayer se não existir
@@ -17,18 +20,27 @@ func load_game_scene(path: String) -> void:
 		push_error("GameRoot não configurado!")
 		return
 
+	# Inicia a transição
+	transition.fade_out()
+	await transition.fade_out()
+	# Pequeno delay
+	await get_tree().create_timer(0.5).timeout
+
 	if game_root.get_child_count() > 0:
 		for child in game_root.get_children():
 			child.queue_free()
 
+	
 	# Carrega e instancia nova cena
 	var scene = load(path)
 	var instance = scene.instantiate()
 	game_root.add_child(instance)
 
+	#Faz o fade in após o carregamento
+	transition.fade_in()
+
 # Função para tocar áudio
 func play_audio(audio_path: String, volume_db: float = 0.0) -> void:
-	print("oii")
 	if audio_player == null:
 		push_error("AudioPlayer não está configurado!")
 		return

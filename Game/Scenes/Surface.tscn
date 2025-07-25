@@ -1,12 +1,10 @@
-[gd_scene load_steps=31 format=3 uid="uid://dfmo6jg4usghv"]
+[gd_scene load_steps=18 format=3 uid="uid://dfmo6jg4usghv"]
 
 [ext_resource type="Texture2D" uid="uid://bxonbkkyuocaq" path="res://Assets/Visuals/Sprites/exemplos/Sample.png" id="1_jll27"]
 [ext_resource type="PackedScene" uid="uid://camnftgon0rp" path="res://Scenes/Prefabs/door.tscn" id="2_6t17n"]
 [ext_resource type="PackedScene" uid="uid://v68omfsxr70q" path="res://Scenes/Player.tscn" id="2_jll27"]
 [ext_resource type="PackedScene" uid="uid://becr3kfbneco7" path="res://Scenes/Prefabs/NPC.tscn" id="3_6t17n"]
-[ext_resource type="Texture2D" uid="uid://b6nqunmq8d3mx" path="res://Assets/Visuals/Sprites/exemplos/tile_door.png" id="3_ougk0"]
 [ext_resource type="PackedScene" uid="uid://dfbikeb1245cv" path="res://Scenes/Prefabs/Coletável.tscn" id="4_ougk0"]
-[ext_resource type="Texture2D" uid="uid://bponj0ub2wsqp" path="res://Assets/Visuals/Sprites/exemplos/player_tilesheet.png" id="6_ougk0"]
 [ext_resource type="AudioStream" uid="uid://d1jdpq3l1fgpp" path="res://Assets/Audio/SFX/handleCoins.ogg" id="8_0xxjv"]
 [ext_resource type="PackedScene" uid="uid://bx47i5ifcfg73" path="res://Scenes/Prefabs/Documento.tscn" id="13_mt7aw"]
 [ext_resource type="PackedScene" uid="uid://c2vsibalraxb0" path="res://Scenes/Prefabs/ObjetoSecreto.tscn" id="14_gdppd"]
@@ -20,54 +18,20 @@ size = Vector2(918, 0.001)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ougk0"]
 size = Vector2(80, 59)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ougk0"]
-atlas = ExtResource("6_ougk0")
-region = Rect2(400, 0, 80, 110)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mt7aw"]
 size = Vector2(40, 80)
-
-[sub_resource type="Gradient" id="Gradient_0xxjv"]
-colors = PackedColorArray(0, 0, 1, 1, 0.2, 0.2, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_0xxjv"]
-gradient = SubResource("Gradient_0xxjv")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xxjv"]
 size = Vector2(40, 40)
 
-[sub_resource type="Gradient" id="Gradient_1sihp"]
-colors = PackedColorArray(1, 0, 0, 1, 1, 0.3, 0.3, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_etifk"]
-gradient = SubResource("Gradient_1sihp")
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1sihp"]
 size = Vector2(40, 40)
-
-[sub_resource type="Gradient" id="Gradient_etifk"]
-colors = PackedColorArray(0, 0.8, 0, 1, 0.2, 1, 0.2, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ilqhf"]
-gradient = SubResource("Gradient_etifk")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_etifk"]
 size = Vector2(40, 40)
 
-[sub_resource type="Gradient" id="Gradient_delm8"]
-colors = PackedColorArray(1, 1, 0, 1, 1, 1, 0.3, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_gdppd"]
-gradient = SubResource("Gradient_delm8")
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_delm8"]
 size = Vector2(40, 40)
-
-[sub_resource type="Gradient" id="Gradient_ilqhf"]
-colors = PackedColorArray(0.6, 0, 0.8, 1, 0.8, 0.2, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_71emk"]
-gradient = SubResource("Gradient_ilqhf")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ilqhf"]
 size = Vector2(40, 40)
@@ -111,7 +75,6 @@ shape = SubResource("RectangleShape2D_21xkr")
 [node name="Door" parent="Arena" instance=ExtResource("2_6t17n")]
 position = Vector2(2, 235)
 area = "uid://cgqyy3iep4pev"
-sprite_porta = ExtResource("3_ougk0")
 forma_colisao = SubResource("RectangleShape2D_ougk0")
 posicao_colisao = Vector2(0, -60)
 porta_destrancada = false
@@ -124,62 +87,50 @@ position = Vector2(1, 285)
 [node name="NPC Ex" parent="." instance=ExtResource("3_6t17n")]
 position = Vector2(232, 224)
 nome_npc = "Viajante"
-sprite_npc = SubResource("AtlasTexture_ougk0")
 forma_colisao = SubResource("RectangleShape2D_mt7aw")
 arquivo_dialogo = "uid://citravygd38yc"
 titulo_dialogo = "start"
-tamanho_spritesheet = Vector2(9, 3)
 
 [node name="Coletável Ex" parent="." instance=ExtResource("4_ougk0")]
 position = Vector2(-560, 240)
 texto_interacao = "Você coletou um Cristal Azul!"
-sprite_objeto = SubResource("GradientTexture2D_0xxjv")
 forma_colisao = SubResource("RectangleShape2D_0xxjv")
 item_id = "cristal_azul"
 item_nome = "Cristal Azul"
 item_descricao = "Um cristal azul que emite um brilho suave. Pertence ao viajante da superfície."
-largura_delineado = 10.0
 
 [node name="Coletável Ex2" parent="." instance=ExtResource("4_ougk0")]
 position = Vector2(-584, 200)
 texto_interacao = "Você coletou um Cristal Vermelho!"
-sprite_objeto = SubResource("GradientTexture2D_etifk")
 forma_colisao = SubResource("RectangleShape2D_1sihp")
 item_id = "cristal_vermelho"
 item_nome = "Cristal Vermelho"
 item_descricao = "Um cristal vermelho com formato peculiar. Pertence ao viajante da superfície."
-largura_delineado = 10.0
 
 [node name="Coletável Ex3" parent="." instance=ExtResource("4_ougk0")]
 position = Vector2(-584, 152)
 texto_interacao = "Você coletou um Cristal Verde!"
-sprite_objeto = SubResource("GradientTexture2D_ilqhf")
 forma_colisao = SubResource("RectangleShape2D_etifk")
 item_id = "cristal_verde"
 item_nome = "Cristal Verde"
 item_descricao = "Um cristal verde cintilante. Pertence ao viajante da superfície."
-largura_delineado = 10.0
 
 [node name="Coletável Ex4" parent="." instance=ExtResource("4_ougk0")]
 position = Vector2(-520, 224)
 texto_interacao = "Você coletou um Cristal Amarelo!"
-sprite_objeto = SubResource("GradientTexture2D_gdppd")
 forma_colisao = SubResource("RectangleShape2D_delm8")
 item_id = "cristal_amarelo"
 item_nome = "Cristal Amarelo"
 item_descricao = "Um cristal amarelo reluzente. Pertence ao viajante da superfície."
-largura_delineado = 10.0
 
 [node name="Coletável Ex5" parent="." instance=ExtResource("4_ougk0")]
 position = Vector2(-152, 280)
 texto_interacao = "Você coletou um Cristal Roxo!"
 som_coletar = ExtResource("8_0xxjv")
-sprite_objeto = SubResource("GradientTexture2D_71emk")
 forma_colisao = SubResource("RectangleShape2D_ilqhf")
 item_id = "cristal_roxo"
 item_nome = "Cristal Roxo"
 item_descricao = "Um cristal roxo com formato estranho. Pertence ao viajante da superfície."
-largura_delineado = 10.0
 
 [node name="Documento" parent="." instance=ExtResource("13_mt7aw")]
 position = Vector2(0, 392)

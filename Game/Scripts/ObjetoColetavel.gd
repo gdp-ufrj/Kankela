@@ -1,6 +1,8 @@
 @tool
 class_name ObjetoColetavel extends "res://Scripts/ObjetoInterativo.gd"
 
+@export var sprite_objeto: Texture2D # Imagem do objeto no cenário
+
 # Texto exibido ao interagir com este objeto
 @export var texto_interacao: String = "Você coletou um item!"
 var hasInteracted: bool = false
@@ -21,6 +23,7 @@ var hasInteracted: bool = false
 var quest_manager = Engine.get_singleton("QuestManager")
 
 func _ready() -> void:
+	if sprite_objeto: sprite_texture = sprite_objeto
 	CollisionShape = collision_shape
 	FormaColisao = forma_colisao
 	PosicaoColisao = posicao_colisao

@@ -1,0 +1,20 @@
+# Definição dos personagens para que o Dialogue Manager possa associar cores ou nomes customizados se necessário.
+character "Aprendiz" color="#6dbbe5"
+character "Maga" color="#55e06f"
+
+~ start
+Maga: Alô, Alô, testando, 123
+Maga: Tá me ouvindo?
+
+Aprendiz: Sim...? Você tá falando dentro da minha cabeça? Você consegue escutar os meus pensamentos? VOCÊ FAZ ISSO O TEMPO TODO?
+
+Maga: Não liga muito pra isso não.
+Maga: É o seguinte: O que você precisa fazer aí é acender as luzes pra dar um susto nesse beiçudão que já trabalhou comigo
+Maga: E por saber uns segredinhos ele acha que pode me chantagear, acho que ele esqueceu de quem ele tá mexendo.
+Maga: Mas enfim, tudo o que você precisa fazer aí é dar uns jeito de acender essas luzes pra dar um sustinho nele que só gosta de ficar no escuro.
+Maga: Dá um jeito de acender todas as luzes ao mesmo tempo. Ai tu encontra a chave, e mete o pé daí.
+
+Mesmo sem responder, o beiçudão escuta a aprendiz
+Beiçudão: Ai que merda! Sei que tem alguém aí e eu vou me levantar! Ninguém atrapalha meu sono de beleza!
+
+=> END

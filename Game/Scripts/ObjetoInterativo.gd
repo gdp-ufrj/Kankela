@@ -13,7 +13,7 @@ var _delineado_ativo: bool = false
 
 # Exportando sprite
 @onready var sprite: Sprite2D = $Sprite2D if has_node("Sprite2D") else null
-@export var sprite_texture: Texture2D:
+var sprite_texture: Texture2D:
 	set(nova_textura):
 		sprite_texture = nova_textura
 		_update_sprite_texture()
@@ -39,7 +39,7 @@ func _update_sprite_texture():
 	# Verificamos se o nó já está na árvore de cena e se o filho "Sprite2D" existe.
 	if is_inside_tree() and has_node("Sprite2D"):
 		var sprite_node = get_node("Sprite2D")
-		sprite_node.texture = sprite_texture
+		if sprite_texture: sprite_node.texture = sprite_texture
 		
 		# Força o editor a redesenhar. Às vezes é necessário.
 		if sprite_node:

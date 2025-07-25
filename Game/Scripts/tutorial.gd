@@ -5,7 +5,7 @@ extends Node2D
 
 func _ready():
 	# Inicia a cutscene inicial
-	%Player.start_cutscene(preload("res://Dialogues/Start.dialogue"))
+	%Player.start_cutscene(preload("res://Dialogues/tutorial.dialogue"))
 	
 	# Iniciando a missão do tutorial
 	QuestManager.iniciar_missao("coletar_fusiveis")

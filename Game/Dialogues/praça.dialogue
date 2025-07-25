@@ -37,8 +37,7 @@ Maga: Paz e amor, queridos! Sobre o que vocês estavam falando?
 
 Natália: Ela está em crise existencial. Não sabe quem ela é, nem mesmo seu nome.
 
-Maga: Óbvio que matar, roubar, estuprar e destruir o que não é seu
-Maga: já garante uma passagem direto pra cá
+Maga: Óbvio que matar, roubar, estuprar e destruir o que não é seu já garante uma passagem direto pra cá
 Maga: mas vocês esquecem que a mentira é tão grave quanto. A maior parte tá aqui por isso.
 
 Aprendiz: O senhor com certeza sabe quando estou mentindo ou não, meu senhor! Pode conferir.
@@ -54,6 +53,14 @@ Maga: Tá. Agora acredito.
 do SceneManager.play_audio("res://Assets/Audio/doorOpen_2.ogg")
 
 Maga: Foi mal meus amores, mas precisa ir embora.
-Maga: Você ai, esquecida. Vai no casarão e me liga.
+Maga: Você ai, esquecida. Você vem comigo.
+
+=> END
+
+~ finale
+
+Geraldo: ...
+Natália: ...
+Natália: eita.
 
 => END

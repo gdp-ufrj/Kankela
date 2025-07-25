@@ -1,15 +1,14 @@
-[gd_scene load_steps=33 format=3 uid="uid://cgmng2iidaame"]
+[gd_scene load_steps=30 format=3 uid="uid://cgmng2iidaame"]
 
 [ext_resource type="Script" uid="uid://dfldsq546qti" path="res://Scripts/tutorial.gd" id="1_sgy12"]
 [ext_resource type="Texture2D" uid="uid://bl6ncpn10kknl" path="res://Assets/Visuals/Scenarios/Sala-Tutorial.png" id="2_sgy12"]
 [ext_resource type="PackedScene" uid="uid://camnftgon0rp" path="res://Scenes/Prefabs/door.tscn" id="2_vv0ms"]
 [ext_resource type="PackedScene" uid="uid://v68omfsxr70q" path="res://Scenes/Player.tscn" id="4_dlght"]
-[ext_resource type="PackedScene" uid="uid://becr3kfbneco7" path="res://Scenes/Prefabs/NPC.tscn" id="5_8i65c"]
 [ext_resource type="PackedScene" uid="uid://dfbikeb1245cv" path="res://Scenes/Prefabs/Coletável.tscn" id="7_sgy12"]
 [ext_resource type="AudioStream" uid="uid://d1jdpq3l1fgpp" path="res://Assets/Audio/SFX/handleCoins.ogg" id="8_m35rq"]
 [ext_resource type="PackedScene" uid="uid://dfkajxwjd3px5" path="res://Scenes/Prefabs/caixa_de_luz.tscn" id="8_sgy12"]
-[ext_resource type="Texture2D" uid="uid://dt8q30ck62axd" path="res://Assets/Visuals/Scenarios/luminária_apagada.png" id="9_8i65c"]
 [ext_resource type="Texture2D" uid="uid://drcg2t0oeinav" path="res://Assets/Visuals/Scenarios/Sala-Tutorial-Objetos.png" id="9_sgy12"]
+[ext_resource type="PackedScene" uid="uid://be21ietsuo8oy" path="res://Scenes/Personagens/Beiçudão.tscn" id="11_8i65c"]
 [ext_resource type="PackedScene" uid="uid://brorihu3te6dt" path="res://Scenes/Prefabs/lampada.tscn" id="12_fx2vl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5gw1s"]
@@ -76,14 +75,8 @@ region = Rect2(36, 29, 21, 26)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyml5"]
 size = Vector2(2, 7)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nrx0i"]
-atlas = ExtResource("9_sgy12")
-region = Rect2(322, 63, 24, 32)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mqud2"]
 size = Vector2(40, 40)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sswaw"]
 
 [node name="Tutorial" type="Node2D"]
 script = ExtResource("1_sgy12")
@@ -213,24 +206,20 @@ item_descricao = "Um fusível de cor preta. Pode ser útil para ligar alguma lâ
 position = Vector2(168, -96)
 item_necessario = "fusivel"
 consumir_fusivel = true
-sprite_texture = SubResource("AtlasTexture_nrx0i")
 
 [node name="Lampada1" parent="." instance=ExtResource("12_fx2vl")]
 position = Vector2(-168, -72)
 scale = Vector2(0.3, 0.3)
-sprite_texture = ExtResource("9_8i65c")
 
 [node name="Lampada2" parent="." instance=ExtResource("12_fx2vl")]
 position = Vector2(-136, -72)
 scale = Vector2(0.3, 0.3)
 lampada_index = 1
-sprite_texture = ExtResource("9_8i65c")
 
 [node name="Lampada3" parent="." instance=ExtResource("12_fx2vl")]
 position = Vector2(-104, -72)
 scale = Vector2(0.3, 0.3)
 lampada_index = 2
-sprite_texture = ExtResource("9_8i65c")
 
 [node name="Chave" parent="." instance=ExtResource("7_sgy12")]
 visible = false
@@ -245,9 +234,5 @@ item_descricao = "Uma chave gasta e enferrujada."
 [node name="Player" parent="." instance=ExtResource("4_dlght")]
 unique_name_in_owner = true
 
-[node name="NPC Ex" parent="." instance=ExtResource("5_8i65c")]
-position = Vector2(-128, 48)
-nome_npc = "Beiçudo adormecido"
-forma_colisao = SubResource("RectangleShape2D_sswaw")
-arquivo_dialogo = "uid://ea7gvi2iqihc"
-titulo_dialogo = "start"
+[node name="Beiçudão" parent="." instance=ExtResource("11_8i65c")]
+position = Vector2(-160, 56)

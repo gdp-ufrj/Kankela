@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://mu05u5ygxoyu"
+path="res://.godot/imported/sala_do_maga.dialogue-8731b1a10f5bdd5d6b1528ecc2bdf3b5.tres"
+
+[deps]
+
+source_file="res://Dialogues/sala_do_maga.dialogue"
+dest_files=["res://.godot/imported/sala_do_maga.dialogue-8731b1a10f5bdd5d6b1528ecc2bdf3b5.tres"]
+
+[params]
+
+defaults=true

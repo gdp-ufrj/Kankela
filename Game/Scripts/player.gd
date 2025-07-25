@@ -23,7 +23,7 @@ func get_idle_animation() -> String:
 # Variáveis para controle de cutscenes avançadas
 var is_moving_to_position: bool = false
 var target_position: Vector2
-var cutscene_movement_speed: float = 200.0
+var cutscene_movement_speed: float = 50.0
 var cutscene_tween: Tween
 
 # Referência à tela, controlador e sinal da lupa
@@ -231,7 +231,7 @@ func start_cutscene_from_string(text: String, title: String = "") -> void:
 
 
 # Método para mover o player para uma posição específica durante cutscenes
-func move_player_to_position(target_pos: Vector2) -> void:
+func move_player_to_position(target_pos: Vector2):
 	if cutscene_tween:
 		cutscene_tween.kill()
 	

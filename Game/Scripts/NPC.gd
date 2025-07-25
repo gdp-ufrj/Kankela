@@ -3,6 +3,8 @@ class_name NPC extends "res://Scripts/ObjetoInterativo.gd"
 
 # Nome do NPC
 @export var nome_npc: String = "NPC"
+@export var sprite_npc: Texture2D # Imagem do objeto no cenário
+
 # Área de colisão do NPC:
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 @export var forma_colisao: Shape2D
@@ -19,6 +21,7 @@ var interaction_debounce: float = 0.05
 
 func _ready() -> void:
 	$Label.text = nome_npc
+	if sprite_npc: sprite_texture = sprite_npc
 	CollisionShape = collision_shape
 	FormaColisao = forma_colisao
 	PosicaoColisao = posicao_colisao

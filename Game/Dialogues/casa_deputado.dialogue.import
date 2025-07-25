@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://0yi8y8bsl1yv"
+path="res://.godot/imported/casa_deputado.dialogue-e099f2aa5aa78b127a93bfcdd99d6e71.tres"
+
+[deps]
+
+source_file="res://Dialogues/casa_deputado.dialogue"
+dest_files=["res://.godot/imported/casa_deputado.dialogue-e099f2aa5aa78b127a93bfcdd99d6e71.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,44 @@
+# Definição dos personagens para que o Dialogue Manager possa associar cores ou nomes customizados se necessário.
+character "Aprendiz" color="#6dbbe5"
+character "Maga" color="#55e06f"
+
+~ start
+Aprendiz: Oh poderoso Maga! Todos saudemos…
+
+# Maga interrompe a aprendiz.
+Maga: Não! Não! Não! Senta ai.
+
+Aprendiz: Claro.
+
+=> END
+
+~ conversa
+Maga: Então, você chegou aqui qual dia?
+
+Aprendiz: 24 de janeiro, foi no dia do aniversário do Geraldo, dessa informação eu consigo lembrar.
+
+# Maga digita no seu computador
+do SceneManager.play_audio("res://Assets/Audio/doorOpen_2.ogg")
+Maga: ...
+Maga: Tenho tudo aqui.
+
+#do set_character_emotion("aprendiz", "animada")
+Aprendiz: AI QUE BOM! Tudo o que…
+
+Maga: Calma, bebê. Precisamos conversar sobre isso. Não posso te dar essas informações assim, sabe?
+
+#do set_character_emotion("aprendiz", "confusa")
+Aprendiz: Ué? Mas então porque o senhor me chamou aqui?
+
+Maga: Para saber se você tá afim de fazer um troca-troca. Você vai descobrir quem era se fizer alguns favores pra mim. Você topa?
+
+Aprendiz: Sim, mas que favores seri…
+
+Maga estala os dedos e a aprendiz desaparece.
+# Maga estala os dedos e aprendiz some com um "puf"
+do SceneManager.play_audio("res://Assets/Audio/doorOpen_2.ogg")
+=> END
+
+~ finale
+Maga: Vamos ver aonde isso vai dar.
+=> END
