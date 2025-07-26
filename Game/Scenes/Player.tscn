@@ -210,7 +210,7 @@ region = Rect2(15, 201, 52, 13)
 script = ExtResource("1_k4ujt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 16)
+position = Vector2(0, 15)
 shape = SubResource("RectangleShape2D_ug7d6")
 
 [node name="Camera2D" type="Camera2D" parent="."]
