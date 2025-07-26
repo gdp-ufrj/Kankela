@@ -6,7 +6,8 @@ var isInteracting: bool = false
 # Dados para o player poder interagir
 @onready var player = %Player
 
-@onready var keypad: Sprite2D = $Keypad if has_node("Sprite2D") else null
+#@onready var keypad: Sprite2D = $Keypad if has_node("Sprite2D") else null
+@onready var keypad = $Keypad2
 @onready var black: ColorRect = $Black
 @onready var button_pressed: bool = false
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
