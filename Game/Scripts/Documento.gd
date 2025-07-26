@@ -8,7 +8,7 @@ var isInteracting: bool = false
 
 @onready var documento: Sprite2D = $Documento if has_node("Sprite2D") else null
 @onready var segredos: Node2D = $Segredos
-@onready var blur: ColorRect = $Blur
+@onready var black: ColorRect = $Black
 @onready var button_pressed: bool = false
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 
@@ -84,8 +84,9 @@ func interact(_player: Node) -> void:
 	isInteracting = not isInteracting
 
 	documento.visible = player.interacting
-	blur.visible = player.interacting
+	black.visible = player.interacting
 	segredos.visible = player.interacting
+
 	player.get_node("IconeInteracao").visible = not player.interacting
 	player.get_node("AreaInteracao").monitoring = not player.get_node("AreaInteracao").monitoring
 
