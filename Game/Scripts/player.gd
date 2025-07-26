@@ -23,7 +23,6 @@ func get_idle_animation() -> String:
 # Variáveis para controle de cutscenes avançadas
 var is_moving_to_position: bool = false
 var target_position: Vector2
-var cutscene_movement_speed: float = 50.0
 var cutscene_tween: Tween
 
 # Referência à tela, controlador e sinal da lupa
@@ -195,16 +194,11 @@ func _physics_process(_delta: float) -> void:
 		move_and_slide()
 
 
-func start_cutscene(dialogue_resource: DialogueResource, title: String = "", move_to_position: Vector2 = Vector2.ZERO, new_scene_path: String = "", movement_speed: float = 0.0) -> void:
+func start_cutscene(dialogue_resource: DialogueResource, title: String = "", move_to_position: Vector2 = Vector2.ZERO, new_scene_path: String = "", movement_speed: float = 50.0) -> void:
 	cutscene_mode = true
-	
-	# Define a velocidade de movimento da cutscene se especificada
-	if movement_speed > 0:
-		cutscene_movement_speed = movement_speed
-	
 	# Move o player para a posição especificada (se fornecida)
 	if move_to_position != Vector2.ZERO:
-		await move_player_to_position(move_to_position)
+		await move_player_to_position(move_to_position, movement_speed)
 	
 	# Exibe o diálogo (se fornecido)
 	if dialogue_resource != null:
@@ -225,7 +219,7 @@ func start_cutscene_from_string(text: String, title: String = "") -> void:
 
 
 # Método para mover o player para uma posição específica durante cutscenes
-func move_player_to_position(target_pos: Vector2):
+func move_player_to_position(target_pos: Vector2, movement_speed: float = 50.0):
 	if cutscene_tween:
 		cutscene_tween.kill()
 	
@@ -260,7 +254,7 @@ func move_player_to_position(target_pos: Vector2):
 	
 	# Calcula o tempo baseado na distância e velocidade
 	var distance = global_position.distance_to(target_position)
-	var duration = distance / cutscene_movement_speed
+	var duration = distance / movement_speed
 	
 	# Move o player usando Tween
 	cutscene_tween.tween_property(self, "global_position", target_position, duration)

@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://o0hfbfl35wn2"]
+
+[ext_resource type="Script" uid="uid://dbuftwgh6yb0f" path="res://Scripts/Cofre.gd" id="1_fqjtv"]
+[ext_resource type="Texture2D" uid="uid://iekne7ivydp0" path="res://Assets/Visuals/Sprites/individual/cofre.png" id="2_31644"]
+[ext_resource type="Texture2D" uid="uid://cj3p8hioadgqt" path="res://Assets/Visuals/Sprites/exemplos/folha-poema.png" id="3_sm11o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fqjtv"]
+size = Vector2(28, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aunrs"]
+size = Vector2(28, 31)
+
+[node name="Cofre" type="StaticBody2D"]
+script = ExtResource("1_fqjtv")
+texto_interacao = "Você encontrou uma pista!"
+sprite_objeto = ExtResource("2_31644")
+forma_colisao = SubResource("RectangleShape2D_fqjtv")
+
+[node name="Black" type="ColorRect" parent="."]
+visible = false
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+color = Color(0, 0, 0, 0.478431)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_31644")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_aunrs")
+
+[node name="Keypad" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_sm11o")

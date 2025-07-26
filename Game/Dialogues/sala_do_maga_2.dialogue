@@ -6,24 +6,19 @@ character "Maga" color="#55e06f"
 Aprendiz: Oh poderoso Maga! Todos saudemos…
 
 # Maga interrompe a aprendiz.
-Maga: Não! Não! Não! Senta ai.
-
-Aprendiz: Claro.
+Maga: Não precisa! Sente-se, amore.
 
 => END
 
 ~ conversa
-Maga: Então, você chegou aqui qual dia?
+Maga: Primeiro: Queria te parabenizar pela execução da tarefa que eu te pedi, você superou minhas expectativas.
 
-Aprendiz: 24 de janeiro, foi no dia do aniversário do Geraldo, dessa informação eu consigo lembrar.
+Aprendiz: Muito obrigada, mestre.
 
-# Maga digita no seu computador
-do SceneManager.play_audio("res://Assets/Audio/SFX/handleCoins.ogg")
-Maga: ...
-Maga: Tenho tudo aqui.
+Maga: Segundo: Não é pra ninguém ficar sabendo de nada o que acontece entre a gente.
+Maga: Por isso te interrompi na hora que você tava falando sobre.
 
-#do set_character_emotion("aprendiz", "animada")
-Aprendiz: AI QUE BOM! Tudo o que…
+Aprendiz: Peço desculpas, eu percebi depois que o senhor não queria.
 
 Maga: Calma, bebê. Precisamos conversar sobre isso. Não posso te dar essas informações assim, sabe?
 

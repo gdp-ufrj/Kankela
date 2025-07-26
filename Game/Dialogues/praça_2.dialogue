@@ -1,0 +1,58 @@
+# Definição dos personagens para que o Dialogue Manager possa associar cores ou nomes customizados se necessário.
+character "Geraldo" color="#e3a13f"
+character "Aprendiz" color="#6dbbe5"
+character "Valdiléia" color="#6dbbe5"
+character "Natália" color="#8b55e0"
+character "Maga" color="#55e06f"
+character "Todos" color="#cccccc"
+
+
+~ prep
+
+Geraldo: ...
+Natália: ...
+
+=> END
+
+~ start
+
+Natália: Amiga, você voltou!
+Geraldo: Tava demorando hein! Aonde você foi?
+Aprendiz: Eu...
+
+=> END
+
+~ maga_entrance
+
+# Maga entra em cena.
+# Todos reagem à chegada de Maga. Ação de saudar.
+Todos: Oh, poderoso Maga! Todos saudemos o Todo Poderoso Maga!
+
+Maga: E aí meus trutas! Parabéns Valdiléia!
+
+Valdiléia: Valdiléia, então esse é o meu nome...
+
+Geraldo: Meu Deus, te maltrataram com esse nome hein..
+
+Natália: Pois é, que nome.
+Natália: Mas como você descobriu?
+
+Valdiléia: Fiz um favor pro Maga. Ele pediu que-
+
+Maga: Pra ela limpar a minha sala, já que eu não tô tendo tempo pra nada.
+Valdiléia: ...
+
+Valdiléia: Mas Maga, eu morava aonde? Quantos anos eu tinha? Por que eu não sei de nada?
+Maga: Mais respostas exigem mais favores. Vamos resolver essa parada.
+
+=> END
+
+~ finale
+
+Geraldo: ...
+Natália: ...
+Geraldo: Eles vivem deixando a gente de lado, né?
+Natália: Pois é, complicado... Mas a gente marcou com a Simone de fazer nossas unhas daqui a pouco, então vamos indo.
+Geraldo: Tinha esquecido disso, vamos.
+
+=> END

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cl5o7f0nj4i14"
+path="res://.godot/imported/praça_2.dialogue-a7bcf3ddd85ab5b2c8bbbc003ad7748a.tres"
+
+[deps]
+
+source_file="res://Dialogues/praça_2.dialogue"
+dest_files=["res://.godot/imported/praça_2.dialogue-a7bcf3ddd85ab5b2c8bbbc003ad7748a.tres"]
+
+[params]
+
+defaults=true
