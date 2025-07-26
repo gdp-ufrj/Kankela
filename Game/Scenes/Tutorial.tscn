@@ -202,7 +202,7 @@ position = Vector2(-96, -120)
 texture = SubResource("AtlasTexture_amhwl")
 
 [node name="Fusivel" parent="." instance=ExtResource("7_sgy12")]
-position = Vector2(130, -63)
+position = Vector2(87, -63)
 scale = Vector2(1.75, 1.75)
 sprite_objeto = SubResource("AtlasTexture_dlght")
 texto_interacao = "Você coletou um Fusível Preto!!"
@@ -233,10 +233,11 @@ scale = Vector2(0.3, 0.3)
 lampada_index = 2
 
 [node name="Chave" parent="." instance=ExtResource("7_sgy12")]
+visible = false
 position = Vector2(-168, -8)
 scale = Vector2(0.15, 0.15)
 sprite_objeto = ExtResource("9_8i65c")
-texto_interacao = "Você coletou um Cristal Roxo!"
+texto_interacao = "Você coletou a chave!"
 som_coletar = ExtResource("8_m35rq")
 forma_colisao = SubResource("RectangleShape2D_mqud2")
 item_id = "chave_tutorial"
