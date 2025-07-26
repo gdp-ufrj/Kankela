@@ -125,7 +125,7 @@ shape = SubResource("RectangleShape2D_brn58")
 
 [node name="Door" parent="Arena" instance=ExtResource("2_vv0ms")]
 position = Vector2(138, 105)
-area = "uid://dfmo6jg4usghv"
+area = "uid://cspwuy40uyls4"
 porta_destrancada = false
 item_necessario = "chave_tutorial"
 consumir_item = true

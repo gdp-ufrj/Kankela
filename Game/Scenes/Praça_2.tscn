@@ -1,0 +1,37 @@
+[gd_scene load_steps=8 format=3 uid="uid://cspwuy40uyls4"]
+
+[ext_resource type="Script" uid="uid://wpro3hqoylnq" path="res://Scripts/praça_2.gd" id="1_hhuvu"]
+[ext_resource type="Texture2D" uid="uid://cw4utswqfpb7w" path="res://Assets/Visuals/Scenarios/Cenario-cidade.png" id="2_3har2"]
+[ext_resource type="PackedScene" uid="uid://bngd53hxyswut" path="res://Scenes/Personagens/Geraldo.tscn" id="3_ayaws"]
+[ext_resource type="Script" uid="uid://bqdfu0ty0hrm" path="res://Scripts/NPC_cutscene.gd" id="4_jfsov"]
+[ext_resource type="PackedScene" uid="uid://cwreyagl13w2r" path="res://Scenes/Personagens/Natália.tscn" id="5_8hkf7"]
+[ext_resource type="PackedScene" uid="uid://b0r2u5jb61v82" path="res://Scenes/Personagens/Maga.tscn" id="6_biy8r"]
+[ext_resource type="PackedScene" uid="uid://v68omfsxr70q" path="res://Scenes/Player.tscn" id="7_lwbw5"]
+
+[node name="Praça_2" type="Node2D"]
+script = ExtResource("1_hhuvu")
+area = "uid://cyc12gwahvas6"
+
+[node name="Cenario-cidade" type="Sprite2D" parent="."]
+texture = ExtResource("2_3har2")
+
+[node name="Geraldo" parent="." instance=ExtResource("3_ayaws")]
+unique_name_in_owner = true
+position = Vector2(-24, 72)
+script = ExtResource("4_jfsov")
+
+[node name="Natália" parent="." instance=ExtResource("5_8hkf7")]
+unique_name_in_owner = true
+position = Vector2(24, 72)
+script = ExtResource("4_jfsov")
+
+[node name="Maga" parent="." instance=ExtResource("6_biy8r")]
+unique_name_in_owner = true
+visible = false
+position = Vector2(0, 72)
+script = ExtResource("4_jfsov")
+
+[node name="Player" parent="." instance=ExtResource("7_lwbw5")]
+unique_name_in_owner = true
+visible = false
+position = Vector2(0, 104)

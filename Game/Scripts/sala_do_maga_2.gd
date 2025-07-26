@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var player: CharacterBody2D = %Player
 @onready var maga: CharacterBody2D = %Maga
-var arquivo_dialogo: String = "res://Dialogues/sala_do_maga.dialogue"
+var arquivo_dialogo: String = "res://Dialogues/sala_do_maga_2.dialogue"
 @export_file("*.tscn") var area: String
 
 func _ready():

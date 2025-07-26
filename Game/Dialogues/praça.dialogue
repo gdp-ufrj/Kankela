@@ -44,13 +44,13 @@ Aprendiz: O senhor com certeza sabe quando estou mentindo ou não, meu senhor! P
 
 # Maga "escaneia" a alma da aprendiz.
 Maga: Uhm... vou te escanear então.
-do SceneManager.play_audio("res://Assets/Audio/doorOpen_2.ogg")
+do SceneManager.play_audio("res://Assets/Audio/SFX/handleCoins.ogg")
 Maga: ...
 
 Maga: Tá. Agora acredito.
 
 # Maga recebe uma ligação.
-do SceneManager.play_audio("res://Assets/Audio/doorOpen_2.ogg")
+do SceneManager.play_audio("res://Assets/Audio/SFX/handleCoins.ogg")
 
 Maga: Foi mal meus amores, mas precisa ir embora.
 Maga: Você ai, esquecida. Você vem comigo.

@@ -1,0 +1,52 @@
+[gd_scene load_steps=10 format=3 uid="uid://cyc12gwahvas6"]
+
+[ext_resource type="Script" uid="uid://n5jvtp0bky2d" path="res://Scripts/sala_do_maga_2.gd" id="1_bukx1"]
+[ext_resource type="Texture2D" uid="uid://3wv11u3d6pwy" path="res://Assets/Visuals/Scenarios/Background-Quarto-Inicial.png" id="2_kww6u"]
+[ext_resource type="Texture2D" uid="uid://drcg2t0oeinav" path="res://Assets/Visuals/Scenarios/Sala-Tutorial-Objetos.png" id="3_6ajts"]
+[ext_resource type="PackedScene" uid="uid://b0r2u5jb61v82" path="res://Scenes/Personagens/Maga.tscn" id="4_ltyxk"]
+[ext_resource type="PackedScene" uid="uid://v68omfsxr70q" path="res://Scenes/Player.tscn" id="5_65oe8"]
+[ext_resource type="Texture2D" uid="uid://bmeyklcp6ojo2" path="res://Assets/Visuals/Sprites/individual/cadeira_costas.png" id="6_ncfrs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jinu"]
+atlas = ExtResource("3_6ajts")
+region = Rect2(231, 44, 66, 86)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8tba"]
+atlas = ExtResource("3_6ajts")
+region = Rect2(212, 172, 15, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ovegd"]
+atlas = ExtResource("3_6ajts")
+region = Rect2(142, 28, 54, 100)
+
+[node name="SalaDoMaga" type="Node2D"]
+script = ExtResource("1_bukx1")
+area = "uid://ch6kxcm48k8qo"
+
+[node name="Arena" type="Node2D" parent="."]
+
+[node name="Background" type="Sprite2D" parent="Arena"]
+texture = ExtResource("2_kww6u")
+
+[node name="Estante" type="Sprite2D" parent="."]
+position = Vector2(64, -80)
+texture = SubResource("AtlasTexture_2jinu")
+
+[node name="Cadeira" type="Sprite2D" parent="."]
+position = Vector2(0, -24)
+texture = SubResource("AtlasTexture_i8tba")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-88, -88)
+texture = SubResource("AtlasTexture_ovegd")
+
+[node name="Maga" parent="." instance=ExtResource("4_ltyxk")]
+position = Vector2(0, -24)
+
+[node name="Player" parent="." instance=ExtResource("5_65oe8")]
+unique_name_in_owner = true
+position = Vector2(0, 80)
+
+[node name="CadeiraCostas" type="Sprite2D" parent="."]
+position = Vector2(0, 16)
+texture = ExtResource("6_ncfrs")

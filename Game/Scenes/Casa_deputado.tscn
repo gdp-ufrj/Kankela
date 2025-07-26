@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://v68omfsxr70q" path="res://Scenes/Player.tscn" id="2_4du07"]
 [ext_resource type="PackedScene" uid="uid://camnftgon0rp" path="res://Scenes/Prefabs/door.tscn" id="2_albp3"]
 [ext_resource type="PackedScene" uid="uid://bx47i5ifcfg73" path="res://Scenes/Prefabs/Documento.tscn" id="4_3kile"]
+[ext_resource type="PackedScene" uid="uid://o0hfbfl35wn2" path="res://Scenes/Prefabs/Cofre.tscn" id="4_m2h5s"]
 [ext_resource type="Texture2D" uid="uid://cpeuj7ihl43oq" path="res://Assets/Visuals/Sprites/individual/papel_1.png" id="5_wy2or"]
 [ext_resource type="Texture2D" uid="uid://bwpmuiqataafs" path="res://Assets/Visuals/Sprites/individual/papel_4.png" id="6_ejewp"]
 [ext_resource type="Texture2D" uid="uid://blkql1r5nd3h8" path="res://Assets/Visuals/Sprites/individual/papel_2.png" id="7_ij7iw"]
@@ -170,9 +171,6 @@ size = Vector2(16, 31)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dpv1k"]
 size = Vector2(66, 80)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sg7p1"]
-size = Vector2(28, 31)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tngml"]
 size = Vector2(23, 53)
@@ -551,11 +549,8 @@ position = Vector2(224, -298)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cenário/Comodo 3/Estante"]
 shape = SubResource("RectangleShape2D_dpv1k")
 
-[node name="Cofre" type="StaticBody2D" parent="Cenário/Comodo 3"]
+[node name="Cofre3" parent="Cenário/Comodo 3" instance=ExtResource("4_m2h5s")]
 position = Vector2(421, -280)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenário/Comodo 3/Cofre"]
-shape = SubResource("RectangleShape2D_sg7p1")
 
 [node name="Quarto" type="Node2D" parent="Cenário"]
 
