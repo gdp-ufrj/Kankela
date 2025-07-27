@@ -10,10 +10,18 @@ config_version=5
 
 [application]
 
-config/name="PP (25.1)"
+config/name="Kankela"
+config/description="Em outra realidade, a grande maioria das pessoas seguem a doutrina religiosa Ogapismo e acreditam que, por serem pessoas boas, irão para o reino de Theagapos após a morte, enquanto as outras vão apodrecer no submundo.
+Uma mulher, após a morte, está no submundo há um tempo e por falta de experiência não consegue descobrir o porquê de estar ali. Para ajudá-la, seu chefe Maga oferece uma troca: conforme ela atende seus favores, ele a ajuda a recuperar sua memória. Entretanto, não é assim que as coisas acabam funcionando...
+Ajude-a a se lembrar de seu passado e entender os motivos para ter sido condenada ao submundo!"
+config/version="1.0"
 run/main_scene="uid://dipegqkcwbvig"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.27451, 0.0196078, 0.0196078, 1)
+boot_splash/fullsize=false
+boot_splash/image="uid://k2atns5l7kgf"
+config/icon="uid://ceb71qrdww00y"
+boot_splash/minimum_display_time=3000
 
 [autoload]
 
