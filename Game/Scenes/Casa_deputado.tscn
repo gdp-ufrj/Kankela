@@ -1,12 +1,11 @@
-[gd_scene load_steps=70 format=3 uid="uid://ch6kxcm48k8qo"]
+[gd_scene load_steps=69 format=3 uid="uid://ch6kxcm48k8qo"]
 
 [ext_resource type="Script" uid="uid://bhhfgiuasag2w" path="res://Scripts/casa_deputado.gd" id="1_ejewp"]
 [ext_resource type="Texture2D" uid="uid://dxdp8lwopyby4" path="res://Assets/Visuals/Scenarios/Cenario-deputado.png" id="1_fvrg7"]
 [ext_resource type="PackedScene" uid="uid://v68omfsxr70q" path="res://Scenes/Player.tscn" id="2_4du07"]
 [ext_resource type="PackedScene" uid="uid://camnftgon0rp" path="res://Scenes/Prefabs/door.tscn" id="2_albp3"]
 [ext_resource type="PackedScene" uid="uid://bx47i5ifcfg73" path="res://Scenes/Prefabs/Documento.tscn" id="4_3kile"]
-[ext_resource type="PackedScene" path="res://Scenes/Prefabs/Cofre.tscn" id="4_m2h5s"]
-[ext_resource type="PackedScene" uid="uid://cwvpjecjcddwk" path="res://Scenes/Prefabs/keypad.tscn" id="5_m2h5s"]
+[ext_resource type="PackedScene" uid="uid://o0hfbfl35wn2" path="res://Scenes/Prefabs/Cofre.tscn" id="4_m2h5s"]
 [ext_resource type="Texture2D" uid="uid://cpeuj7ihl43oq" path="res://Assets/Visuals/Sprites/individual/papel_1.png" id="5_wy2or"]
 [ext_resource type="Texture2D" uid="uid://bwpmuiqataafs" path="res://Assets/Visuals/Sprites/individual/papel_4.png" id="6_ejewp"]
 [ext_resource type="Texture2D" uid="uid://blkql1r5nd3h8" path="res://Assets/Visuals/Sprites/individual/papel_2.png" id="7_ij7iw"]
@@ -49,8 +48,8 @@ a = Vector2(0, -53)
 b = Vector2(0, 53)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_m2h5s"]
-a = Vector2(-62, 0)
-b = Vector2(62, 0)
+a = Vector2(-60.5, 0)
+b = Vector2(60.5, 0)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_n4xeb"]
 a = Vector2(0, -37)
@@ -85,19 +84,19 @@ a = Vector2(-199, 0)
 b = Vector2(199, 0)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_1ntvx"]
-a = Vector2(0, -81)
+a = Vector2(0, -78.5)
 b = Vector2(0, 81)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_f6dwp"]
-a = Vector2(-36.5, 0)
-b = Vector2(33.5, 0)
+a = Vector2(-33.5, 0)
+b = Vector2(32.5, 0)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_fgkne"]
-a = Vector2(0, -13)
+a = Vector2(0, -11)
 b = Vector2(0, 13)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_34gjc"]
-a = Vector2(-91.5, 0)
+a = Vector2(-88.5, 0)
 b = Vector2(88.5, 0)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_35tjp"]
@@ -122,15 +121,15 @@ b = Vector2(35, 0)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_pa1cb"]
 a = Vector2(0, -31.5)
-b = Vector2(0, 47)
+b = Vector2(0, 45)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_vkero"]
-a = Vector2(-27, 0)
-b = Vector2(29, 0)
+a = Vector2(-24.5, 0)
+b = Vector2(26, 0)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_xc05b"]
 a = Vector2(0, -36)
-b = Vector2(0, 40)
+b = Vector2(0, 37)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_gyrxh"]
 a = Vector2(-66.5, 0)
@@ -396,7 +395,7 @@ position = Vector2(-45, 202)
 shape = SubResource("SegmentShape2D_1ntvx")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Arena/Sala"]
-position = Vector2(-10, 123)
+position = Vector2(-10, 122)
 shape = SubResource("SegmentShape2D_f6dwp")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Arena/Sala"]
@@ -553,18 +552,6 @@ shape = SubResource("RectangleShape2D_dpv1k")
 [node name="Cofre3" parent="Cenário/Comodo 3" instance=ExtResource("4_m2h5s")]
 position = Vector2(421, -280)
 
-[node name="Keypad2" parent="Cenário/Comodo 3/Cofre3" instance=ExtResource("5_m2h5s")]
-visible = false
-anchors_preset = 9
-anchor_right = 0.0
-offset_left = -145.0
-offset_top = -19.0
-offset_right = -45.0
-offset_bottom = 141.0
-grow_horizontal = 1
-senha = "170724"
-tamanho = 6
-
 [node name="Quarto" type="Node2D" parent="Cenário"]
 
 [node name="Mesa" type="StaticBody2D" parent="Cenário/Quarto"]
@@ -699,6 +686,10 @@ sprite_objeto = ExtResource("8_m2h5s")
 position = Vector2(114, -274)
 sprite_objeto = ExtResource("7_ij7iw")
 
+[node name="Documento! 6" parent="Documentos" instance=ExtResource("4_3kile")]
+position = Vector2(-32, 208)
+sprite_objeto = ExtResource("6_ejewp")
+
 [node name="Documento" parent="Documentos" instance=ExtResource("4_3kile")]
 position = Vector2(-435, -185)
 sprite_objeto = ExtResource("7_ij7iw")
@@ -746,6 +737,10 @@ sprite_objeto = ExtResource("5_wy2or")
 [node name="Documento12" parent="Documentos" instance=ExtResource("4_3kile")]
 position = Vector2(255, -249)
 sprite_objeto = ExtResource("8_m2h5s")
+
+[node name="Documento13" parent="Documentos" instance=ExtResource("4_3kile")]
+position = Vector2(112, 248)
+sprite_objeto = ExtResource("7_ij7iw")
 
 [node name="Player" parent="." instance=ExtResource("2_4du07")]
 unique_name_in_owner = true
