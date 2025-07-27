@@ -19,7 +19,7 @@ region = Rect2(212, 172, 15, 32)
 atlas = ExtResource("3_6ajts")
 region = Rect2(142, 28, 54, 100)
 
-[node name="SalaDoMaga" type="Node2D"]
+[node name="SalaDoMaga2" type="Node2D"]
 script = ExtResource("1_bukx1")
 area = "uid://ch6kxcm48k8qo"
 
