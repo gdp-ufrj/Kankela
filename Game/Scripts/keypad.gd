@@ -11,16 +11,16 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func keyPressed(num):
-	if(str(num) == 'c'):
+	if (str(num) == 'c'):
 		label.text = ''
-	elif(str(num) == 'ok'):
+	elif (str(num) == 'ok'):
 		if label.text == senha:
 			label.text = 'ACEITO'
-	elif(len(label.text)<tamanho):
+	elif (len(label.text) < tamanho):
 		label.text += str(num)
 
 

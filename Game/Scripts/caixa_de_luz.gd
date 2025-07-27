@@ -29,19 +29,22 @@ func interact(_player: Node) -> void:
 				if consumir_fusivel:
 					QuestManager.usar_item(item_necessario)
 					QuestManager.completar_missao("coletar_fusiveis")
-					_player.start_cutscene_from_string("Consegui! Agora só preciso acender as luzes.")
-				
+					_player.start_cutscene_from_string("Aprendiz: Consegui! Agora só preciso acender as luzes.")
+
 			else:
 				if Engine.has_singleton("DialogueManager"):
-						_player.start_cutscene_from_string("O quadro elétrico está quebrado. Parece faltar um fusível...")
-						
-						await DialogueManager.dialogue_ended
-						get_tree().create_timer(interaction_debounce).timeout.connect(func(): can_interact = true)
-						ativar_delineado()
-						_player.get_node("IconeInteracao").visible = true
+						_player.start_cutscene_from_string("Aprendiz: O quadro elétrico está quebrado. Parece faltar um fusível...")
 				else:
 					# Caso o Dialogue Manager não esteja disponível, exibe mensagem padrão
 					print("Sistema de diálogo não disponível.")
-		
-		# Emite o sinal de interação
-		interaction_finished.emit(InteractableType.Lamp)
+
+	elif QuestManager.todos_itens[item_necessario].usado:
+		_player.start_cutscene_from_string("Aprendiz: O quadro elétrico já está funcionando.")
+
+	await DialogueManager.dialogue_ended
+	get_tree().create_timer(interaction_debounce).timeout.connect(func(): can_interact = true)
+	ativar_delineado()
+	_player.get_node("IconeInteracao").visible = true
+
+	# Emite o sinal de interação
+	interaction_finished.emit(InteractableType.Lamp)
