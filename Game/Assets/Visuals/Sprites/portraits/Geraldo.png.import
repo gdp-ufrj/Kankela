@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bv41u818rn4b7"
-path="res://.godot/imported/Geraldo.png-db7b6995525208b340d3d0d2f6e8d180.ctex"
+path="res://.godot/imported/geraldo.png-26e0eeac85fd607e954c138c394e4bf6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Visuals/Sprites/portraits/Geraldo.png"
-dest_files=["res://.godot/imported/Geraldo.png-db7b6995525208b340d3d0d2f6e8d180.ctex"]
+source_file="res://Assets/Visuals/Sprites/portraits/geraldo.png"
+dest_files=["res://.godot/imported/geraldo.png-26e0eeac85fd607e954c138c394e4bf6.ctex"]
 
 [params]
 

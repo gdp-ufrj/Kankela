@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://pl8pm4vhwer1"
-path="res://.godot/imported/Pregadora.png-673dd22b0378711dab3938a16f103237.ctex"
+path="res://.godot/imported/pregadora.png-07b8f9ddf3f84c6ecd9f17333e0ebd61.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Visuals/Sprites/portraits/Pregadora.png"
-dest_files=["res://.godot/imported/Pregadora.png-673dd22b0378711dab3938a16f103237.ctex"]
+source_file="res://Assets/Visuals/Sprites/portraits/pregadora.png"
+dest_files=["res://.godot/imported/pregadora.png-07b8f9ddf3f84c6ecd9f17333e0ebd61.ctex"]
 
 [params]
 
