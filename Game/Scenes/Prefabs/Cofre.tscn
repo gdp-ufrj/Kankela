@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dbuftwgh6yb0f" path="res://Scripts/Cofre.gd" id="1_fqjtv"]
 [ext_resource type="Texture2D" uid="uid://iekne7ivydp0" path="res://Assets/Visuals/Sprites/individual/cofre.png" id="2_31644"]
-[ext_resource type="Texture2D" uid="uid://cj3p8hioadgqt" path="res://Assets/Visuals/Sprites/exemplos/folha-poema.png" id="3_sm11o"]
+[ext_resource type="PackedScene" uid="uid://c4bt1r828ibmv" path="res://Scenes/Prefabs/keypad.tscn" id="4_31644"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fqjtv"]
 size = Vector2(28, 31)
@@ -11,6 +11,7 @@ size = Vector2(28, 31)
 size = Vector2(28, 31)
 
 [node name="Cofre" type="StaticBody2D"]
+z_index = 1
 script = ExtResource("1_fqjtv")
 texto_interacao = "Você encontrou uma pista!"
 sprite_objeto = ExtResource("2_31644")
@@ -25,11 +26,13 @@ offset_bottom = 324.0
 color = Color(0, 0, 0, 0.478431)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
 texture = ExtResource("2_31644")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_aunrs")
 
-[node name="Keypad" type="Sprite2D" parent="."]
+[node name="Keypad" parent="." instance=ExtResource("4_31644")]
 visible = false
-texture = ExtResource("3_sm11o")
+senha = "170724"
+tamanho = 6
