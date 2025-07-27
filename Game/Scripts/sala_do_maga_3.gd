@@ -28,7 +28,7 @@ func _ready():
 		tween_in.tween_property(black, "modulate:a", 1.0, 0) # 1 segundo de fade in
 		await tween_in.finished
 		# Maga estala os dedos
-		SceneManager.play_audio("res://Assets/Audio/SFX/estalar")
+		SceneManager.play_audio("res://Assets/Audio/SFX/estalar.ogg")
 		await get_tree().create_timer(2).timeout
 
 		player.start_cutscene(load(arquivo_dialogo), "revelation")
@@ -51,7 +51,7 @@ func _ready():
 		tween_final.tween_property(black, "modulate:a", 1.0, 0) # 1 segundo de fade in
 		await tween_final.finished
 		# Maga estala os dedos
-		SceneManager.play_audio("res://Assets/Audio/SFX/estalar")
+		SceneManager.play_audio("res://Assets/Audio/SFX/estalar_epico.ogg")
 		await get_tree().create_timer(5).timeout
 		
 		player.change_scene_to("res://Scenes/title_screen.tscn")

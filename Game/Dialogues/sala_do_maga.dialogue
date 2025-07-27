@@ -18,9 +18,8 @@ Maga: Então, você chegou aqui qual dia?
 Aprendiz: 24 de janeiro, foi no dia do aniversário do Geraldo, dessa informação eu consigo lembrar.
 
 # Maga digita no seu computador
-do SceneManager.play_audio("res://Assets/Audio/SFX/handleCoins.ogg")
-Maga: ...
-Maga: Tenho tudo aqui.
+do SceneManager.play_audio("res://Assets/Audio/SFX/teclado.ogg")
+Maga: ...[wait=5.0]Tenho tudo aqui.
 
 #do set_character_emotion("aprendiz", "animada")
 Aprendiz: AI QUE BOM! Tudo o que…

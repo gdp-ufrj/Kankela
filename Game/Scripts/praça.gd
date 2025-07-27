@@ -18,7 +18,7 @@ func _ready():
 		await DialogueManager.dialogue_ended
 
 		maga.visible = true
-		SceneManager.play_audio("")
+		SceneManager.play_audio("res://Assets/Audio/SFX/puf.ogg")
 		geraldo.move_to_position(Vector2(-24, 72), 300)
 		natalia.move_to_position(Vector2(24, 72), 300)
 
@@ -27,6 +27,8 @@ func _ready():
 
 		maga.visible = false
 		player.visible = false
+		SceneManager.play_audio("res://Assets/Audio/SFX/puf.ogg")
 
 		player.start_cutscene(load(arquivo_dialogo), "finale")
+		await DialogueManager.dialogue_ended
 		player.change_scene_to(area)

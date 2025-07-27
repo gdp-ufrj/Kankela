@@ -16,14 +16,14 @@ func _ready():
 		await DialogueManager.dialogue_ended
 
 		player.visible = true
-		SceneManager.play_audio("")
+		SceneManager.play_audio("res://Assets/Audio/SFX/puf.ogg")
 		await get_tree().create_timer(0.5).timeout
 
 		player.start_cutscene(load(arquivo_dialogo), "start")
 		await DialogueManager.dialogue_ended
 
 		maga.visible = true
-		SceneManager.play_audio("")
+		SceneManager.play_audio("res://Assets/Audio/SFX/puf.ogg")
 		await get_tree().create_timer(1).timeout
 
 		player.start_cutscene(load(arquivo_dialogo), "maga_entrance")
@@ -31,6 +31,7 @@ func _ready():
 
 		player.visible = false
 		maga.visible = false
+		SceneManager.play_audio("res://Assets/Audio/SFX/puf.ogg")
 		await get_tree().create_timer(2).timeout
 
 		player.start_cutscene(load(arquivo_dialogo), "finale")

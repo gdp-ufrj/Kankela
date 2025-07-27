@@ -24,7 +24,7 @@ func _ready():
 		await DialogueManager.dialogue_ended
 
 		player.visible = false
-		SceneManager.play_audio("")
+		SceneManager.play_audio("res://Assets/Audio/SFX/puf.ogg")
 
 		player.start_cutscene(load(arquivo_dialogo), "finale")
 		await DialogueManager.dialogue_ended
