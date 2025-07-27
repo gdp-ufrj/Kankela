@@ -18,8 +18,8 @@ func _ready():
 
 		maga.visible = true
 		SceneManager.play_audio("")
-		geraldo.move_to_position(Vector2(-24, 72))
-		natalia.move_to_position(Vector2(24, 72))
+		geraldo.move_to_position(Vector2(-24, 72), 300)
+		natalia.move_to_position(Vector2(24, 72), 300)
 
 		player.start_cutscene(load(arquivo_dialogo), "maga_entrance")
 		await DialogueManager.dialogue_ended
