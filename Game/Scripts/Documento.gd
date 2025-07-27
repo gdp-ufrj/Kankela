@@ -114,4 +114,4 @@ func _input(event):
 		# Se o player pressiona "Espaço" enquanto analisa a pista, para de analisar ela
 		if event.is_action_pressed("ui_select") and not event.is_echo():
 			interact(player)
-			# await get_tree().create_timer(0.2).timeout
+			await get_tree().create_timer(0.05).timeout
