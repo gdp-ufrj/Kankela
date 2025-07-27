@@ -452,8 +452,10 @@ shape = SubResource("SegmentShape2D_opro1")
 
 [node name="Door" parent="Arena" instance=ExtResource("2_albp3")]
 position = Vector2(-412, -275)
-area = "uid://ch6kxcm48k8qo"
+area = "uid://bmsykvcks1osy"
 porta_destrancada = false
+item_necessario = "deputado_completed"
+consumir_item = true
 mensagem_proibido_passar = "Não da pra voltar, preciso fazer o que o Maga pediu..."
 
 [node name="Cenário" type="Node2D" parent="."]
@@ -744,4 +746,4 @@ sprite_objeto = ExtResource("7_ij7iw")
 
 [node name="Player" parent="." instance=ExtResource("2_4du07")]
 unique_name_in_owner = true
-position = Vector2(-413, -279)
+position = Vector2(-412, -269)

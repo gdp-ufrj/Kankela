@@ -1,0 +1,33 @@
+# Definição dos personagens para que o Dialogue Manager possa associar cores ou nomes customizados se necessário.
+character "Valdiléia" color="#6dbbe5"
+character "Maga" color="#55e06f"
+
+~ start
+Maga: *Tá me ouvindo?*
+
+Valdiléia: *Eu nunca vou me acostumar com você falando na minha cabeça.*
+
+Maga: *Beleza, é o seguinte: Tem um deputado que fez um pacto comigo para poder ganhar as eleições, mas ele ta tentando me dar um golpe*
+Maga: *e tentar me passar a perna não sai barato.*
+Maga: *Ele guarda uma lista das pessoas que ele mandou matar em um cofre, mas ele guarda a senha com a alma dele.*
+Maga: *Eu saberia a senha se ele cumprisse o acordo, mas bem, você não estaria aqui se ele tivesse.*
+Maga: *Investiga a casa dele, acha algumas pistas pela casa e tenta descobrir a senha do cofre.*
+
+Valdiléia: *Mas eu vou ter que olhar tudo? Olha essa casa, ta cheia de papel por aí, eu não vou encontrar nunca!*
+
+Maga: *Relaxa. Lembra que eu tinha falado das lentes? Elas podem te ajudar dessa vez.*
+Maga: *Aperta L para ativar a lupa. Você pode alternar entre elas apertando L mais vezes. Se você quiser desligar, pode pressionar L.*
+
+Valdiléia: *Ok...?*
+
+Maga: *Pra acabar, eu não sei se isso vai ajudar, mas ele tinha uma mania esquisita.*
+Maga: *Ele sempre somava os números com a cor roxa e depois subtraía os com a cor azul, era tipo um passatempo ou sei lá.*
+Maga: *Se você ver alguma coisa assim, você pode tentar fazer isso.*
+Maga: *Enfim, boa sorte ai querida.*
+
+Valdiléia: *...*
+Valdiléia: *"Apertar L"? Acho que ele ficou maluco.*
+
+Maga: *[shake]EI! EU ESCUTEI ISSO[/shake]*
+
+=> END

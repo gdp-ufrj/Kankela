@@ -10,5 +10,11 @@
     "id": "chave_tutorial",
     "descricao": "Uma chave gasta e enferrujada.",
     "icone_path": ""
+  },
+  {
+    "nome": "",
+    "id": "deputado_completed",
+    "descricao": "",
+    "icone_path": ""
   }
 ]
