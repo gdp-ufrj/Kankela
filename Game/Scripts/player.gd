@@ -214,9 +214,13 @@ func start_cutscene(dialogue_resource: DialogueResource, title: String = "", mov
 
 # Método auxiliar para mostrar diálogo a partir de uma string
 func start_cutscene_from_string(text: String, title: String = "") -> void:
+	cutscene_mode = true
+
 	var dialogue_resource = DialogueManager.create_resource_from_text(text)
 	DialogueManager.show_dialogue_balloon(dialogue_resource, title)
 	await DialogueManager.dialogue_ended
+
+	cutscene_mode = false
 
 
 # Método para mover o player para uma posição específica durante cutscenes
