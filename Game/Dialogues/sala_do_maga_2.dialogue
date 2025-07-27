@@ -1,11 +1,10 @@
 # Definição dos personagens para que o Dialogue Manager possa associar cores ou nomes customizados se necessário.
-character "Aprendiz" color="#6dbbe5"
+character "Valdiléia" color="#6dbbe5"
 character "Maga" color="#55e06f"
 
 ~ start
-Aprendiz: Oh poderoso Maga! Todos saudemos…
+Valdiléia: Oh poderoso Maga! Todos saudemos…
 
-# Maga interrompe a aprendiz.
 Maga: Não precisa! Sente-se, amore.
 
 => END
@@ -13,25 +12,27 @@ Maga: Não precisa! Sente-se, amore.
 ~ conversa
 Maga: Primeiro: Queria te parabenizar pela execução da tarefa que eu te pedi, você superou minhas expectativas.
 
-Aprendiz: Muito obrigada, mestre.
+Valdiléia: Muito obrigada, mestre.
 
 Maga: Segundo: Não é pra ninguém ficar sabendo de nada o que acontece entre a gente.
 Maga: Por isso te interrompi na hora que você tava falando sobre.
 
-Aprendiz: Peço desculpas, eu percebi depois que o senhor não queria.
+Valdiléia: Peço desculpas, eu percebi depois que o senhor não queria.
 
-Maga: Calma, bebê. Precisamos conversar sobre isso. Não posso te dar essas informações assim, sabe?
+Maga: Terceiro: Deve ter sido um pouco difícil de achar o fusivel naquela sala escura
+Maga: e eu esqueci de te ensinar a usar nossas lentes especiais, que teria ajudado bastante.
 
-#do set_character_emotion("aprendiz", "confusa")
-Aprendiz: Ué? Mas então porque o senhor me chamou aqui?
+Valdiléia: Muito obrigada, mestre.
 
-Maga: Para saber se você tá afim de fazer um troca-troca. Você vai descobrir quem era se fizer alguns favores pra mim. Você topa?
+Maga: Mas então, animada pra saber mais coisas?
 
-Aprendiz: Sim, mas que favores seri…
+Valdiléia: Claro que tô, mas o que eu vou descobrir exatamente? Da última vez você me disse só o meu nome...
 
-Maga estala os dedos e a aprendiz desaparece.
+Maga: Várias coisas. Talvez até tudo. Tá preparada?
+
+Valdiléia: Claro, o que eu preciso fa-
 => END
 
 ~ finale
-Maga: Vamos ver aonde isso vai dar.
+Maga: Aiai, eu adoro meu trabalho.
 => END
