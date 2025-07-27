@@ -31,6 +31,7 @@ signal activate_lupa(is_lupa_active: bool)
 @onready var is_lupa_active = false
 
 # Variáveis para controle da tecla L
+var can_use_lupa: bool = false
 var l_key_pressed_time: float = 0.0
 var l_key_hold_threshold: float = 0.5 # 0.5 segundos para considerar "segurar"
 var l_key_just_pressed: bool = false
@@ -75,7 +76,7 @@ func _process(_delta: float) -> void:
 		PauseMenu()
 
 	# Nova lógica para a tecla L
-	handle_lupa_input(_delta)
+	if can_use_lupa: handle_lupa_input(_delta)
 
 func handle_lupa_input(delta: float):
 	if Input.is_action_just_pressed("lupa"):
