@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://bmsykvcks1osy"]
+
+[ext_resource type="Script" uid="uid://cvtuk37km5vc" path="res://Scripts/sala_do_maga_3.gd" id="1_wrwco"]
+[ext_resource type="Texture2D" uid="uid://3wv11u3d6pwy" path="res://Assets/Visuals/Scenarios/Background-Quarto-Inicial.png" id="2_qfomc"]
+[ext_resource type="Texture2D" uid="uid://drcg2t0oeinav" path="res://Assets/Visuals/Scenarios/Sala-Tutorial-Objetos.png" id="3_m26c7"]
+[ext_resource type="PackedScene" uid="uid://b0r2u5jb61v82" path="res://Scenes/Personagens/Maga.tscn" id="4_v1uai"]
+[ext_resource type="PackedScene" uid="uid://v68omfsxr70q" path="res://Scenes/Player.tscn" id="5_vq3km"]
+[ext_resource type="Texture2D" uid="uid://bmeyklcp6ojo2" path="res://Assets/Visuals/Sprites/individual/cadeira_costas.png" id="6_iltvx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jinu"]
+atlas = ExtResource("3_m26c7")
+region = Rect2(231, 44, 66, 86)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8tba"]
+atlas = ExtResource("3_m26c7")
+region = Rect2(212, 172, 15, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ovegd"]
+atlas = ExtResource("3_m26c7")
+region = Rect2(142, 28, 54, 100)
+
+[node name="SalaDoMaga3" type="Node2D"]
+script = ExtResource("1_wrwco")
+
+[node name="Arena" type="Node2D" parent="."]
+
+[node name="Background" type="Sprite2D" parent="Arena"]
+texture = ExtResource("2_qfomc")
+
+[node name="Estante" type="Sprite2D" parent="."]
+position = Vector2(64, -80)
+texture = SubResource("AtlasTexture_2jinu")
+
+[node name="Cadeira" type="Sprite2D" parent="."]
+position = Vector2(0, -24)
+texture = SubResource("AtlasTexture_i8tba")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-88, -88)
+texture = SubResource("AtlasTexture_ovegd")
+
+[node name="Maga" parent="." instance=ExtResource("4_v1uai")]
+position = Vector2(0, -24)
+
+[node name="Player" parent="." instance=ExtResource("5_vq3km")]
+unique_name_in_owner = true
+position = Vector2(0, 80)
+
+[node name="CadeiraCostas" type="Sprite2D" parent="."]
+position = Vector2(0, 16)
+texture = ExtResource("6_iltvx")
+
+[node name="Black" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

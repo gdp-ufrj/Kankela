@@ -1,0 +1,34 @@
+# Definição dos personagens para que o Dialogue Manager possa associar cores ou nomes customizados se necessário.
+character "Valdiléia" color="#6dbbe5"
+character "Maga" color="#55e06f"
+
+~ start
+Maga: Bem, você conseguiu, meus parabéns!
+Maga: Agora, o favor é para saber quem você realmente foi. Preparada?
+Valdiléia: Sim!
+
+=> END
+
+# Parte 3: A Verdade na Visão
+
+~ revelation
+Na visão, Valdileia encontra sua versão do passado, uma "Pregadora".
+Valdiléia: O incêndio no templo... o que aconteceu?
+Pregadora: Théo e eu brigamos. Ele espalhou a mentira de que eu comecei o fogo que matou 15 pessoas.
+Valdiléia: E essa mentira...
+Pregadora: Foi o que me matou. Não aguentei a culpa da mentira dele e me joguei de um precipício.
+
+=> END
+
+~ finale
+
+Valdiléia: Nossa...
+
+=> END
+
+~ finale2
+
+Valdiléia: Existe algum jeito de consertar essa mentira?
+Maga: ...[wait=1.5]Há sim.
+
+=> END
