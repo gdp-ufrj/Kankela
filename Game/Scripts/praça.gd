@@ -9,6 +9,7 @@ var arquivo_dialogo: String = "res://Dialogues/praça.dialogue"
 
 func _ready():
 	maga.visible = false
+	player.last_walk_animation = "Walk_back"
 	player.animacao.play("Idle_back")
 
 	if Engine.has_singleton("DialogueManager"):

@@ -6,6 +6,7 @@ var arquivo_dialogo: String = "res://Dialogues/sala_do_maga_2.dialogue"
 @export_file("*.tscn") var area: String
 
 func _ready():
+	player.last_walk_animation = "Walk_back"
 	player.animacao.play("Idle_back")
 
 	if Engine.has_singleton("DialogueManager"):
@@ -16,6 +17,7 @@ func _ready():
 		await player.move_player_to_position(Vector2(-32, 48))
 		await player.move_player_to_position(Vector2(-32, 8))
 		await player.move_player_to_position(Vector2(0, 8))
+		player.last_walk_animation = "Walk_back"
 		player.animacao.play("Idle_back")
 
 		player.start_cutscene(load(arquivo_dialogo), "conversa")

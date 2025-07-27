@@ -8,10 +8,10 @@ var arquivo_dialogo: String = "res://Dialogues/praça_2.dialogue"
 @export_file("*.tscn") var area: String
 
 func _ready():
+	player.last_walk_animation = "Walk_back"
 	player.animacao.play("Idle_back")
 
 	if Engine.has_singleton("DialogueManager"):
-		# Mostrar card com data 24/07/2017
 		player.start_cutscene(load(arquivo_dialogo), "prep")
 		await DialogueManager.dialogue_ended
 
@@ -31,6 +31,7 @@ func _ready():
 
 		player.visible = false
 		maga.visible = false
+		await get_tree().create_timer(2).timeout
 
 		player.start_cutscene(load(arquivo_dialogo), "finale")
 		await DialogueManager.dialogue_ended
