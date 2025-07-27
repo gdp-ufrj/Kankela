@@ -101,11 +101,22 @@ func apply_dialogue_line() -> void:
 	character_label.visible = not dialogue_line.character.is_empty()
 	character_label.text = tr(dialogue_line.character, "dialogue")
 	
-	var portrait_path: String = "res://Assets/Visuals/Sprites/portraits/%s.png" % dialogue_line.character.to_lower()
-	if FileAccess.file_exists(portrait_path):
+	var character_name = dialogue_line.character
+# Verificação extra: Ignora se o nome do personagem estiver vazio
+	if character_name.is_empty():
+		portrait.texture = null
+		return
+
+	# Limpa espaços em branco e converte para minúsculas (mais robusto)
+	var formatted_name = character_name.to_lower().strip_edges()
+	var portrait_path: String = "res://Assets/Visuals/Sprites/portraits/%s.png" % formatted_name
+
+	if ResourceLoader.exists(portrait_path): # Usar ResourceLoader.exists é um pouco mais confiável para builds
 		portrait.texture = load(portrait_path)
 	else:
 		portrait.texture = null
+		# A linha mais importante para o nosso debug:
+		print("DEBUG: Retrato não encontrado. Caminho procurado: '", portrait_path, "' | Nome original do personagem: '", character_name, "'")
 
 	dialogue_label.hide()
 	dialogue_label.dialogue_line = dialogue_line
