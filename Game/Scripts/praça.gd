@@ -27,4 +27,5 @@ func _ready():
 		maga.visible = false
 		player.visible = false
 
-		player.start_cutscene(load(arquivo_dialogo), "finale", Vector2(0, 0), area)
+		player.start_cutscene(load(arquivo_dialogo), "finale")
+		player.change_scene_to(area)

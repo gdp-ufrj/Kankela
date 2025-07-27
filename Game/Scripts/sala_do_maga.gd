@@ -24,5 +24,6 @@ func _ready():
 		player.visible = false
 		SceneManager.play_audio("")
 
-		player.start_cutscene(load(arquivo_dialogo), "finale", Vector2(0, 0), area)
+		player.start_cutscene(load(arquivo_dialogo), "finale")
 		await DialogueManager.dialogue_ended
+		player.change_scene_to(area)
