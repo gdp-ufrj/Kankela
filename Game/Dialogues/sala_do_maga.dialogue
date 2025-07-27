@@ -22,6 +22,7 @@ do SceneManager.play_audio("res://Assets/Audio/SFX/teclado.ogg")
 Maga: ...[wait=5.0]Tenho tudo aqui.
 
 #do set_character_emotion("aprendiz", "animada")
+do SceneManager.stop_audio()
 Aprendiz: AI QUE BOM! Tudo o que…
 
 Maga: Calma, bebê. Precisamos conversar sobre isso. Não posso te dar essas informações assim, sabe?
