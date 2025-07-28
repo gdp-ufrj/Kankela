@@ -3,9 +3,12 @@ extends Node2D
 @onready var fusiveis_conectados: Array = [false, false, false]
 @onready var luzes_acesas: Array = [false, false, false]
 
+var arquivo_dialogo: String = "res://Dialogues/tutorial.dialogue"
+
 func _ready():
 	# Inicia a cutscene inicial
-	%Player.start_cutscene(preload("res://Dialogues/tutorial.dialogue"))
+	%Player.start_cutscene(load(arquivo_dialogo), "start")
+	await DialogueManager.dialogue_ended
 	
 	# Iniciando a missão do tutorial
 	QuestManager.iniciar_missao("coletar_fusiveis")
