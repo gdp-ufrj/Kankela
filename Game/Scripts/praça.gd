@@ -29,6 +29,7 @@ func _ready():
 		player.visible = false
 		SceneManager.play_audio("res://Assets/Audio/SFX/puf.ogg")
 
+		await get_tree().create_timer(2).timeout
 		player.start_cutscene(load(arquivo_dialogo), "finale")
 		await DialogueManager.dialogue_ended
 		player.change_scene_to(area)
