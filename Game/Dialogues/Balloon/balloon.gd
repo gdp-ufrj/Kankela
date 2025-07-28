@@ -105,10 +105,6 @@ func apply_dialogue_line() -> void:
 	character_label.text = tr(dialogue_line.character, "dialogue")
 	
 	var character_name = dialogue_line.character
-# Verificação extra: Ignora se o nome do personagem estiver vazio
-	if character_name.is_empty():
-		portrait.texture = null
-		return
 
 	# Limpa espaços em branco e converte para minúsculas (mais robusto)
 	var formatted_name = character_name.to_lower().strip_edges()
