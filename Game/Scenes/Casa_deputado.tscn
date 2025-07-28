@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://ch6kxcm48k8qo"]
+[gd_scene load_steps=84 format=3 uid="uid://ch6kxcm48k8qo"]
 
 [ext_resource type="Script" uid="uid://bhhfgiuasag2w" path="res://Scripts/casa_deputado.gd" id="1_ejewp"]
 [ext_resource type="Texture2D" uid="uid://dxdp8lwopyby4" path="res://Assets/Visuals/Scenarios/Cenario-deputado.png" id="1_fvrg7"]
@@ -23,6 +23,86 @@
 [ext_resource type="Texture2D" uid="uid://b5feni2nn8oqm" path="res://Assets/Visuals/Sprites/individual/Documento_Azul_5.png" id="20_gyrxh"]
 [ext_resource type="Texture2D" uid="uid://1im3en52kefx" path="res://Assets/Visuals/Sprites/individual/Documento_Roxo_6.png" id="21_opro1"]
 [ext_resource type="Texture2D" uid="uid://dg04mykb6shxx" path="res://Assets/Visuals/Sprites/individual/Documento_Azul_6.png" id="22_yboit"]
+[ext_resource type="Texture2D" uid="uid://c7m0nfdb7w58p" path="res://Assets/Visuals/Scenarios/parede_banheiro.png" id="24_ibfsr"]
+[ext_resource type="Texture2D" uid="uid://biqk6mo038jf5" path="res://Assets/Visuals/Scenarios/parede_quarto.png" id="25_04p0q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4du07"]
+size = Vector2(31, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_albp3"]
+size = Vector2(20, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejewp"]
+size = Vector2(32, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ij7iw"]
+size = Vector2(27, 67)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m2h5s"]
+size = Vector2(10, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n4xeb"]
+size = Vector2(14, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5okb"]
+size = Vector2(32.8, 36.6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6j346"]
+size = Vector2(27, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4j3q"]
+size = Vector2(27, 66)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a7xtp"]
+size = Vector2(16, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dpv1k"]
+size = Vector2(66, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tngml"]
+size = Vector2(23, 53)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ntvx"]
+size = Vector2(34, 62)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f6dwp"]
+size = Vector2(20, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fgkne"]
+size = Vector2(63, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_34gjc"]
+size = Vector2(18, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_35tjp"]
+size = Vector2(56, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ibfsr"]
+size = Vector2(28.5, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_04p0q"]
+size = Vector2(8, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3kile"]
+size = Vector2(65, 39)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_exqhr"]
+size = Vector2(52, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jsfsw"]
+size = Vector2(12, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dl5k5"]
+size = Vector2(30, 63)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wy2or"]
+size = Vector2(8.6125, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fvrg7"]
+size = Vector2(30, 63)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_msyqj"]
+size = Vector2(62, 22)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_fvrg7"]
 a = Vector2(0, -72)
@@ -152,84 +232,6 @@ b = Vector2(56, 0)
 a = Vector2(-60, 0)
 b = Vector2(62.5, 0)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4du07"]
-size = Vector2(31, 48)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_albp3"]
-size = Vector2(20, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejewp"]
-size = Vector2(32, 42)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ij7iw"]
-size = Vector2(27, 67)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m2h5s"]
-size = Vector2(10, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n4xeb"]
-size = Vector2(14, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5okb"]
-size = Vector2(32.8, 36.6)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6j346"]
-size = Vector2(27, 30)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4j3q"]
-size = Vector2(27, 66)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a7xtp"]
-size = Vector2(16, 31)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dpv1k"]
-size = Vector2(66, 80)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tngml"]
-size = Vector2(23, 53)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ntvx"]
-size = Vector2(34, 62)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f6dwp"]
-size = Vector2(20, 25)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fgkne"]
-size = Vector2(63, 22)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_34gjc"]
-size = Vector2(18, 22)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_35tjp"]
-size = Vector2(56, 30)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ibfsr"]
-size = Vector2(28.5, 24)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_04p0q"]
-size = Vector2(8, 13)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3kile"]
-size = Vector2(65, 39)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_exqhr"]
-size = Vector2(52, 40)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jsfsw"]
-size = Vector2(12, 26)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dl5k5"]
-size = Vector2(30, 63)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wy2or"]
-size = Vector2(8.6125, 10)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fvrg7"]
-size = Vector2(30, 63)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_msyqj"]
-size = Vector2(62, 22)
-
 [node name="CasaDeputado" type="Node2D"]
 script = ExtResource("1_ejewp")
 
@@ -238,228 +240,439 @@ script = ExtResource("1_ejewp")
 [node name="Background" type="Sprite2D" parent="Arena"]
 texture = ExtResource("1_fvrg7")
 
-[node name="Comodo 1" type="StaticBody2D" parent="Arena"]
+[node name="Cenário" type="Node2D" parent="Arena"]
+
+[node name="Comodo 1" type="Node2D" parent="Arena/Cenário"]
+
+[node name="Cadeira 1" type="StaticBody2D" parent="Arena/Cenário/Comodo 1"]
+position = Vector2(-428, -216)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Cenário/Comodo 1/Cadeira 1"]
+shape = SubResource("RectangleShape2D_4du07")
+
+[node name="Cadeira 2" type="StaticBody2D" parent="Arena/Cenário/Comodo 1"]
+position = Vector2(-428, -155)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Cenário/Comodo 1/Cadeira 2"]
+shape = SubResource("RectangleShape2D_4du07")
+
+[node name="Cadeira 3" type="StaticBody2D" parent="Arena/Cenário/Comodo 1"]
+position = Vector2(-176, -225)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Cenário/Comodo 1/Cadeira 3"]
+shape = SubResource("RectangleShape2D_4du07")
+
+[node name="Cadeira 4" type="StaticBody2D" parent="Arena/Cenário/Comodo 1"]
+position = Vector2(-176, -152)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Cenário/Comodo 1/Cadeira 4"]
+shape = SubResource("RectangleShape2D_4du07")
+
+[node name="Mesinha" type="StaticBody2D" parent="Arena/Cenário/Comodo 1"]
+position = Vector2(-174, -188)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Cenário/Comodo 1/Mesinha"]
+shape = SubResource("RectangleShape2D_albp3")
+
+[node name="Comodo 2" type="Node2D" parent="Arena/Cenário"]
+
+[node name="Planta no canto" type="StaticBody2D" parent="Arena/Cenário/Comodo 2"]
+position = Vector2(105, -131)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Cenário/Comodo 2/Planta no canto"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_ejewp")
+
+[node name="Mesa" type="StaticBody2D" parent="Arena/Cenário/Comodo 2"]
+position = Vector2(-93.5, -202)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Cenário/Comodo 2/Mesa"]
+shape = SubResource("RectangleShape2D_ij7iw")
+
+[node name="Cadeira de lado" type="StaticBody2D" parent="Arena/Cenário/Comodo 2"]
+position = Vector2(-75, -207)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Cenário/Comodo 2/Cadeira de lado"]
+shape = SubResource("RectangleShape2D_m2h5s")
+
+[node name="Cadeira de frente" type="StaticBody2D" parent="Arena/Cenário/Comodo 2"]
+position = Vector2(-94.5, -240)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Cenário/Comodo 2/Cadeira de frente"]
+shape = SubResource("RectangleShape2D_n4xeb")
+
+[node name="TV" type="StaticBody2D" parent="Arena/Cenário/Comodo 2"]
+position = Vector2(-69.5, -284.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Cenário/Comodo 2/TV"]
+shape = SubResource("RectangleShape2D_j5okb")
+
+[node name="Pia" type="StaticBody2D" parent="Arena/Cenário/Comodo 2"]
+position = Vector2(93.5, -283)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Cenário/Comodo 2/Pia"]
+shape = SubResource("RectangleShape2D_6j346")
+
+[node name="Comodo 3" type="Node2D" parent="Arena/Cenário"]
+
+[node name="Mesa" type="StaticBody2D" parent="Arena/Cenário/Comodo 3"]
+position = Vector2(188, -198)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Cenário/Comodo 3/Mesa"]
+shape = SubResource("RectangleShape2D_g4j3q")
+
+[node name="Cadeira" type="StaticBody2D" parent="Arena/Cenário/Comodo 3"]
+position = Vector2(213, -205.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Cenário/Comodo 3/Cadeira"]
+shape = SubResource("RectangleShape2D_a7xtp")
+
+[node name="Estante" type="StaticBody2D" parent="Arena/Cenário/Comodo 3"]
+position = Vector2(224, -298)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Cenário/Comodo 3/Estante"]
+shape = SubResource("RectangleShape2D_dpv1k")
+
+[node name="Cofre3" parent="Arena/Cenário/Comodo 3" instance=ExtResource("4_m2h5s")]
+position = Vector2(421, -280)
+
+[node name="Quarto" type="Node2D" parent="Arena/Cenário"]
+
+[node name="Mesa" type="StaticBody2D" parent="Arena/Cenário/Quarto"]
+position = Vector2(447.5, 256)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Cenário/Quarto/Mesa"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_tngml")
+
+[node name="Cama" type="StaticBody2D" parent="Arena/Cenário/Quarto"]
+position = Vector2(237, 182)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Cenário/Quarto/Cama"]
+shape = SubResource("RectangleShape2D_1ntvx")
+
+[node name="Cabeceira" type="StaticBody2D" parent="Arena/Cenário/Quarto"]
+position = Vector2(204, 174.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Cenário/Quarto/Cabeceira"]
+shape = SubResource("RectangleShape2D_f6dwp")
+
+[node name="Movel da tv" type="StaticBody2D" parent="Arena/Cenário/Quarto"]
+position = Vector2(236.5, 272)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Cenário/Quarto/Movel da tv"]
+shape = SubResource("RectangleShape2D_fgkne")
+
+[node name="Banheiro" type="Node2D" parent="Arena/Cenário"]
+
+[node name="Pia" type="StaticBody2D" parent="Arena/Cenário/Banheiro"]
+position = Vector2(98, 189)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Cenário/Banheiro/Pia"]
+shape = SubResource("RectangleShape2D_34gjc")
+
+[node name="Banheira" type="StaticBody2D" parent="Arena/Cenário/Banheiro"]
+position = Vector2(92, 267)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Cenário/Banheiro/Banheira"]
+shape = SubResource("RectangleShape2D_35tjp")
+
+[node name="Privada" type="StaticBody2D" parent="Arena/Cenário/Banheiro"]
+position = Vector2(-24.5, 245)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Cenário/Banheiro/Privada"]
+shape = SubResource("RectangleShape2D_ibfsr")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Arena/Cenário/Banheiro/Privada"]
+position = Vector2(-10, -18.5)
+shape = SubResource("RectangleShape2D_04p0q")
+
+[node name="Sala" type="Node2D" parent="Arena/Cenário"]
+
+[node name="Mesa de fora" type="StaticBody2D" parent="Arena/Cenário/Sala"]
+position = Vector2(-211.5, 23.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Cenário/Sala/Mesa de fora"]
+shape = SubResource("RectangleShape2D_3kile")
+
+[node name="Sofá de frente" type="StaticBody2D" parent="Arena/Cenário/Sala"]
+position = Vector2(-328, 131)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Cenário/Sala/Sofá de frente"]
+shape = SubResource("RectangleShape2D_exqhr")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Arena/Cenário/Sala/Sofá de frente"]
+position = Vector2(-31, 7)
+shape = SubResource("RectangleShape2D_jsfsw")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Arena/Cenário/Sala/Sofá de frente"]
+position = Vector2(31, 7)
+shape = SubResource("RectangleShape2D_jsfsw")
+
+[node name="Sofá da esquerda" type="StaticBody2D" parent="Arena/Cenário/Sala"]
+position = Vector2(-428.5, 204)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Cenário/Sala/Sofá da esquerda"]
+shape = SubResource("RectangleShape2D_dl5k5")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Arena/Cenário/Sala/Sofá da esquerda"]
+position = Vector2(-10.7, -36)
+shape = SubResource("RectangleShape2D_wy2or")
+
+[node name="Sofá da direita" type="StaticBody2D" parent="Arena/Cenário/Sala"]
+position = Vector2(-213, 209.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Cenário/Sala/Sofá da direita"]
+shape = SubResource("RectangleShape2D_fvrg7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Arena/Cenário/Sala/Sofá da direita"]
+position = Vector2(10.7, -36)
+shape = SubResource("RectangleShape2D_wy2or")
+
+[node name="Mesinha" type="StaticBody2D" parent="Arena/Cenário/Sala"]
+position = Vector2(-383, 135)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Cenário/Sala/Mesinha"]
+shape = SubResource("RectangleShape2D_albp3")
+
+[node name="Planta no canto" type="StaticBody2D" parent="Arena/Cenário/Sala"]
+position = Vector2(-425, 18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Cenário/Sala/Planta no canto"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_ejewp")
+
+[node name="Movel da tv" type="StaticBody2D" parent="Arena/Cenário/Sala"]
+position = Vector2(-328.5, 272)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Cenário/Sala/Movel da tv"]
+shape = SubResource("RectangleShape2D_msyqj")
+
+[node name="Colliders" type="Node2D" parent="Arena"]
+visible = false
+
+[node name="Comodo 1" type="StaticBody2D" parent="Arena/Colliders"]
 position = Vector2(-302, -200)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Comodo 1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Colliders/Comodo 1"]
 position = Vector2(-141, 0)
 shape = SubResource("SegmentShape2D_fvrg7")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Arena/Comodo 1"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Arena/Colliders/Comodo 1"]
 position = Vector2(141, 0)
 shape = SubResource("SegmentShape2D_fvrg7")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Arena/Comodo 1"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Arena/Colliders/Comodo 1"]
 position = Vector2(0, -72)
 shape = SubResource("SegmentShape2D_albp3")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Arena/Comodo 1"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Arena/Colliders/Comodo 1"]
 position = Vector2(-80, 86)
 shape = SubResource("SegmentShape2D_3kile")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Arena/Comodo 1"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Arena/Colliders/Comodo 1"]
 position = Vector2(80, 86)
 shape = SubResource("SegmentShape2D_3kile")
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Arena/Comodo 1"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Arena/Colliders/Comodo 1"]
 position = Vector2(-18, 153)
 shape = SubResource("SegmentShape2D_exqhr")
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Arena/Comodo 1"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Arena/Colliders/Comodo 1"]
 position = Vector2(18, 153)
 shape = SubResource("SegmentShape2D_exqhr")
 
-[node name="Comodo 2" type="StaticBody2D" parent="Arena"]
+[node name="Comodo 2" type="StaticBody2D" parent="Arena/Colliders"]
 position = Vector2(-20.5, -200)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Comodo 2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Colliders/Comodo 2"]
 position = Vector2(-86, 0)
 shape = SubResource("SegmentShape2D_fvrg7")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Arena/Comodo 2"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Arena/Colliders/Comodo 2"]
 position = Vector2(141, 0)
 shape = SubResource("SegmentShape2D_fvrg7")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Arena/Comodo 2"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Arena/Colliders/Comodo 2"]
 position = Vector2(20.5, -72)
 shape = SubResource("SegmentShape2D_jsfsw")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Arena/Comodo 2"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Arena/Colliders/Comodo 2"]
 position = Vector2(-51.5, 86)
 shape = SubResource("SegmentShape2D_dl5k5")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Arena/Comodo 2"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Arena/Colliders/Comodo 2"]
 position = Vector2(80, 86)
 shape = SubResource("SegmentShape2D_3kile")
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Arena/Comodo 2"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Arena/Colliders/Comodo 2"]
 position = Vector2(-18, 152)
 shape = SubResource("SegmentShape2D_wy2or")
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Arena/Comodo 2"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Arena/Colliders/Comodo 2"]
 position = Vector2(18, 152)
 shape = SubResource("SegmentShape2D_wy2or")
 
-[node name="Comodo 3" type="StaticBody2D" parent="Arena"]
+[node name="Comodo 3" type="StaticBody2D" parent="Arena/Colliders"]
 position = Vector2(317, -200)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Comodo 3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Colliders/Comodo 3"]
 position = Vector2(-141, 0)
 shape = SubResource("SegmentShape2D_fvrg7")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Arena/Comodo 3"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Arena/Colliders/Comodo 3"]
 position = Vector2(141, 0)
 shape = SubResource("SegmentShape2D_fvrg7")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Arena/Comodo 3"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Arena/Colliders/Comodo 3"]
 position = Vector2(0, -72)
 shape = SubResource("SegmentShape2D_albp3")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Arena/Comodo 3"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Arena/Colliders/Comodo 3"]
 position = Vector2(-80, 86)
 shape = SubResource("SegmentShape2D_3kile")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Arena/Comodo 3"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Arena/Colliders/Comodo 3"]
 position = Vector2(80, 86)
 shape = SubResource("SegmentShape2D_3kile")
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Arena/Comodo 3"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Arena/Colliders/Comodo 3"]
 position = Vector2(-18, 152)
 shape = SubResource("SegmentShape2D_wy2or")
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Arena/Comodo 3"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Arena/Colliders/Comodo 3"]
 position = Vector2(18, 152)
 shape = SubResource("SegmentShape2D_wy2or")
 
-[node name="Quarto" type="StaticBody2D" parent="Arena"]
+[node name="Quarto" type="StaticBody2D" parent="Arena/Colliders"]
 position = Vector2(317, 229)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Quarto"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Colliders/Quarto"]
 position = Vector2(0, 53)
 shape = SubResource("SegmentShape2D_ejewp")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Arena/Quarto"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Arena/Colliders/Quarto"]
 position = Vector2(-141, 0)
 shape = SubResource("SegmentShape2D_ij7iw")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Arena/Quarto"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Arena/Colliders/Quarto"]
 position = Vector2(141, 0)
 shape = SubResource("SegmentShape2D_ij7iw")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Arena/Quarto"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Arena/Colliders/Quarto"]
 position = Vector2(-79, -53)
 shape = SubResource("SegmentShape2D_m2h5s")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Arena/Quarto"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Arena/Colliders/Quarto"]
 position = Vector2(79, -53)
 shape = SubResource("SegmentShape2D_m2h5s")
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Arena/Quarto"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Arena/Colliders/Quarto"]
 position = Vector2(-17, -93)
 shape = SubResource("SegmentShape2D_n4xeb")
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Arena/Quarto"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Arena/Colliders/Quarto"]
 position = Vector2(17, -93)
 shape = SubResource("SegmentShape2D_n4xeb")
 
-[node name="Banheiro" type="StaticBody2D" parent="Arena"]
+[node name="Banheiro" type="StaticBody2D" parent="Arena/Colliders"]
 position = Vector2(41, 240)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Banheiro"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Colliders/Banheiro"]
 position = Vector2(-79.5, 0)
 shape = SubResource("SegmentShape2D_j5okb")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Arena/Banheiro"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Arena/Colliders/Banheiro"]
 position = Vector2(79.5, 0)
 shape = SubResource("SegmentShape2D_j5okb")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Arena/Banheiro"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Arena/Colliders/Banheiro"]
 position = Vector2(0, 43)
 shape = SubResource("SegmentShape2D_6j346")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Arena/Banheiro"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Arena/Colliders/Banheiro"]
 position = Vector2(-49, -43)
 shape = SubResource("SegmentShape2D_g4j3q")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Arena/Banheiro"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Arena/Colliders/Banheiro"]
 position = Vector2(48, -43)
 shape = SubResource("SegmentShape2D_a7xtp")
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Arena/Banheiro"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Arena/Colliders/Banheiro"]
 position = Vector2(-17, -80)
 shape = SubResource("SegmentShape2D_dpv1k")
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Arena/Banheiro"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Arena/Colliders/Banheiro"]
 position = Vector2(17, -80)
 shape = SubResource("SegmentShape2D_dpv1k")
 
-[node name="Sala" type="StaticBody2D" parent="Arena"]
+[node name="Sala" type="StaticBody2D" parent="Arena/Colliders"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Sala"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena/Colliders/Sala"]
 position = Vector2(-443.5, 151.5)
 shape = SubResource("SegmentShape2D_sg7p1")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Arena/Sala"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Arena/Colliders/Sala"]
 position = Vector2(-245, 283)
 shape = SubResource("SegmentShape2D_tngml")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Arena/Sala"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Arena/Colliders/Sala"]
 position = Vector2(-45, 202)
 shape = SubResource("SegmentShape2D_1ntvx")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Arena/Sala"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Arena/Colliders/Sala"]
 position = Vector2(-10, 122)
 shape = SubResource("SegmentShape2D_f6dwp")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Arena/Sala"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Arena/Colliders/Sala"]
 position = Vector2(89, 122)
 shape = SubResource("SegmentShape2D_a7xtp")
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Arena/Sala"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Arena/Colliders/Sala"]
 position = Vector2(120, 110)
 shape = SubResource("SegmentShape2D_fgkne")
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Arena/Sala"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Arena/Colliders/Sala"]
 position = Vector2(210, 97.5)
 shape = SubResource("SegmentShape2D_34gjc")
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Arena/Sala"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Arena/Colliders/Sala"]
 position = Vector2(396, 97.5)
 shape = SubResource("SegmentShape2D_35tjp")
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Arena/Sala"]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Arena/Colliders/Sala"]
 position = Vector2(458.5, 58)
 shape = SubResource("SegmentShape2D_ibfsr")
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Arena/Sala"]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Arena/Colliders/Sala"]
 position = Vector2(397, 18)
 shape = SubResource("SegmentShape2D_04p0q")
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Arena/Sala"]
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Arena/Colliders/Sala"]
 position = Vector2(144, 18)
 shape = SubResource("SegmentShape2D_msyqj")
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Arena/Sala"]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Arena/Colliders/Sala"]
 position = Vector2(-75, 18)
 shape = SubResource("SegmentShape2D_iwdya")
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Arena/Sala"]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Arena/Colliders/Sala"]
 position = Vector2(-106.5, 48)
 shape = SubResource("SegmentShape2D_pa1cb")
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Arena/Sala"]
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Arena/Colliders/Sala"]
 position = Vector2(-134, 94.5)
 shape = SubResource("SegmentShape2D_vkero")
 
-[node name="CollisionShape2D15" type="CollisionShape2D" parent="Arena/Sala"]
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="Arena/Colliders/Sala"]
 position = Vector2(-160, 56)
 shape = SubResource("SegmentShape2D_xc05b")
 
-[node name="CollisionShape2D16" type="CollisionShape2D" parent="Arena/Sala"]
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="Arena/Colliders/Sala"]
 position = Vector2(-216, 20)
 shape = SubResource("SegmentShape2D_gyrxh")
 
-[node name="CollisionShape2D17" type="CollisionShape2D" parent="Arena/Sala"]
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="Arena/Colliders/Sala"]
 position = Vector2(-384, 20)
 shape = SubResource("SegmentShape2D_opro1")
 
@@ -470,214 +683,6 @@ porta_destrancada = false
 item_necessario = "deputado_completed"
 consumir_item = true
 mensagem_proibido_passar = "Não da pra voltar, preciso fazer o que o Maga pediu..."
-
-[node name="Cenário" type="Node2D" parent="."]
-
-[node name="Comodo 1" type="Node2D" parent="Cenário"]
-
-[node name="Cadeira 1" type="StaticBody2D" parent="Cenário/Comodo 1"]
-position = Vector2(-428, -216)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenário/Comodo 1/Cadeira 1"]
-shape = SubResource("RectangleShape2D_4du07")
-
-[node name="Cadeira 2" type="StaticBody2D" parent="Cenário/Comodo 1"]
-position = Vector2(-428, -155)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenário/Comodo 1/Cadeira 2"]
-shape = SubResource("RectangleShape2D_4du07")
-
-[node name="Cadeira 3" type="StaticBody2D" parent="Cenário/Comodo 1"]
-position = Vector2(-176, -225)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenário/Comodo 1/Cadeira 3"]
-shape = SubResource("RectangleShape2D_4du07")
-
-[node name="Cadeira 4" type="StaticBody2D" parent="Cenário/Comodo 1"]
-position = Vector2(-176, -152)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenário/Comodo 1/Cadeira 4"]
-shape = SubResource("RectangleShape2D_4du07")
-
-[node name="Mesinha" type="StaticBody2D" parent="Cenário/Comodo 1"]
-position = Vector2(-174, -188)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenário/Comodo 1/Mesinha"]
-shape = SubResource("RectangleShape2D_albp3")
-
-[node name="Comodo 2" type="Node2D" parent="Cenário"]
-
-[node name="Planta no canto" type="StaticBody2D" parent="Cenário/Comodo 2"]
-position = Vector2(105, -131)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenário/Comodo 2/Planta no canto"]
-position = Vector2(0, -4)
-shape = SubResource("RectangleShape2D_ejewp")
-
-[node name="Mesa" type="StaticBody2D" parent="Cenário/Comodo 2"]
-position = Vector2(-93.5, -202)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenário/Comodo 2/Mesa"]
-shape = SubResource("RectangleShape2D_ij7iw")
-
-[node name="Cadeira de lado" type="StaticBody2D" parent="Cenário/Comodo 2"]
-position = Vector2(-75, -207)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenário/Comodo 2/Cadeira de lado"]
-shape = SubResource("RectangleShape2D_m2h5s")
-
-[node name="Cadeira de frente" type="StaticBody2D" parent="Cenário/Comodo 2"]
-position = Vector2(-94.5, -240)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenário/Comodo 2/Cadeira de frente"]
-shape = SubResource("RectangleShape2D_n4xeb")
-
-[node name="TV" type="StaticBody2D" parent="Cenário/Comodo 2"]
-position = Vector2(-69.5, -284.5)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenário/Comodo 2/TV"]
-shape = SubResource("RectangleShape2D_j5okb")
-
-[node name="Pia" type="StaticBody2D" parent="Cenário/Comodo 2"]
-position = Vector2(93.5, -283)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenário/Comodo 2/Pia"]
-shape = SubResource("RectangleShape2D_6j346")
-
-[node name="Comodo 3" type="Node2D" parent="Cenário"]
-
-[node name="Mesa" type="StaticBody2D" parent="Cenário/Comodo 3"]
-position = Vector2(188, -198)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenário/Comodo 3/Mesa"]
-shape = SubResource("RectangleShape2D_g4j3q")
-
-[node name="Cadeira" type="StaticBody2D" parent="Cenário/Comodo 3"]
-position = Vector2(213, -205.5)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenário/Comodo 3/Cadeira"]
-shape = SubResource("RectangleShape2D_a7xtp")
-
-[node name="Estante" type="StaticBody2D" parent="Cenário/Comodo 3"]
-position = Vector2(224, -298)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenário/Comodo 3/Estante"]
-shape = SubResource("RectangleShape2D_dpv1k")
-
-[node name="Cofre3" parent="Cenário/Comodo 3" instance=ExtResource("4_m2h5s")]
-position = Vector2(421, -280)
-
-[node name="Quarto" type="Node2D" parent="Cenário"]
-
-[node name="Mesa" type="StaticBody2D" parent="Cenário/Quarto"]
-position = Vector2(447.5, 256)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenário/Quarto/Mesa"]
-position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_tngml")
-
-[node name="Cama" type="StaticBody2D" parent="Cenário/Quarto"]
-position = Vector2(237, 182)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenário/Quarto/Cama"]
-shape = SubResource("RectangleShape2D_1ntvx")
-
-[node name="Cabeceira" type="StaticBody2D" parent="Cenário/Quarto"]
-position = Vector2(204, 174.5)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenário/Quarto/Cabeceira"]
-shape = SubResource("RectangleShape2D_f6dwp")
-
-[node name="Movel da tv" type="StaticBody2D" parent="Cenário/Quarto"]
-position = Vector2(236.5, 272)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenário/Quarto/Movel da tv"]
-shape = SubResource("RectangleShape2D_fgkne")
-
-[node name="Banheiro" type="Node2D" parent="Cenário"]
-
-[node name="Pia" type="StaticBody2D" parent="Cenário/Banheiro"]
-position = Vector2(98, 189)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenário/Banheiro/Pia"]
-shape = SubResource("RectangleShape2D_34gjc")
-
-[node name="Banheira" type="StaticBody2D" parent="Cenário/Banheiro"]
-position = Vector2(92, 267)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenário/Banheiro/Banheira"]
-shape = SubResource("RectangleShape2D_35tjp")
-
-[node name="Privada" type="StaticBody2D" parent="Cenário/Banheiro"]
-position = Vector2(-24.5, 245)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenário/Banheiro/Privada"]
-shape = SubResource("RectangleShape2D_ibfsr")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Cenário/Banheiro/Privada"]
-position = Vector2(-10, -18.5)
-shape = SubResource("RectangleShape2D_04p0q")
-
-[node name="Sala" type="Node2D" parent="Cenário"]
-
-[node name="Mesa de fora" type="StaticBody2D" parent="Cenário/Sala"]
-position = Vector2(-211.5, 23.5)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenário/Sala/Mesa de fora"]
-shape = SubResource("RectangleShape2D_3kile")
-
-[node name="Sofá de frente" type="StaticBody2D" parent="Cenário/Sala"]
-position = Vector2(-328, 131)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenário/Sala/Sofá de frente"]
-shape = SubResource("RectangleShape2D_exqhr")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Cenário/Sala/Sofá de frente"]
-position = Vector2(-31, 7)
-shape = SubResource("RectangleShape2D_jsfsw")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Cenário/Sala/Sofá de frente"]
-position = Vector2(31, 7)
-shape = SubResource("RectangleShape2D_jsfsw")
-
-[node name="Sofá da esquerda" type="StaticBody2D" parent="Cenário/Sala"]
-position = Vector2(-428.5, 204)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenário/Sala/Sofá da esquerda"]
-shape = SubResource("RectangleShape2D_dl5k5")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Cenário/Sala/Sofá da esquerda"]
-position = Vector2(-10.7, -36)
-shape = SubResource("RectangleShape2D_wy2or")
-
-[node name="Sofá da direita" type="StaticBody2D" parent="Cenário/Sala"]
-position = Vector2(-213, 209.5)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenário/Sala/Sofá da direita"]
-shape = SubResource("RectangleShape2D_fvrg7")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Cenário/Sala/Sofá da direita"]
-position = Vector2(10.7, -36)
-shape = SubResource("RectangleShape2D_wy2or")
-
-[node name="Mesinha" type="StaticBody2D" parent="Cenário/Sala"]
-position = Vector2(-383, 135)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenário/Sala/Mesinha"]
-shape = SubResource("RectangleShape2D_albp3")
-
-[node name="Planta no canto" type="StaticBody2D" parent="Cenário/Sala"]
-position = Vector2(-425, 18)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenário/Sala/Planta no canto"]
-position = Vector2(0, -4)
-shape = SubResource("RectangleShape2D_ejewp")
-
-[node name="Movel da tv" type="StaticBody2D" parent="Cenário/Sala"]
-position = Vector2(-328.5, 272)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenário/Sala/Movel da tv"]
-shape = SubResource("RectangleShape2D_msyqj")
 
 [node name="Documentos" type="Node2D" parent="."]
 
@@ -791,3 +796,11 @@ sprite_documento = ExtResource("7_m2h5s")
 [node name="Player" parent="." instance=ExtResource("2_4du07")]
 unique_name_in_owner = true
 position = Vector2(-412, -269)
+
+[node name="ParedeBanheiro" type="Sprite2D" parent="."]
+position = Vector2(37, 131.5)
+texture = ExtResource("24_ibfsr")
+
+[node name="ParedeQuarto" type="Sprite2D" parent="."]
+position = Vector2(317, 108.5)
+texture = ExtResource("25_04p0q")
