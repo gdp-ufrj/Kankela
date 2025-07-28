@@ -40,7 +40,7 @@ func load_game_scene(path: String) -> void:
 	transition.fade_in()
 
 # Função para tocar áudio
-func play_audio(audio_path: String, volume_db: float = 0.0) -> void:
+func play_audio(audio_path: String, volume_db: float = 0.0, audio_bus: String = "SFX") -> void:
 	if audio_player == null:
 		push_error("AudioPlayer não está configurado!")
 		return
@@ -54,6 +54,7 @@ func play_audio(audio_path: String, volume_db: float = 0.0) -> void:
 	# Configura e toca o áudio
 	audio_player.stream = audio_resource
 	audio_player.volume_db = volume_db
+	audio_player.bus = audio_bus
 	audio_player.play()
 
 # Função para parar o áudio atual

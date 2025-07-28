@@ -95,6 +95,7 @@ script = ExtResource("1_sgy12")
 stream = ExtResource("2_m35rq")
 volume_db = -10.0
 autoplay = true
+bus = &"BG"
 parameters/looping = true
 
 [node name="Arena" type="Node2D" parent="."]

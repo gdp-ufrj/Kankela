@@ -66,6 +66,7 @@ texture = SubResource("AtlasTexture_twnyg")
 stream = ExtResource("2_p3fck")
 volume_db = -10.0
 autoplay = true
+bus = &"BG"
 parameters/looping = true
 
 [node name="Play" type="TextureButton" parent="."]
