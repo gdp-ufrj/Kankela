@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://ch6kxcm48k8qo"]
+[gd_scene load_steps=82 format=3 uid="uid://ch6kxcm48k8qo"]
 
 [ext_resource type="Script" uid="uid://bhhfgiuasag2w" path="res://Scripts/casa_deputado.gd" id="1_ejewp"]
 [ext_resource type="Texture2D" uid="uid://dxdp8lwopyby4" path="res://Assets/Visuals/Scenarios/Cenario-deputado.png" id="1_fvrg7"]
@@ -9,7 +9,20 @@
 [ext_resource type="Texture2D" uid="uid://cpeuj7ihl43oq" path="res://Assets/Visuals/Sprites/individual/papel_1.png" id="5_wy2or"]
 [ext_resource type="Texture2D" uid="uid://bwpmuiqataafs" path="res://Assets/Visuals/Sprites/individual/papel_4.png" id="6_ejewp"]
 [ext_resource type="Texture2D" uid="uid://blkql1r5nd3h8" path="res://Assets/Visuals/Sprites/individual/papel_2.png" id="7_ij7iw"]
+[ext_resource type="Texture2D" uid="uid://be3qc8d613qqj" path="res://Assets/Visuals/Sprites/individual/Documento_base.png" id="7_m2h5s"]
+[ext_resource type="Texture2D" uid="uid://cdhbsj1qufu8a" path="res://Assets/Visuals/Sprites/individual/Documento_Roxo_1.png" id="8_34gjc"]
 [ext_resource type="Texture2D" uid="uid://cqax8cbt42nw3" path="res://Assets/Visuals/Sprites/individual/papel_3.png" id="8_m2h5s"]
+[ext_resource type="Texture2D" uid="uid://b5ruqgvf8wxbi" path="res://Assets/Visuals/Sprites/individual/Documento_Azul_1.png" id="9_35tjp"]
+[ext_resource type="Texture2D" uid="uid://b62fysumeya3r" path="res://Assets/Visuals/Sprites/individual/Documento_Roxo_2.png" id="11_ibfsr"]
+[ext_resource type="Texture2D" uid="uid://cll856gos7wq3" path="res://Assets/Visuals/Sprites/individual/Documento_Azul_2.png" id="12_04p0q"]
+[ext_resource type="Texture2D" uid="uid://b1ofx8vag6pqk" path="res://Assets/Visuals/Sprites/individual/Documento_Roxo_3.png" id="14_msyqj"]
+[ext_resource type="Texture2D" uid="uid://c5ldi5kyyecr5" path="res://Assets/Visuals/Sprites/individual/Documento_Azul_3.png" id="15_iwdya"]
+[ext_resource type="Texture2D" uid="uid://c0v16p33ind2u" path="res://Assets/Visuals/Sprites/individual/Documento_Roxo_4.png" id="17_pa1cb"]
+[ext_resource type="Texture2D" uid="uid://fgt8ucxxt064" path="res://Assets/Visuals/Sprites/individual/Documento_Azul_4.png" id="18_vkero"]
+[ext_resource type="Texture2D" uid="uid://dndsc15lgb6it" path="res://Assets/Visuals/Sprites/individual/Documento_Roxo_5.png" id="19_xc05b"]
+[ext_resource type="Texture2D" uid="uid://b5feni2nn8oqm" path="res://Assets/Visuals/Sprites/individual/Documento_Azul_5.png" id="20_gyrxh"]
+[ext_resource type="Texture2D" uid="uid://1im3en52kefx" path="res://Assets/Visuals/Sprites/individual/Documento_Roxo_6.png" id="21_opro1"]
+[ext_resource type="Texture2D" uid="uid://dg04mykb6shxx" path="res://Assets/Visuals/Sprites/individual/Documento_Azul_6.png" id="22_yboit"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_fvrg7"]
 a = Vector2(0, -72)
@@ -671,78 +684,109 @@ shape = SubResource("RectangleShape2D_msyqj")
 [node name="Documento!" parent="Documentos" instance=ExtResource("4_3kile")]
 position = Vector2(-308, -265)
 sprite_objeto = ExtResource("5_wy2or")
+sprite_documento = ExtResource("7_m2h5s")
+objetos_secretos_sprites = Array[Texture2D]([ExtResource("8_34gjc"), ExtResource("9_35tjp")])
+objetos_secretos_tipos_lupa = Array[int]([1, 2])
 
 [node name="Documento! 2" parent="Documentos" instance=ExtResource("4_3kile")]
 position = Vector2(-169, -121)
 sprite_objeto = ExtResource("6_ejewp")
+sprite_documento = ExtResource("7_m2h5s")
+objetos_secretos_sprites = Array[Texture2D]([ExtResource("11_ibfsr"), ExtResource("12_04p0q")])
+objetos_secretos_tipos_lupa = Array[int]([1, 2])
 
 [node name="Documento! 3" parent="Documentos" instance=ExtResource("4_3kile")]
 position = Vector2(-433, 273)
 sprite_objeto = ExtResource("7_ij7iw")
+sprite_documento = ExtResource("7_m2h5s")
+objetos_secretos_sprites = Array[Texture2D]([ExtResource("14_msyqj"), ExtResource("15_iwdya")])
+objetos_secretos_tipos_lupa = Array[int]([1, 2])
 
 [node name="Documento! 4" parent="Documentos" instance=ExtResource("4_3kile")]
 position = Vector2(187, 274)
 sprite_objeto = ExtResource("8_m2h5s")
+sprite_documento = ExtResource("7_m2h5s")
+objetos_secretos_sprites = Array[Texture2D]([ExtResource("17_pa1cb"), ExtResource("18_vkero")])
+objetos_secretos_tipos_lupa = Array[int]([1, 2])
 
 [node name="Documento! 5" parent="Documentos" instance=ExtResource("4_3kile")]
 position = Vector2(114, -274)
 sprite_objeto = ExtResource("7_ij7iw")
+sprite_documento = ExtResource("7_m2h5s")
+objetos_secretos_sprites = Array[Texture2D]([ExtResource("19_xc05b"), ExtResource("20_gyrxh")])
+objetos_secretos_tipos_lupa = Array[int]([1, 2])
 
 [node name="Documento! 6" parent="Documentos" instance=ExtResource("4_3kile")]
 position = Vector2(-32, 208)
 sprite_objeto = ExtResource("6_ejewp")
+sprite_documento = ExtResource("7_m2h5s")
+objetos_secretos_sprites = Array[Texture2D]([ExtResource("21_opro1"), ExtResource("22_yboit")])
+objetos_secretos_tipos_lupa = Array[int]([1, 2])
 
 [node name="Documento" parent="Documentos" instance=ExtResource("4_3kile")]
 position = Vector2(-435, -185)
 sprite_objeto = ExtResource("7_ij7iw")
+sprite_documento = ExtResource("7_m2h5s")
 
 [node name="Documento2" parent="Documentos" instance=ExtResource("4_3kile")]
 position = Vector2(-211, -220)
 sprite_objeto = ExtResource("6_ejewp")
+sprite_documento = ExtResource("7_m2h5s")
 
 [node name="Documento3" parent="Documentos" instance=ExtResource("4_3kile")]
 position = Vector2(-266, -125)
 sprite_objeto = ExtResource("5_wy2or")
+sprite_documento = ExtResource("7_m2h5s")
 
 [node name="Documento4" parent="Documentos" instance=ExtResource("4_3kile")]
 position = Vector2(-236, 20)
 sprite_objeto = ExtResource("7_ij7iw")
+sprite_documento = ExtResource("7_m2h5s")
 
 [node name="Documento5" parent="Documentos" instance=ExtResource("4_3kile")]
 position = Vector2(-423, 77)
 sprite_objeto = ExtResource("6_ejewp")
+sprite_documento = ExtResource("7_m2h5s")
 
 [node name="Documento6" parent="Documentos" instance=ExtResource("4_3kile")]
 position = Vector2(-355, 267)
 sprite_objeto = ExtResource("5_wy2or")
+sprite_documento = ExtResource("7_m2h5s")
 
 [node name="Documento7" parent="Documentos" instance=ExtResource("4_3kile")]
 position = Vector2(-76, 216)
 sprite_objeto = ExtResource("7_ij7iw")
+sprite_documento = ExtResource("7_m2h5s")
 
 [node name="Documento8" parent="Documentos" instance=ExtResource("4_3kile")]
 position = Vector2(204, 169)
 sprite_objeto = ExtResource("8_m2h5s")
+sprite_documento = ExtResource("7_m2h5s")
 
 [node name="Documento9" parent="Documentos" instance=ExtResource("4_3kile")]
 position = Vector2(448, 239)
 sprite_objeto = ExtResource("7_ij7iw")
+sprite_documento = ExtResource("7_m2h5s")
 
 [node name="Documento10" parent="Documentos" instance=ExtResource("4_3kile")]
 position = Vector2(-96, -260)
 sprite_objeto = ExtResource("6_ejewp")
+sprite_documento = ExtResource("7_m2h5s")
 
 [node name="Documento11" parent="Documentos" instance=ExtResource("4_3kile")]
 position = Vector2(81, -127)
 sprite_objeto = ExtResource("5_wy2or")
+sprite_documento = ExtResource("7_m2h5s")
 
 [node name="Documento12" parent="Documentos" instance=ExtResource("4_3kile")]
 position = Vector2(255, -249)
 sprite_objeto = ExtResource("8_m2h5s")
+sprite_documento = ExtResource("7_m2h5s")
 
 [node name="Documento13" parent="Documentos" instance=ExtResource("4_3kile")]
 position = Vector2(112, 248)
 sprite_objeto = ExtResource("7_ij7iw")
+sprite_documento = ExtResource("7_m2h5s")
 
 [node name="Player" parent="." instance=ExtResource("2_4du07")]
 unique_name_in_owner = true

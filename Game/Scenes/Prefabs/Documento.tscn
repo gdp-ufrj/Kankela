@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://bx47i5ifcfg73"]
 
 [ext_resource type="Script" uid="uid://cjfyg1svnpj0r" path="res://Scripts/Documento.gd" id="1_f3ykg"]
-[ext_resource type="Texture2D" uid="uid://cj3p8hioadgqt" path="res://Assets/Visuals/Sprites/exemplos/folha-poema.png" id="1_ogyqe"]
 [ext_resource type="Texture2D" uid="uid://cpeuj7ihl43oq" path="res://Assets/Visuals/Sprites/individual/papel_1.png" id="2_aunrs"]
 [ext_resource type="PackedScene" uid="uid://c2vsibalraxb0" path="res://Scenes/Prefabs/ObjetoSecreto.tscn" id="3_30w5n"]
+[ext_resource type="Texture2D" uid="uid://be3qc8d613qqj" path="res://Assets/Visuals/Sprites/individual/Documento_base.png" id="3_aunrs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aunrs"]
 size = Vector2(12, 10)
@@ -31,15 +31,19 @@ shape = SubResource("RectangleShape2D_aunrs")
 
 [node name="Documento" type="Sprite2D" parent="."]
 visible = false
-texture = ExtResource("1_ogyqe")
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("3_aunrs")
 
 [node name="Segredos" type="Node2D" parent="."]
 visible = false
+scale = Vector2(0.9, 0.9)
 
 [node name="ObjetoSecreto" parent="Segredos" instance=ExtResource("3_30w5n")]
+visible = false
 position = Vector2(64, -96)
 required_lupa_type = 1
 
 [node name="ObjetoSecreto2" parent="Segredos" instance=ExtResource("3_30w5n")]
+visible = false
 position = Vector2(-64, 96)
 required_lupa_type = 2
