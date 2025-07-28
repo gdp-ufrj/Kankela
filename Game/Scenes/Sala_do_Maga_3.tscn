@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bmsykvcks1osy"]
+[gd_scene load_steps=11 format=3 uid="uid://bmsykvcks1osy"]
 
 [ext_resource type="Script" uid="uid://cvtuk37km5vc" path="res://Scripts/sala_do_maga_3.gd" id="1_wrwco"]
 [ext_resource type="Texture2D" uid="uid://3wv11u3d6pwy" path="res://Assets/Visuals/Scenarios/Background-Quarto-Inicial.png" id="2_qfomc"]
 [ext_resource type="Texture2D" uid="uid://drcg2t0oeinav" path="res://Assets/Visuals/Scenarios/Sala-Tutorial-Objetos.png" id="3_m26c7"]
 [ext_resource type="PackedScene" uid="uid://b0r2u5jb61v82" path="res://Scenes/Personagens/Maga.tscn" id="4_v1uai"]
+[ext_resource type="Texture2D" uid="uid://bntgdtgf0duup" path="res://Assets/Visuals/Sprites/individual/mesa_horizontal.png" id="5_qfomc"]
 [ext_resource type="PackedScene" uid="uid://v68omfsxr70q" path="res://Scenes/Player.tscn" id="5_vq3km"]
 [ext_resource type="Texture2D" uid="uid://bmeyklcp6ojo2" path="res://Assets/Visuals/Sprites/individual/cadeira_costas.png" id="6_iltvx"]
 
@@ -41,6 +42,9 @@ texture = SubResource("AtlasTexture_ovegd")
 
 [node name="Maga" parent="." instance=ExtResource("4_v1uai")]
 position = Vector2(0, -24)
+
+[node name="MesaHorizontal" type="Sprite2D" parent="."]
+texture = ExtResource("5_qfomc")
 
 [node name="Player" parent="." instance=ExtResource("5_vq3km")]
 unique_name_in_owner = true
