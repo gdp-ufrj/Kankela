@@ -36,8 +36,10 @@ func _ready():
 
 		player.start_cutscene(load(arquivo_dialogo), "finale")
 		await DialogueManager.dialogue_ended
-		natalia.move_to_position(Vector2(264, 72), 10.0)
-		geraldo.move_to_position(Vector2(264, 72), 10.3)
+
+		player.colisao.shape = null
+		natalia.move_to_position(Vector2(24, 280), 10.0)
+		geraldo.move_to_position(Vector2(-24, 280), 10.3)
 
 		await get_tree().create_timer(3).timeout
 		player.change_scene_to(area)

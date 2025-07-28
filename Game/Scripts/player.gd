@@ -3,6 +3,7 @@ extends CharacterBody2D
 const SPEED = 200.0
 
 @onready var animacao := $Anim as AnimatedSprite2D
+@onready var colisao := $CollisionShape2D as CollisionShape2D
 @onready var cutscene_mode
 
 # Variável para rastrear a última animação de caminhada
