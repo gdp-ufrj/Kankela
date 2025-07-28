@@ -60,6 +60,7 @@ layout_mode = 2
 theme_override_constants/separation = 15
 
 [node name="PortraitSpacer" type="Control" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(155, 0)
 layout_mode = 2
 

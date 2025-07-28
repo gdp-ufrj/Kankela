@@ -48,6 +48,9 @@ var mutation_cooldown: Timer = Timer.new()
 ## The portrait of the currently speaking character
 @onready var portrait: TextureRect = %Portrait
 
+## The portrait of the currently speaking character
+@onready var portrait_spacer: Control = %PortraitSpacer
+
 ## The label showing the currently spoken dialogue
 @onready var dialogue_label: DialogueLabel = %DialogueLabel
 
@@ -112,8 +115,10 @@ func apply_dialogue_line() -> void:
 	var portrait_path: String = "res://Assets/Visuals/Sprites/portraits/%s.png" % formatted_name
 
 	if ResourceLoader.exists(portrait_path): # Usar ResourceLoader.exists é um pouco mais confiável para builds
+		portrait_spacer.custom_minimum_size = Vector2(155.0, 0.0)
 		portrait.texture = load(portrait_path)
 	else:
+		portrait_spacer.custom_minimum_size = Vector2(0.0, 0.0)
 		portrait.texture = null
 		# A linha mais importante para o nosso debug:
 		print("DEBUG: Retrato não encontrado. Caminho procurado: '", portrait_path, "' | Nome original do personagem: '", character_name, "'")
