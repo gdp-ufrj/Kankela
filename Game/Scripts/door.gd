@@ -66,17 +66,7 @@ func interact(_player: Node) -> void:
 					QuestManager.usar_item(item_necessario)
 				porta_destrancada = true
 				# Muda de cena para o novo cenário
-				#inicia a transição
-				transition.fade_out()
-				await transition.fade_out()
-				await get_tree().create_timer(0.5).timeout # Pequeno delay
-				audio_player.play()
-				await audio_player.finished
-				await get_tree().create_timer(0.5).timeout
-				
 				SceneManager.load_game_scene(area)
-				#faz o fade_in após o carregamento
-				transition.fade_in()
 			else:
 				if Engine.has_singleton("DialogueManager"):
 						_player.start_cutscene_from_string(mensagem_proibido_passar)
