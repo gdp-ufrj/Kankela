@@ -3,6 +3,11 @@ extends Control
 @export_file("*.tscn") var primeira_fase: String
 
 func _on_play_pressed() -> void:
+	# Reseta o estado do jogo antes de iniciar
+	if Engine.has_singleton("QuestManager"):
+		var quest_manager = Engine.get_singleton("QuestManager")
+		quest_manager.recarregar_sistema()
+	
 	SceneManager.load_game_scene(primeira_fase)
 
 

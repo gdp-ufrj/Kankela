@@ -5,6 +5,7 @@ signal missao_atualizada(quest_id: String)
 signal item_coletado(item_id: String)
 signal item_usado(item_id: String)
 signal inventario_atualizado
+signal jogo_resetado
 
 # Lista de todas as missões no jogo
 var todas_missoes: Dictionary = {}
@@ -18,6 +19,8 @@ var todos_itens: Dictionary = {}
 var caminho_arquivo_itens = "res://Data/itens.json"
 # Caminho para o arquivo JSON de missões
 var caminho_arquivo_missoes = "res://Data/missoes.json"
+# Se o jogo já foi completo alguma vez
+var game_finished: bool = false
 
 func _ready() -> void:
 	if not Engine.has_singleton("QuestManager"):
@@ -121,8 +124,56 @@ func obter_info_item(item_id: String) -> Dictionary:
 		return todos_itens[item_id]
 	return {}
 
+# Reseta o estado do QuestManager para valores iniciais
+func resetar_estado() -> void:
+	todas_missoes.clear()
+	missao_ativa = null
+	inventario.clear()
+	todos_itens.clear()
+	
+	# Resetar todos os objetos coletáveis na cena atual
+	_resetar_objetos_coletaveis()
+	
+	# Emite sinal para que outros objetos se resetem
+	jogo_resetado.emit()
+	
+	print("Estado do QuestManager resetado!")
+
+# Resetar todos os objetos coletáveis na cena atual
+func _resetar_objetos_coletaveis() -> void:
+	var cena_atual = get_tree().current_scene
+	if cena_atual:
+		var objetos_coletaveis = _encontrar_objetos_coletaveis(cena_atual)
+		for objeto in objetos_coletaveis:
+			if objeto.has_method("resetar_objeto"):
+				objeto.resetar_objeto()
+
+# Encontra todos os objetos coletáveis na cena de forma recursiva
+func _encontrar_objetos_coletaveis(node: Node) -> Array:
+	var objetos: Array = []
+	
+	# Verifica se o nó atual é um ObjetoColetavel
+	if node.has_method("resetar_objeto"):
+		objetos.append(node)
+	
+	# Busca recursivamente nos filhos
+	for child in node.get_children():
+		objetos.append_array(_encontrar_objetos_coletaveis(child))
+	
+	return objetos
+
+# Função pública para recarregar todo o sistema de quests
+func recarregar_sistema() -> void:
+	_carregar_dados_json()
+	# Emite sinais para atualizar interfaces
+	inventario_atualizado.emit()
+	if missao_ativa:
+		missao_atualizada.emit(missao_ativa.id)
+
 # Carrega os itens e missões a partir do .json
 func _carregar_dados_json() -> void:
+	# Reseta o estado antes de carregar os dados
+	resetar_estado()
 	# Carregar itens
 	if ResourceLoader.exists(caminho_arquivo_itens):
 		var arquivo_json = FileAccess.open(caminho_arquivo_itens, FileAccess.READ)

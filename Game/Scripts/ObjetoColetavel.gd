@@ -31,6 +31,10 @@ func _ready() -> void:
 	
 	super._ready() # Força esse nó rodar a função _ready() do script que ele está estendendo
 	
+	# Conectar ao sinal de reset do QuestManager
+	if Engine.has_singleton("QuestManager"):
+		quest_manager.jogo_resetado.connect(_on_jogo_resetado)
+	
 	# Registrar o item no sistema se ainda não estiver registrado
 	if Engine.has_singleton("QuestManager") and item_id != "":
 		# Registrar no QuestManager
@@ -43,7 +47,7 @@ func _ready() -> void:
 		
 		# Verificar se o item já foi coletado anteriormente
 		if quest_manager.todos_itens.has(item_id) and quest_manager.todos_itens[item_id].coletado:
-			queue_free() # Remove o item do mundo se já foi coletado
+			_esconder_objeto() # Esconde o item do mundo se já foi coletado
 
 func interact(_player: Node) -> void:
 	if hasInteracted: return
@@ -70,4 +74,28 @@ func interact(_player: Node) -> void:
 	var tween = create_tween()
 	tween.tween_property($Sprite2D, "scale", Vector2.ZERO, 0.5)
 	self.interaction_finished.disconnect(_player._on_objeto_interaction_finished)
-	tween.tween_callback(self.queue_free)
+	tween.tween_callback(_esconder_objeto)
+
+# Esconde o objeto quando coletado (em vez de destruí-lo)
+func _esconder_objeto() -> void:
+	visible = false
+	set_physics_process(false)
+	set_process(false)
+	collision_shape.disabled = true
+
+# Mostra o objeto novamente (para quando resetar o jogo)
+func _mostrar_objeto() -> void:
+	visible = true
+	set_physics_process(true)
+	set_process(true)
+	collision_shape.disabled = false
+	$Sprite2D.scale = Vector2.ONE
+	hasInteracted = false
+
+# Função chamada pelo QuestManager para resetar o objeto
+func resetar_objeto() -> void:
+	_mostrar_objeto()
+
+# Função chamada quando o QuestManager emite o sinal de reset
+func _on_jogo_resetado() -> void:
+	resetar_objeto()
